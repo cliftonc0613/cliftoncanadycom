@@ -1,0 +1,217 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+---
+
+<Layout title="Resume - Clifton T. Canady | WordPress Developer, Content Writer, Speaker & Photographer">
+  <Navigation />
+  <main class="pt-24">
+    
+    <!-- Header Section -->
+    <section class="py-16 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Clifton T. Canady</h1>
+        <p class="text-xl md:text-2xl mb-6 opacity-90">
+          WordPress Developer • Content Writer • Speaker • Photographer
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+          <span>+1 (864) 752-8017</span>
+          <span>•</span>
+          <a href="https://cliftoncanady.com/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">
+            cliftoncanady.com
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Summary -->
+    <section class="py-16 bg-background">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Professional Summary</CardTitle>
+          </CardHeader>
+          <CardContent className="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed">
+              Multi-disciplinary digital professional with extensive experience in WordPress development, 
+              content writing, professional speaking, and photography. Proven track record of delivering 
+              high-quality solutions that drive business results and enhance professional presence. 
+              Combines technical expertise with creative communication skills to provide comprehensive 
+              digital services.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+
+    <!-- Core Competencies -->
+    <section class="py-16 bg-muted/30">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl font-bold text-center mb-12">Core Competencies</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- WordPress Development -->
+          <Card className="h-full">
+            <CardHeader>
+              <CardTitle className="text-lg">WordPress Development</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul class="space-y-2 text-sm">
+                <li>• Custom theme development</li>
+                <li>• Plugin development & integration</li>
+                <li>• WooCommerce solutions</li>
+                <li>• Performance optimization</li>
+                <li>• Security implementation</li>
+                <li>• Site maintenance & updates</li>
+              </ul>
+            </CardContent>
+          </Card>
+          
+          <!-- Content Writing -->
+          <Card className="h-full">
+            <CardHeader>
+              <CardTitle className="text-lg">Content Writing</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul class="space-y-2 text-sm">
+                <li>• SEO content strategy</li>
+                <li>• Technical documentation</li>
+                <li>• Marketing copywriting</li>
+                <li>• Blog writing & management</li>
+                <li>• Social media content</li>
+                <li>• Email campaign writing</li>
+              </ul>
+            </CardContent>
+          </Card>
+          
+          <!-- Speaking & Training -->
+          <Card className="h-full">
+            <CardHeader>
+              <CardTitle className="text-lg">Speaking & Training</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul class="space-y-2 text-sm">
+                <li>• Conference presentations</li>
+                <li>• Workshop facilitation</li>
+                <li>• Corporate training</li>
+                <li>• Technical seminars</li>
+                <li>• Keynote speeches</li>
+                <li>• Educational content</li>
+              </ul>
+            </CardContent>
+          </Card>
+          
+          <!-- Photography -->
+          <Card className="h-full">
+            <CardHeader>
+              <CardTitle className="text-lg">Photography</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul class="space-y-2 text-sm">
+                <li>• Corporate photography</li>
+                <li>• Event documentation</li>
+                <li>• Professional headshots</li>
+                <li>• Product photography</li>
+                <li>• Marketing imagery</li>
+                <li>• Photo editing & retouching</li>
+              </ul>
+            </CardContent>
+          </Card>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="py-16 bg-background">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Technical Skills</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div class="grid md:grid-cols-3 gap-8">
+              <div>
+                <h4 class="font-semibold mb-3 text-primary">Development</h4>
+                <ul class="space-y-1 text-sm">
+                  <li>• WordPress/PHP</li>
+                  <li>• HTML/CSS/JavaScript</li>
+                  <li>• MySQL Database</li>
+                  <li>• Git Version Control</li>
+                  <li>• Linux/Apache/Nginx</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-3 text-primary">Design & Content</h4>
+                <ul class="space-y-1 text-sm">
+                  <li>• Adobe Creative Suite</li>
+                  <li>• SEO & Analytics</li>
+                  <li>• Content Management</li>
+                  <li>• UI/UX Principles</li>
+                  <li>• Brand Development</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold mb-3 text-primary">Photography</h4>
+                <ul class="space-y-1 text-sm">
+                  <li>• Professional Lighting</li>
+                  <li>• Digital Image Processing</li>
+                  <li>• Studio & Location Work</li>
+                  <li>• Event Photography</li>
+                  <li>• Product Photography</li>
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+
+    <!-- Professional Philosophy -->
+    <section class="py-16 bg-muted/30">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Professional Philosophy</CardTitle>
+          </CardHeader>
+          <CardContent className="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed mb-4">
+              I believe in delivering solutions that not only meet technical requirements but also 
+              drive real business results. My approach combines technical excellence with strategic 
+              thinking, ensuring that every project contributes to my clients' long-term success.
+            </p>
+            <p class="text-lg leading-relaxed">
+              Whether developing a custom WordPress solution, crafting compelling content, 
+              delivering an engaging presentation, or capturing professional imagery, I focus on 
+              quality, reliability, and results that exceed expectations.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-primary text-primary-foreground text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-6">Ready to Work Together?</h2>
+        <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+          Let's discuss how my expertise can help your business achieve its digital goals.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <a href="tel:+18647528017">Call +1 (864) 752-8017</a>
+          </Button>
+          <Button asChild variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+            <a href="/#contact">Get in Touch</a>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

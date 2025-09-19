@@ -1,0 +1,119 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Multi-disciplinary digital professional specializing in WordPress development, content writing, speaking/seminars, and photography." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- Person Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Clifton T. Canady",
+      "jobTitle": "WordPress Developer, Content Writer, Speaker & Photographer",
+      "description": "Multi-disciplinary digital professional specializing in WordPress development, content writing, speaking/seminars, and photography.",
+      "telephone": "+1-864-752-8017",
+      "url": "https://cliftoncanady.com",
+      "knowsAbout": ["WordPress Development", "Content Writing", "Speaking", "Photography"],
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "WordPress Developer"
+        },
+        {
+          "@type": "Occupation", 
+          "name": "Content Writer"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Professional Speaker"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Photographer"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <slot />
+    
+    <!-- Scripts -->
+    <script>
+      // HeadroomJS initialization
+      import('headroom.js').then((module: any) => {
+        const Headroom = module.default;
+        const header = document.querySelector('#navigation');
+        if (header) {
+          const headroom = new Headroom(header, {
+            offset: 100,
+            tolerance: { up: 10, down: 10 },
+            classes: {
+              initial: "headroom",
+              pinned: "headroom--pinned", 
+              unpinned: "headroom--unpinned"
+            }
+          });
+          headroom.init();
+        }
+      });
+      
+      // Basic smooth scrolling
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const href = (e.target as HTMLAnchorElement).getAttribute('href');
+            const target = href ? document.querySelector(href) : null;
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/globals.css';
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  
+  p {
+    font-family: 'Roboto Mono', monospace !important;
+  }
+</style>

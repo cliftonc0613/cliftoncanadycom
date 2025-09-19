@@ -1,0 +1,47 @@
+---
+import { Button } from "@/components/ui/button";
+---
+
+<footer class="bg-primary text-primary-foreground py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center">
+      <div class="mb-8">
+        <img src="/ctc-logo.png" alt="Clifton T. Canady" class="h-16 w-auto mx-auto mb-6 opacity-80">
+      </div>
+      
+      <p class="text-primary-foreground/80 mb-8 text-lg max-w-2xl mx-auto">
+        Creating digital experiences that connect, engage, and inspire. Let's bring your vision to life.
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-8 text-primary-foreground/80 mb-12">
+        <Button asChild variant="link" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors p-0 h-auto">
+          <a href="mailto:canady@cliftoncanady.com" style="font-family: 'Poppins', sans-serif;">
+            canady@cliftoncanady.com
+          </a>
+        </Button>
+        <Button asChild variant="link" className="text-primary-foreground/80 hover:text-accent transition-colors p-0 h-auto">
+          <a href="https://facebook.com/cliftoncanady" target="_blank" rel="noopener noreferrer" style="font-family: 'Poppins', sans-serif;">
+            Facebook
+          </a>
+        </Button>
+        <Button asChild variant="link" className="text-primary-foreground/80 hover:text-accent transition-colors p-0 h-auto">
+          <a href="https://linkedin.com/in/cliftoncanady" target="_blank" rel="noopener noreferrer" style="font-family: 'Poppins', sans-serif;">
+            LinkedIn
+          </a>
+        </Button>
+        <Button asChild variant="link" className="text-primary-foreground/80 hover:text-accent transition-colors p-0 h-auto">
+          <a href="https://drift.me/cliftoncanady/meeting" target="_blank" rel="noopener noreferrer" style="font-family: 'Poppins', sans-serif;">
+            Schedule Meeting
+          </a>
+        </Button>
+      </div>
+      
+      <div class="border-t border-primary-foreground/20 pt-8">
+        <p class="text-sm text-primary-foreground/60">
+          © {new Date().getFullYear()} Clifton T. Canady. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+

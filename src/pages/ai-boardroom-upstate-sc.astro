@@ -1,0 +1,414 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import FAQAccordion from "../components/FAQAccordion";
+---
+
+<Layout title="AI Boardroom for Upstate SC Tech Leaders | Clifton T. Canady">
+  <main>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+      <div class="container mx-auto px-4 py-24 text-center">
+        
+        <!-- StoryBrand Character (Customer as Hero) + Problem -->
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          Is Your Tech Company Stuck Between Startup and Scale?
+        </h1>
+        
+        <!-- StoryBrand Solution with Geographic Specificity -->
+        <p class="text-xl md:text-2xl mb-4 opacity-90 max-w-4xl mx-auto font-semibold">
+          Upstate SC (Greenville-Spartanburg-Anderson) Tech Company Leaders: Break Through the $2M-$10M Growth Plateau with AI-Powered Strategic Advisory Boards
+        </p>
+        
+        <!-- StoryBrand Guide Positioning -->
+        <p class="text-lg mb-8 opacity-80 max-w-3xl mx-auto">
+          Stop making million-dollar strategic decisions with only internal perspectives. Join 11 other Upstate tech company leaders in exclusive, in-person AI Boardroom sessions. Finally, strategic planning that happens face-to-face, not through another Zoom screen.
+        </p>
+        
+        <!-- StoryBrand Urgency (Avoid Failure Stakes) -->
+        <div class="bg-accent/20 border border-accent/30 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+          <p class="text-lg font-semibold text-accent-foreground">
+            Next session: October 15th - Only 5 seats remaining for company leaders.
+          </p>
+        </div>
+        
+        <!-- Value Proposition Badges -->
+        <div class="flex flex-wrap justify-center gap-3 mb-10 max-w-3xl mx-auto">
+          <Badge variant="secondary" className="text-base px-4 py-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
+            AI Boardroom Method
+          </Badge>
+          <Badge variant="secondary" className="text-base px-4 py-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
+            $2M-$10M Growth Focus
+          </Badge>
+          <Badge variant="secondary" className="text-base px-4 py-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
+            In-Person Sessions
+          </Badge>
+          <Badge variant="secondary" className="text-base px-4 py-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
+            Upstate SC Leaders Only
+          </Badge>
+        </div>
+        
+        <!-- StoryBrand Call to Action -->
+        <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
+          <Button asChild size="lg" className="text-lg px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground">
+            <a href="#reserve">Secure My Leadership Seat</a>
+          </Button>
+          <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-white/30 text-white hover:bg-white/10">
+            <a href="tel:+18647528017">Call +1 (864) 752-8017</a>
+          </Button>
+        </div>
+        
+        <!-- Pricing & Scarcity Elements -->
+        <div class="text-center mb-8">
+          <p class="text-lg font-semibold mb-2">
+            <span class="text-accent">Founding Member Rate: $125</span> 
+            <span class="opacity-70">(Regular Price: $297)</span>
+          </p>
+          <p class="text-sm opacity-80">Limited to first 12 Upstate SC tech leaders • Lock in founding rate for future sessions</p>
+        </div>
+        
+        <!-- Trust Elements -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm opacity-80 max-w-3xl mx-auto">
+          <div class="flex items-center gap-2">
+            <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>20+ Years Upstate Tech Experience</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>$2M+ Company Leaders Only</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span>AI-Powered Strategic Thinking</span>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- The Problem Section -->
+    <section class="py-24 bg-muted/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            You've built a successful $2M+ tech company, but now you're stuck...
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8 mt-12">
+            <Card>
+              <CardContent className="p-8">
+                <div class="text-left space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Too big for startup advice, too small for enterprise consulting</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Making strategic decisions with only internal perspectives</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Revenue growth has plateaued between $2M-$10M</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="p-8">
+                <div class="text-left space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Decision fatigue from wearing multiple leadership hats</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Feeling isolated from other tech company leaders facing similar challenges</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Solution Section -->
+    <section class="py-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            Introducing: The AI Boardroom Method for Tech Company Leaders
+          </h2>
+          
+          <p class="text-lg text-muted-foreground mb-12">
+            What You'll Learn:
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <Card>
+              <CardContent className="p-8">
+                <div class="text-left space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p>How to assemble virtual advisory boards using AI technology</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Strategic frameworks used by companies that scaled past $10M</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="p-8">
+                <div class="text-left space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Decision-making processes that eliminate leadership isolation</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Proven methods to break through the $2M-$10M growth plateau</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Authority Section (Guide Credentials) -->
+    <section class="py-24 bg-muted/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center text-foreground">
+            Meet Your Strategic Guide: Clifton Canady
+          </h2>
+          
+          <Card>
+            <CardContent className="p-12">
+              <div class="prose prose-lg max-w-none">
+                <p class="text-lg mb-6 leading-relaxed text-foreground">
+                  "After 20+ years working inside multiple Upstate tech companies, I kept seeing the same pattern: brilliant technical teams hitting the same strategic walls between $2M-$10M in revenue.
+                </p>
+                
+                <p class="text-lg mb-6 leading-relaxed text-muted-foreground">
+                  The problem wasn't the technology or the talent - it was strategic isolation. Leadership teams making million-dollar decisions with only internal perspectives.
+                </p>
+                
+                <p class="text-lg mb-8 leading-relaxed text-muted-foreground">
+                  So I stepped back, mastered AI-powered strategic thinking, and developed the AI Boardroom method to solve from the outside what I couldn't fix from the inside."
+                </p>
+                
+                <!-- Credibility Bullets -->
+                <div class="bg-primary/5 rounded-lg p-6">
+                  <h3 class="text-xl font-semibold mb-4 text-primary">Credibility & Experience:</h3>
+                  <div class="space-y-3">
+                    <div class="flex items-start gap-3">
+                      <svg class="h-5 w-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <p>20+ years inside Upstate tech companies</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <svg class="h-5 w-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <p>Witnessed the $2M-$10M growth plateau firsthand at multiple organizations</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <svg class="h-5 w-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <p>Early AI adopter since 2023</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <svg class="h-5 w-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <p>Former Greenville WordPress Meetup organizer</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <svg class="h-5 w-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                      </svg>
+                      <p>"I've seen what works and what doesn't from the inside. Now I help other companies avoid the same strategic pitfalls."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Coming Section -->
+    <section class="py-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            AI Boardroom Sessions for Upstate Tech Leaders
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8 mt-12">
+            <Card>
+              <CardContent className="p-8">
+                <h3 class="text-xl font-semibold mb-4 text-primary">Strategic Planning Intensive</h3>
+                <p class="text-muted-foreground mb-4">AI Boardroom Fundamentals</p>
+                <ul class="text-left space-y-2 text-sm">
+                  <li>• Exclusive in-person sessions in Upstate SC</li>
+                  <li>• Interactive workshops with real strategic challenges</li>
+                  <li>• Limited to 12 company leaders per session</li>
+                  <li>• Face-to-face strategic planning - no Zoom fatigue</li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="p-8">
+                <h3 class="text-xl font-semibold mb-4 text-primary">Growth Breakthrough Workshop</h3>
+                <p class="text-muted-foreground mb-4">Scaling Past $10M</p>
+                <ul class="text-left space-y-2 text-sm">
+                  <li>• Monthly exclusive sessions</li>
+                  <li>• Intimate, focused discussions</li>
+                  <li>• Real-world case studies from Upstate companies</li>
+                  <li>• Actionable strategies you can implement immediately</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Email Capture / CTA Section -->
+    <section id="reserve" class="py-24 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Reserve Your Company's Strategic Planning Seat
+          </h2>
+          
+          <div class="bg-white/10 backdrop-blur rounded-lg p-8 mb-8">
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="text-center">
+                <p class="text-2xl font-bold text-accent mb-2">$125</p>
+                <p class="text-sm opacity-90">Founding Member Rate</p>
+                <p class="text-xs opacity-70">Limited to first 12 leaders</p>
+              </div>
+              <div class="text-center">
+                <p class="text-2xl font-bold opacity-70 mb-2">$297</p>
+                <p class="text-sm opacity-70">Regular Price</p>
+                <p class="text-xs opacity-60">Starting with second session</p>
+              </div>
+            </div>
+            
+            <!-- Contact Form Placeholder -->
+            <div class="space-y-4 text-left">
+              <div>
+                <label class="block text-sm font-medium mb-2">Company Name</label>
+                <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60" placeholder="Your Company Name">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Your Name & Title</label>
+                <input type="text" class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60" placeholder="John Smith, CEO">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Email Address</label>
+                <input type="email" class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60" placeholder="your@email.com">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Current Annual Revenue</label>
+                <select class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white">
+                  <option>$2M-$5M</option>
+                  <option>$5M-$10M</option>
+                  <option>$10M+</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Biggest Strategic Challenge (Optional)</label>
+                <textarea class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60" rows="3" placeholder="What's your biggest strategic challenge right now?"></textarea>
+              </div>
+            </div>
+            
+            <Button size="lg" className="w-full mt-6 text-lg py-6 bg-accent hover:bg-accent/90 text-accent-foreground">
+              Secure My Leadership Seat
+            </Button>
+          </div>
+          
+          <!-- Scarcity Elements -->
+          <div class="space-y-2 text-sm opacity-90">
+            <p>• Limited to 12 Upstate SC (Greenville-Spartanburg-Anderson) company leaders per session</p>
+            <p>• Founding Member $125 rate ends after first session fills</p>
+            <p>• Future sessions will be $297 - lock in your founding rate now</p>
+          </div>
+          
+          <div class="mt-8">
+            <Button asChild variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10">
+              <a href="tel:+18647528017">Or Call +1 (864) 752-8017</a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-muted/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
+            Frequently Asked Questions
+          </h2>
+          
+          <FAQAccordion client:load />
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            Future Success Stories
+          </h2>
+          
+          <Card>
+            <CardContent className="p-8">
+              <p class="text-lg italic text-muted-foreground mb-6">
+                "Coming Soon: Success stories from Upstate tech companies that broke through growth plateaus using AI Boardroom strategies"
+              </p>
+              
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                  <Badge variant="secondary" className="mb-2">Authority Indicator</Badge>
+                  <p class="text-sm">Exclusive program for $2M+ tech companies</p>
+                </div>
+                <div class="text-center">
+                  <Badge variant="secondary" className="mb-2">Local Expertise</Badge>
+                  <p class="text-sm">Insider knowledge from 20+ years in Upstate tech</p>
+                </div>
+                <div class="text-center">
+                  <Badge variant="secondary" className="mb-2">AI-Powered</Badge>
+                  <p class="text-sm">Strategic thinking for modern leaders</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
