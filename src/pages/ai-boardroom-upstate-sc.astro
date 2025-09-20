@@ -458,15 +458,15 @@ import FAQAccordion from "../components/FAQAccordion";
               
               <div class="grid md:grid-cols-3 gap-6">
                 <div class="text-center">
-                  <Badge variant="secondary" className="mb-2">Authority Indicator</Badge>
-                  <p class="text-sm">Exclusive program for $2M+ tech companies</p>
+                  <Badge variant="secondary" className="mb-2 badge">Authority Indicator</Badge>
+                  <p class="text-sm">Exclusive program for established tech companies</p>
                 </div>
                 <div class="text-center">
-                  <Badge variant="secondary" className="mb-2">Local Expertise</Badge>
+                  <Badge variant="secondary" className="mb-2 badge">Local Expertise</Badge>
                   <p class="text-sm">Insider knowledge from 20+ years in Upstate tech</p>
                 </div>
                 <div class="text-center">
-                  <Badge variant="secondary" className="mb-2">AI-Powered</Badge>
+                  <Badge variant="secondary" className="mb-2 badge">AI-Powered</Badge>
                   <p class="text-sm">Strategic thinking for modern leaders</p>
                 </div>
               </div>
@@ -624,14 +624,16 @@ import FAQAccordion from "../components/FAQAccordion";
   /* Footer Styles */
   .footer-title {
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 100 !important;
     margin-bottom: 1rem;
     color: #F66733;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 
   @media (min-width: 768px) {
     .footer-title {
       font-size: 2.75rem;
+      font-weight: 100 !important;
     }
   }
 
@@ -720,6 +722,17 @@ import FAQAccordion from "../components/FAQAccordion";
     
     .solutions-section .grid {
       gap: 1.5rem !important;
+    }
+  }
+
+  /* Social proof badges - smaller text on desktop only */
+  @media (min-width: 768px) {
+    .ai-boardroom-social-proof .badge {
+      font-size: 0.75rem !important;
+    }
+    
+    .ai-boardroom-social-proof .text-sm {
+      font-size: 0.75rem !important;
     }
   }
 </style>
