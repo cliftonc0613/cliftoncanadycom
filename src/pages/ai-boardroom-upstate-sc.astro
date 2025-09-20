@@ -8,89 +8,66 @@ import FAQAccordion from "../components/FAQAccordion";
 
 <Layout title="AI Boardroom for Upstate SC Tech Leaders | Clifton T. Canady">
   <main>
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-center md:justify-between py-4">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img 
+              src="/logo/SVG/AI-bordroom-logo.svg" 
+              alt="AI Boardroom Logo" 
+              class="h-12 w-auto"
+            >
+          </div>
+          
+          <!-- Call to Action Button -->
+          <div class="hidden md:block">
+            <a href="#reserve" class="orange-btn inline-flex items-center justify-center px-6 py-3 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
+              Reserve Your Seat
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
-      <div class="container mx-auto px-4 py-24 text-center">
-        
-        <!-- StoryBrand Character (Customer as Hero) + Problem -->
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          Is Your Tech Company Stuck Between Startup and Scale?
-        </h1>
-        
-        <!-- StoryBrand Solution with Geographic Specificity -->
-        <p class="text-xl md:text-2xl mb-4 opacity-90 max-w-4xl mx-auto font-semibold">
-          Upstate SC (Greenville-Spartanburg-Anderson) Tech Company Leaders: Break Through the $2M-$10M Growth Plateau with AI-Powered Strategic Advisory Boards
-        </p>
-        
-        <!-- StoryBrand Guide Positioning -->
-        <p class="text-lg mb-8 opacity-80 max-w-3xl mx-auto">
-          Stop making million-dollar strategic decisions with only internal perspectives. Join 11 other Upstate tech company leaders in exclusive, in-person AI Boardroom sessions. Finally, strategic planning that happens face-to-face, not through another Zoom screen.
-        </p>
-        
-        <!-- StoryBrand Urgency (Avoid Failure Stakes) -->
-        <div class="bg-accent/20 border border-accent/30 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
-          <p class="text-lg font-semibold text-accent-foreground">
+    <section class="h-screen md:h-[700px] flex items-center justify-center relative text-primary-foreground overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/ai-boardroom.jpg');"></div>
+      
+      <!-- Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/80"></div>
+      
+      <div class="max-w-6xl mx-auto px-4 py-24 relative z-10">
+        <div class="w-full md:w-3/5 text-center md:text-left">
+          
+          <!-- Main Headline -->
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Is Your Tech Company Stuck Between Startup and Scale?
+          </h1>
+          
+          <!-- Subheadline -->
+          <p class="text-xl md:text-2xl opacity-90 font-semibold mb-8">
+            Upstate, SC Tech Company Leaders: Break Through the Growth Plateau with AI-Powered Strategic Advisory Boards
+          </p>
+          <!-- Call to Action Button -->
+          <a href="#reserve" class="orange-btn inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
+            Reserve My Leadership Seat
+          </a>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Urgency Section -->
+    <section class="py-8 bg-accent">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-2xl font-bold text-white">
             Next session: October 15th - Only 5 seats remaining for company leaders.
           </p>
         </div>
-        
-        <!-- Value Proposition Badges -->
-        <div class="flex flex-wrap justify-center gap-3 mb-10 max-w-3xl mx-auto">
-          <Badge variant="secondary" className="text-base px-4 py-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
-            AI Boardroom Method
-          </Badge>
-          <Badge variant="secondary" className="text-base px-4 py-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
-            $2M-$10M Growth Focus
-          </Badge>
-          <Badge variant="secondary" className="text-base px-4 py-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
-            In-Person Sessions
-          </Badge>
-          <Badge variant="secondary" className="text-base px-4 py-2 bg-white/10 text-white border-white/20 hover:bg-white/20">
-            Upstate SC Leaders Only
-          </Badge>
-        </div>
-        
-        <!-- StoryBrand Call to Action -->
-        <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
-          <Button asChild size="lg" className="text-lg px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground">
-            <a href="#reserve">Secure My Leadership Seat</a>
-          </Button>
-          <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 border-white/30 text-white hover:bg-white/10">
-            <a href="tel:+18647528017">Call +1 (864) 752-8017</a>
-          </Button>
-        </div>
-        
-        <!-- Pricing & Scarcity Elements -->
-        <div class="text-center mb-8">
-          <p class="text-lg font-semibold mb-2">
-            <span class="text-accent">Founding Member Rate: $125</span> 
-            <span class="opacity-70">(Regular Price: $297)</span>
-          </p>
-          <p class="text-sm opacity-80">Limited to first 12 Upstate SC tech leaders • Lock in founding rate for future sessions</p>
-        </div>
-        
-        <!-- Trust Elements -->
-        <div class="flex flex-wrap justify-center gap-6 text-sm opacity-80 max-w-3xl mx-auto">
-          <div class="flex items-center gap-2">
-            <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>20+ Years Upstate Tech Experience</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>$2M+ Company Leaders Only</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="h-4 w-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span>AI-Powered Strategic Thinking</span>
-          </div>
-        </div>
-        
       </div>
     </section>
 
@@ -101,6 +78,10 @@ import FAQAccordion from "../components/FAQAccordion";
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
             You've built a successful $2M+ tech company, but now you're stuck...
           </h2>
+          
+          <p class="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto">
+            Stop making million-dollar strategic decisions with only internal perspectives. Join 11 other Upstate tech company leaders in exclusive, in-person AI Boardroom sessions. Finally, strategic planning that happens face-to-face, not through another Zoom screen.
+          </p>
           
           <div class="grid md:grid-cols-2 gap-8 mt-12">
             <Card>
@@ -142,9 +123,9 @@ import FAQAccordion from "../components/FAQAccordion";
     </section>
 
     <!-- The Solution Section -->
-    <section class="py-24">
+    <section class="py-24 bg-gray-100">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-6xl mx-auto text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
             Introducing: The AI Boardroom Method for Tech Company Leaders
           </h2>
@@ -153,141 +134,199 @@ import FAQAccordion from "../components/FAQAccordion";
             What You'll Learn:
           </p>
           
-          <div class="grid md:grid-cols-2 gap-8">
-            <Card>
-              <CardContent className="p-8">
-                <div class="text-left space-y-4">
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p>How to assemble virtual advisory boards using AI technology</p>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p>Strategic frameworks used by companies that scaled past $10M</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- AI Advisory Boardrooms -->
+            <div class="text-center p-6 bg-muted/20 rounded-lg">
+              <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-sm mb-2">AI Advisory Boardrooms</h3>
+              <p class="text-xs text-muted-foreground">Assemble virtual advisory boardrooms using AI technology</p>
+            </div>
             
-            <Card>
-              <CardContent className="p-8">
-                <div class="text-left space-y-4">
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p>Decision-making processes that eliminate leadership isolation</p>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p>Proven methods to break through the $2M-$10M growth plateau</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <!-- Strategic Frameworks -->
+            <div class="text-center p-6 bg-muted/20 rounded-lg">
+              <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-sm mb-2">Strategic Frameworks</h3>
+              <p class="text-xs text-muted-foreground">Frameworks used by companies that scaled past $10M</p>
+            </div>
+            
+            <!-- Decision Processes -->
+            <div class="text-center p-6 bg-muted/20 rounded-lg">
+              <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-sm mb-2">Decision Processes</h3>
+              <p class="text-xs text-muted-foreground">Processes that eliminate leadership isolation</p>
+            </div>
+            
+            <!-- Growth Methods -->
+            <div class="text-center p-6 bg-muted/20 rounded-lg">
+              <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                </svg>
+              </div>
+              <h3 class="font-semibold text-sm mb-2">Growth Methods</h3>
+              <p class="text-xs text-muted-foreground">Proven methods to break through the $2M-$10M plateau</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Authority Section (Guide Credentials) -->
-    <section class="py-24 bg-muted/30">
+    <section class="py-16" style="background-color: #F66733;">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center text-foreground">
-            Meet Your Strategic Guide: Clifton Canady
-          </h2>
-          
-          <Card>
-            <CardContent className="p-12">
-              <div class="prose prose-lg max-w-none">
-                <p class="text-lg mb-6 leading-relaxed text-foreground">
-                  "After 20+ years working inside multiple Upstate tech companies, I kept seeing the same pattern: brilliant technical teams hitting the same strategic walls between $2M-$10M in revenue.
-                </p>
-                
-                <p class="text-lg mb-6 leading-relaxed text-muted-foreground">
-                  The problem wasn't the technology or the talent - it was strategic isolation. Leadership teams making million-dollar decisions with only internal perspectives.
-                </p>
-                
-                <p class="text-lg mb-8 leading-relaxed text-muted-foreground">
-                  So I stepped back, mastered AI-powered strategic thinking, and developed the AI Boardroom method to solve from the outside what I couldn't fix from the inside."
-                </p>
-                
-                <!-- Credibility Bullets -->
-                <div class="bg-primary/5 rounded-lg p-6">
-                  <h3 class="text-xl font-semibold mb-4 text-primary">Credibility & Experience:</h3>
-                  <div class="space-y-3">
-                    <div class="flex items-start gap-3">
-                      <svg class="h-5 w-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                      </svg>
-                      <p>20+ years inside Upstate tech companies</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                      <svg class="h-5 w-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                      </svg>
-                      <p>Witnessed the $2M-$10M growth plateau firsthand at multiple organizations</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                      <svg class="h-5 w-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                      </svg>
-                      <p>Early AI adopter since 2023</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                      <svg class="h-5 w-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                      </svg>
-                      <p>Former Greenville WordPress Meetup organizer</p>
-                    </div>
-                    <div class="flex items-start gap-3">
-                      <svg class="h-5 w-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                      </svg>
-                      <p>"I've seen what works and what doesn't from the inside. Now I help other companies avoid the same strategic pitfalls."</p>
-                    </div>
-                  </div>
-                </div>
+        <div class="max-w-6xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Side - Content -->
+            <div class="text-white">
+              <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                Clifton Canady
+              </h2>
+              
+              <p class="text-lg mb-8 leading-relaxed opacity-90">
+                "After 20+ years working inside multiple Upstate tech companies, I kept seeing the same pattern: brilliant technical teams hitting the same strategic walls between $2M-$10M in revenue. The problem wasn't the technology or the talent - it was strategic isolation. Leadership teams making million-dollar decisions with only internal perspectives. So I stepped back, mastered AI-powered strategic thinking, and developed the AI Boardroom method to solve from the outside what I couldn't fix from the inside."
+              </p>
+            </div>
+            
+            <!-- Right Side - Image -->
+            <div class="flex justify-center lg:justify-end">
+              <div class="relative">
+                <img 
+                  src="/clifton-canady-headstot.jpg" 
+                  alt="Clifton Canady - Strategic Guide" 
+                  class="w-[500px] h-[500px] object-cover rounded-lg shadow-xl"
+                >
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+          
+          <!-- Three Column Features -->
+          <div class="grid md:grid-cols-3 gap-8 mt-16 text-white">
+            <div>
+              <div class="border-b-2 border-white/30 pb-4 mb-4">
+                <h3 class="text-xl font-semibold">Experience</h3>
+              </div>
+              <p class="text-sm opacity-80">
+                20+ years inside Upstate tech companies. Witnessed the $2M-$10M growth plateau firsthand at multiple organizations.
+              </p>
+            </div>
+            
+            <div>
+              <div class="border-b-2 border-white/30 pb-4 mb-4">
+                <h3 class="text-xl font-semibold">Tech Leader</h3>
+              </div>
+              <p class="text-sm opacity-80">
+                Early AI adopter since 2023. Current Greenville WordPress Meetup organizer. Deep understanding of tech leadership challenges.
+              </p>
+            </div>
+            
+            <div>
+              <div class="border-b-2 border-white/30 pb-4 mb-4">
+                <h3 class="text-xl font-semibold">Strategic Expert</h3>
+              </div>
+              <p class="text-sm opacity-80">
+                Adopted the AI Boardroom method from Corey Creed. I've seen what works and what doesn't from the inside. Now I help other companies avoid the same strategic pitfalls.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- What's Coming Section -->
-    <section class="py-24">
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-            AI Boardroom Sessions for Upstate Tech Leaders
-          </h2>
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-primary">
+              AI Boardroom Sessions for Upstate Tech Leaders
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Exclusive, in-person strategic planning sessions designed specifically for $2M+ tech companies in the Upstate SC region.
+            </p>
+          </div>
           
-          <div class="grid md:grid-cols-2 gap-8 mt-12">
-            <Card>
-              <CardContent className="p-8">
-                <h3 class="text-xl font-semibold mb-4 text-primary">Strategic Planning Intensive</h3>
-                <p class="text-muted-foreground mb-4">AI Boardroom Fundamentals</p>
-                <ul class="text-left space-y-2 text-sm">
-                  <li>• Exclusive in-person sessions in Upstate SC</li>
-                  <li>• Interactive workshops with real strategic challenges</li>
-                  <li>• Limited to 12 company leaders per session</li>
-                  <li>• Face-to-face strategic planning - no Zoom fatigue</li>
-                </ul>
-              </CardContent>
-            </Card>
+          <!-- Session Cards -->
+          <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Strategic Planning Intensive -->
+            <div class="group relative flex">
+              <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 flex flex-col w-full">
+                <div class="mb-6">
+                  <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-primary mb-2">Strategic Planning Intensive</h3>
+                  <p class="text-lg text-primary font-semibold">AI Boardroom Fundamentals</p>
+                </div>
+                
+                <div class="space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-gray-700">Exclusive in-person sessions in Upstate SC</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-gray-700">Interactive workshops with real strategic challenges</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-gray-700">Limited to 12 company leaders per session</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-gray-700">Face-to-face strategic planning - no Zoom fatigue</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             
-            <Card>
-              <CardContent className="p-8">
-                <h3 class="text-xl font-semibold mb-4 text-primary">Growth Breakthrough Workshop</h3>
-                <p class="text-muted-foreground mb-4">Scaling Past $10M</p>
-                <ul class="text-left space-y-2 text-sm">
-                  <li>• Monthly exclusive sessions</li>
-                  <li>• Intimate, focused discussions</li>
-                  <li>• Real-world case studies from Upstate companies</li>
-                  <li>• Actionable strategies you can implement immediately</li>
-                </ul>
-              </CardContent>
-            </Card>
+            <!-- Growth Breakthrough Workshop -->
+            <div class="group relative flex">
+              <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 flex flex-col w-full">
+                <div class="mb-6">
+                  <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-primary mb-2">Growth Breakthrough Workshop</h3>
+                  <p class="text-lg text-orange-600 font-semibold">Scaling Past $10M</p>
+                </div>
+                
+                <div class="space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-gray-700">Monthly exclusive sessions</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-gray-700">Intimate, focused discussions</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-gray-700">Real-world case studies from Upstate companies</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <p class="text-gray-700">Actionable strategies you can implement immediately</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -410,5 +449,164 @@ import FAQAccordion from "../components/FAQAccordion";
         </div>
       </div>
     </section>
+
+    <!-- Custom Footer -->
+    <footer class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <!-- Have a Project Header -->
+          <h2 class="footer-title">
+            HAVE A PROJECT?
+          </h2>
+          
+          <!-- Main Message -->
+          <h3 class="footer-subtitle">
+            Do not hesitate to get in touch with us
+          </h3>
+          
+          <!-- Follow Us -->
+          <p class="footer-follow">
+            FOLLOW US
+          </p>
+          
+          <!-- Social Icons -->
+          <div class="flex justify-center gap-4 mb-8">
+            <a href="#" class="footer-social-icon">
+              <svg class="footer-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-icon">
+              <svg class="footer-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+          </div>
+          
+          <!-- Email -->
+          <p class="footer-email">
+            HELLO@CLIFTONCANADY.COM
+          </p>
+          
+          <!-- Call to Action Button -->
+          <a href="#reserve" class="orange-btn inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
+            BOOK A MEETING
+          </a>
+          
+        </div>
+        
+        <!-- Footer Bottom - Full Width -->
+        <div class="footer-bottom">
+          <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+              <div class="footer-logo-section">
+                <img 
+                  src="/logo/SVG/AI-bordroom-logo.svg" 
+                  alt="AI Boardroom Logo" 
+                  class="footer-logo"
+                >
+              </div>
+              <p class="footer-copyright">
+                © 2025 Clifton T. Canady. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </main>
 </Layout>
+
+<style>
+  .orange-btn {
+    background-color: #F66733;
+    border: 2px solid #F66733;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .orange-btn:hover {
+    background-color: #e55a2d;
+    border: 2px solid #e55a2d;
+    color: white;
+  }
+
+  /* Footer Styles */
+  .footer-title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: #F66733;
+  }
+
+  @media (min-width: 768px) {
+    .footer-title {
+      font-size: 3.75rem;
+    }
+  }
+
+  .footer-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: hsl(var(--primary));
+  }
+
+  @media (min-width: 768px) {
+    .footer-subtitle {
+      font-size: 1.875rem;
+    }
+  }
+
+  .footer-follow {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #6B7280;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-social-icon {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+
+  .footer-social-icon:hover {
+    background-color: #E5E7EB;
+  }
+
+  .footer-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #F66733;
+  }
+
+  .footer-email {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    color: #F66733;
+  }
+
+  .footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #D1D5DB;
+  }
+
+  .footer-logo {
+    height: 2.5rem;
+    width: auto;
+  }
+
+  .footer-copyright {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin: 0;
+  }
+</style>
