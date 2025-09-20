@@ -21,9 +21,22 @@ const { title, description = "Multi-disciplinary digital professional specializi
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content="Clifton T. Canady" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="/ai-boardrooms-og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI Boardroom Strategic Advisory for Upstate SC Tech Company Leaders" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:site" content="@cliftoncanady" />
+    <meta name="twitter:image" content="/ai-boardrooms-og.jpg" />
+    <meta name="twitter:image:alt" content="AI Boardroom Strategic Advisory for Upstate SC Tech Company Leaders" />
+    
+    <!-- Keywords -->
+    <meta name="keywords" content="AI Boardroom, Upstate SC, tech company leaders, strategic planning, business advisory, growth plateau solutions, Greenville SC, Spartanburg SC, Anderson SC, tech consulting" />
     
     <!-- Person Schema Markup -->
     <script type="application/ld+json">
@@ -35,7 +48,7 @@ const { title, description = "Multi-disciplinary digital professional specializi
       "description": "Multi-disciplinary digital professional specializing in WordPress development, content writing, speaking/seminars, and photography.",
       "telephone": "+1-864-752-8017",
       "url": "https://cliftoncanady.com",
-      "knowsAbout": ["WordPress Development", "Content Writing", "Speaking", "Photography"],
+      "knowsAbout": ["WordPress Development", "Content Writing", "Speaking", "Photography", "AI Boardroom", "Strategic Planning"],
       "hasOccupation": [
         {
           "@type": "Occupation",
@@ -52,15 +65,152 @@ const { title, description = "Multi-disciplinary digital professional specializi
         {
           "@type": "Occupation",
           "name": "Photographer"
+        },
+        {
+          "@type": "Occupation",
+          "name": "Strategic Business Advisor"
+        }
+      ]
+    }
+    </script>
+
+    <!-- AI Boardroom Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI Boardroom Strategic Advisory",
+      "description": "Strategic advisory sessions for tech company leaders in Upstate South Carolina. Break through growth plateaus with AI-powered strategic planning.",
+      "provider": {
+        "@type": "Person",
+        "name": "Clifton T. Canady",
+        "telephone": "+1-864-752-8017",
+        "url": "https://cliftoncanady.com"
+      },
+      "serviceType": "Business Consulting",
+      "category": "Strategic Planning",
+      "audience": {
+        "@type": "Audience",
+        "name": "Tech Company Leaders"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Upstate South Carolina",
+        "containsPlace": [
+          {
+            "@type": "Place",
+            "name": "Greenville, SC"
+          },
+          {
+            "@type": "Place", 
+            "name": "Spartanburg, SC"
+          },
+          {
+            "@type": "Place",
+            "name": "Anderson, SC"
+          }
+        ]
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "125",
+        "priceCurrency": "USD",
+        "description": "Founding Member Rate - Limited to first 12 leaders",
+        "availability": "https://schema.org/LimitedAvailability"
+      }
+    }
+    </script>
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "AI Boardroom Upstate SC",
+      "description": "Strategic advisory sessions for tech company leaders facing growth plateaus. AI-powered strategic planning in Upstate South Carolina.",
+      "url": "https://cliftoncanady.com/ai-boardroom-upstate-sc",
+      "telephone": "+1-864-752-8017",
+      "email": "hello@cliftoncanady.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Clifton T. Canady"
+      },
+      "serviceArea": {
+        "@type": "Place",
+        "name": "Upstate South Carolina"
+      },
+      "knowsAbout": [
+        "Strategic Planning",
+        "AI Boardroom",
+        "Tech Company Growth",
+        "Business Advisory",
+        "Growth Plateau Solutions"
+      ]
+    }
+    </script>
+
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do we need AI experience to attend AI Boardroom Upstate SC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No! This method is designed for tech company leaders who want to leverage AI for strategic thinking, regardless of current AI knowledge."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "Is AI Boardroom just for Upstate SC companies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! These exclusive in-person sessions are designed specifically for Upstate SC (Greenville-Spartanburg-Anderson) tech company leaders. The intimate, face-to-face format requires us to focus on one region to build genuine strategic relationships among local peers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much time does AI Boardroom strategic planning require?",
+          "acceptedAnswer": {
+            "@type": "Answer", 
+            "text": "The AI Boardroom method is designed for busy executives. Most strategic sessions take 30-60 minutes, and the workshop is a half-day intensive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's different about AI Boardroom versus other business consulting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I've worked inside multiple Upstate tech companies and seen these exact challenges firsthand. This isn't theoretical - it's based on real patterns I've observed across multiple organizations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can multiple people from our company attend AI Boardroom sessions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Leadership teams often benefit from attending together. Contact us about team rates for 2+ attendees from the same company."
+          }
         }
       ]
     }
     </script>
     
+    <!-- Performance Optimization -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload Critical Images -->
+    <link rel="preload" as="image" href="/ai-boardroom.jpg">
+    <link rel="preload" as="image" href="/logo/SVG/AI-bordroom-logo.svg">
   </head>
   <body>
     <slot />
