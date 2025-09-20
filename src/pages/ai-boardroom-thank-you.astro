@@ -1,0 +1,349 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import AIBoardroomHeader from '../components/AIBoardroomHeader.astro';
+import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
+---
+
+<Layout 
+  title="Thank You | AI Boardroom Upstate SC - Strategic Advisory Confirmation"
+  description="Thank you for joining AI Boardroom Upstate SC. Your strategic advisory journey begins now. Exclusive in-person sessions for tech company leaders in Greenville, Spartanburg & Anderson."
+>
+  <main>
+    <!-- Header Section -->
+    <AIBoardroomHeader ctaText="Book a Call" ctaLink="https://links.ctwebdesignshop.com/widget/bookings/clifton-canady" />
+
+    <!-- Thank You Hero Section -->
+    <section class="ai-boardroom-hero flex items-center justify-center relative text-primary-foreground overflow-hidden py-16">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/ai-boardroom.jpg');"></div>
+      
+      <!-- Glassy Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/85 to-primary/80 backdrop-blur-sm"></div>
+      <div class="absolute inset-0 bg-white/10 backdrop-blur-[2px]"></div>
+      
+      <div class="max-w-4xl mx-auto px-4 py-24 relative z-10 text-center">
+        
+        <!-- Success Badge -->
+        <div class="inline-flex items-center gap-2 bg-accent/20 backdrop-blur rounded-full px-6 py-3 mb-8">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-white font-semibold text-sm uppercase tracking-wide hero-badge-text">Registration Confirmed</span>
+        </div>
+        
+        <!-- Main Thank You Message -->
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-center">
+          Welcome to AI Boardroom Upstate SC!
+        </h1>
+        
+        <!-- Subheadline -->
+        <p class="text-xl md:text-2xl opacity-90 font-semibold mb-8 max-w-3xl mx-auto">
+          Thank you for registering for our exclusive seminar for tech company leaders. Your strategic transformation journey begins now.
+        </p>
+
+        <!-- Key Benefits -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+          <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+            <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-2 icon-box-header">Exclusive Access</h3>
+            <p class="text-white/80 text-sm icon-box-text">Join 11 other Upstate SC tech leaders in our elite strategic planning sessions</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+            <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-2 icon-box-header">AI-Powered Strategy</h3>
+            <p class="text-white/80 text-sm icon-box-text">Revolutionary frameworks that combine human insight with AI intelligence</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+            <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              </svg>
+            </div>
+            <h3 class="text-sm font-bold text-white mb-2 icon-box-header">Growth Breakthrough</h3>
+            <p class="text-white/80 text-sm icon-box-text">Break through plateaus with proven methods designed for tech companies</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- What Happens Next Section -->
+    <section class="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+            What Happens Next?
+          </h2>
+          <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+            Here's what you can expect in the coming days as we prepare for your strategic transformation.
+          </p>
+
+          <!-- Timeline Steps -->
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Step 1 -->
+            <div class="relative">
+              <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 h-full">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <span class="text-2xl font-bold text-white">1</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 icon-box-header">Confirmation Email</h3>
+                <p class="text-gray-600 icon-box-text">You'll receive a detailed confirmation email within the next 24 hours with session details and preparation materials.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative">
+              <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 h-full">
+                <div class="w-16 h-16 bg-gradient-to-br from-accent to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <span class="text-2xl font-bold text-white">2</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 icon-box-header">Strategic Consultation</h3>
+                <p class="text-gray-600 icon-box-text">Schedule your 15-minute strategic consultation to assess your growth readiness and specific challenges.</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative">
+              <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 h-full">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <span class="text-2xl font-bold text-white">3</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 icon-box-header">Session Preparation</h3>
+                <p class="text-gray-600 icon-box-text">Receive your AI Boardroom toolkit and connect with other enrolled tech leaders before the session.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Immediate Action Section -->
+    <section class="py-24 bg-primary text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Start Your Strategic Journey?
+          </h2>
+          <p class="text-xl opacity-90 mb-8">
+            Don't wait for the session - book your strategic consultation now and get immediate insights into your growth challenges.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="https://links.ctwebdesignshop.com/widget/bookings/clifton-canady" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <span>Book Strategic Consultation</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            
+            <a href="tel:+18647528017" class="inline-flex items-center gap-3 bg-white/10 backdrop-blur text-white px-8 py-4 rounded-xl font-semibold text-lg border border-white/20 hover:bg-white/20 transition-all duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <span>Call +1 (864) 752-8017</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Session Details Section -->
+    <section class="py-24 bg-muted/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">
+            Session Information
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Session Details Card -->
+            <Card>
+              <CardContent className="p-8">
+                <h3 class="text-xl font-bold text-primary mb-6">Your AI Boardroom Session</h3>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <strong>Date:</strong> October 15th, 2024
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <strong>Location:</strong> Upstate SC (Greenville Area)
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <strong>Duration:</strong> Half-day intensive session
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <strong>Group Size:</strong> Limited to 12 tech company leaders
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <strong>Investment:</strong> <span class="price-mobile">$125</span> (Founding Member Rate)
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <!-- What to Expect Card -->
+            <Card>
+              <CardContent className="p-8">
+                <h3 class="text-xl font-bold text-primary mb-6">What You'll Receive</h3>
+                <div class="space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      AI-powered strategic frameworks and templates
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      Personalized 90-day growth implementation plan
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      Direct access to peer network of tech leaders
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      Strategic decision-making processes
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      Follow-up support and resources
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <AIBoardroomFooter />
+  </main>
+</Layout>
+
+<style>
+  /* Responsive Font System using calc() */
+  html {
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+  }
+
+  h1 {
+    font-size: calc(1.5rem + 2.5vw);
+    line-height: calc(1.2 + 0.2vw);
+  }
+
+  h2 {
+    font-size: calc(1.25rem + 1.5vw);
+    line-height: calc(1.3 + 0.15vw);
+  }
+
+  h3 {
+    font-size: calc(1rem + 1vw);
+    line-height: calc(1.4 + 0.1vw);
+  }
+
+  h4, h5, h6 {
+    font-size: calc(0.875rem + 0.5vw);
+    line-height: calc(1.5 + 0.05vw);
+  }
+
+  p, span, div {
+    font-size: calc(0.875rem + 0.25vw);
+    line-height: calc(1.5 + 0.1vw);
+  }
+
+  /* Button responsive sizing */
+  .orange-btn {
+    background-color: #F66733;
+    border: 2px solid #F66733;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(0.875rem + 0.25vw);
+    padding: calc(0.5rem + 0.5vw) calc(1rem + 1vw);
+  }
+  
+  .orange-btn:hover {
+    background-color: #e55a2d;
+    border: 2px solid #e55a2d;
+    color: white;
+  }
+
+
+  /* Icon box header text override - desktop only */
+  @media (min-width: 768px) {
+    .icon-box-header {
+      font-size: 1em !important;
+    }
+  }
+
+  /* Icon box paragraph text override */
+  .icon-box-text {
+    font-size: 16px !important;
+  }
+
+  /* Hero badge text override */
+  .hero-badge-text {
+    font-size: 16px !important;
+  }
+
+  /* Price styling - bigger on mobile */
+  .price-mobile {
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+  }
+
+  @media (min-width: 768px) {
+    .price-mobile {
+      font-size: inherit !important;
+      font-weight: inherit !important;
+    }
+  }
+
+  /* Hero height overrides */
+  .ai-boardroom-hero {
+    min-height: 100vh;
+  }
+
+  @media (min-width: 768px) {
+    .ai-boardroom-hero {
+      height: 78vh !important;
+      min-height: auto;
+    }
+  }
+</style>

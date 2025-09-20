@@ -1,0 +1,145 @@
+---
+export interface Props {
+  ctaText?: string;
+  ctaLink?: string;
+}
+
+const { 
+  ctaText = "BOOK A MEETING",
+  ctaLink = "https://links.ctwebdesignshop.com/widget/bookings/clifton-canady"
+} = Astro.props;
+---
+
+<footer class="ai-boardroom-footer py-16 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Have a Project Header -->
+      <h2 class="footer-title">
+        Have a question?  
+      </h2>
+      
+      <!-- Main Message -->
+      <h3 class="footer-subtitle">
+        Do not hesitate to get in touch with us
+      </h3>
+      
+      <!-- Email -->
+      <p class="footer-email">
+        HELLO@CLIFTONCANADY.COM
+      </p>
+      
+      <!-- Call to Action Button -->
+      <a href={ctaLink} target="_blank" rel="noopener noreferrer" class="orange-btn inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
+        {ctaText}
+      </a>
+      
+      <!-- Credit -->
+      <p class="footer-corey-creed mt-8">
+        The AI Boardroom methodology and framework was created by <a href="https://coreycreed.com/" target="_blank" rel="noopener noreferrer">Corey Creed</a>.
+      </p>
+      
+    </div>
+    
+    <!-- Footer Bottom - Full Width -->
+    <div class="footer-bottom">
+      <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="footer-logo-section">
+            <img 
+              src="/logo/SVG/AI-bordroom-logo.svg" 
+              alt="AI Boardroom Strategic Advisory - Upstate SC Tech Company Growth Solutions" 
+              class="footer-logo"
+            >
+          </div>
+          <p class="footer-copyright">
+            © 2025 Clifton T. Canady. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* Footer Styles */
+  .footer-title {
+    font-size: 2rem;
+    font-weight: 100 !important;
+    margin-bottom: 1rem;
+    color: #F66733;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  @media (min-width: 768px) {
+    .footer-title {
+      font-size: 2.75rem;
+      font-weight: 100 !important;
+    }
+  }
+
+  .footer-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: hsl(var(--primary));
+  }
+
+  @media (min-width: 768px) {
+    .footer-subtitle {
+      font-size: 1.875rem;
+    }
+  }
+
+  .footer-email {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    color: #F66733;
+  }
+
+  .footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #D1D5DB;
+  }
+
+  .footer-logo {
+    height: 2.5rem;
+    width: auto;
+  }
+
+  .footer-copyright {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin: 0;
+  }
+
+  .footer-corey-creed {
+    font-size: 16px;
+  }
+
+  .footer-corey-creed a {
+    color: #F66733;
+  }
+
+  .footer-corey-creed a:hover {
+    color: #e55a2d;
+    text-decoration: underline;
+  }
+
+  /* Button responsive sizing */
+  .orange-btn {
+    background-color: #F66733;
+    border: 2px solid #F66733;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(0.875rem + 0.25vw);
+    padding: calc(0.5rem + 0.5vw) calc(1rem + 1vw);
+  }
+  
+  .orange-btn:hover {
+    background-color: #e55a2d;
+    border: 2px solid #e55a2d;
+    color: white;
+  }
+</style>

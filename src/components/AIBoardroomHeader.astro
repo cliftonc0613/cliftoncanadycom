@@ -1,0 +1,50 @@
+---
+export interface Props {
+  ctaText?: string;
+  ctaLink?: string;
+}
+
+const { 
+  ctaText = "Reserve Your Seat",
+  ctaLink = "#reserve"
+} = Astro.props;
+---
+
+<header class="ai-boardroom-header bg-white shadow-sm">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-center md:justify-between py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img 
+          src="/logo/SVG/AI-bordroom-logo.svg" 
+          alt="AI Boardroom Upstate SC - Strategic Advisory for Tech Company Leaders" 
+          class="h-12 w-auto"
+        >
+      </div>
+      
+      <!-- Call to Action Button -->
+      <div class="hidden md:block">
+        <a href={ctaLink} class="orange-btn inline-flex items-center justify-center px-6 py-3 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
+          {ctaText}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Orange button styling */
+  .orange-btn {
+    background-color: #F66733;
+    border: 2px solid #F66733;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .orange-btn:hover {
+    background-color: #e55a2d;
+    border: 2px solid #e55a2d;
+    color: white;
+  }
+</style>

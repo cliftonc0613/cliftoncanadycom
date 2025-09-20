@@ -33,6 +33,11 @@ const {
   cta
 } = Astro.props;
 
+// Check if the link is external
+const isExternalLink = (url: string) => {
+  return url.startsWith('http') || url.startsWith('//');
+};
+
 const getStepStyles = (color: string) => {
   switch (color) {
     case 'primary':
@@ -162,9 +167,14 @@ const getRotation = (index: number) => {
           <div class="bg-gradient-to-r from-primary to-primary/90 rounded-2xl p-8 shadow-2xl">
             <h3 class="text-2xl font-bold text-white mb-4">{cta.title}</h3>
             <p class="text-white/90 mb-6 text-lg">{cta.subtitle}</p>
-            <a href={cta.buttonLink} class="inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              <span>{cta.buttonText}</span>
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a 
+              href={cta.buttonLink} 
+              target={isExternalLink(cta.buttonLink) ? "_blank" : undefined}
+              rel={isExternalLink(cta.buttonLink) ? "noopener noreferrer" : undefined}
+              class="inline-flex items-center gap-2 md:gap-3 bg-white text-primary px-4 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-sm md:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-center"
+            >
+              <span class="leading-tight">{cta.buttonText}</span>
+              <svg class="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
