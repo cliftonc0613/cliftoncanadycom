@@ -1,0 +1,176 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  badge?: {
+    icon: string;
+    text: string;
+  };
+  steps: {
+    number: string;
+    title: string;
+    description: string;
+    icon: string;
+    color: 'primary' | 'accent' | 'success';
+    features: string[];
+  }[];
+  cta?: {
+    title: string;
+    subtitle: string;
+    buttonText: string;
+    buttonLink: string;
+  };
+}
+
+const {
+  title = "How It Works",
+  subtitle = "Transform your tech company in three strategic steps designed for sustainable growth",
+  badge = {
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    text: "Simple Process"
+  },
+  steps,
+  cta
+} = Astro.props;
+
+const getStepStyles = (color: string) => {
+  switch (color) {
+    case 'primary':
+      return {
+        badge: 'from-primary to-primary/80',
+        icon: 'from-primary/10 to-primary/20',
+        iconColor: 'text-primary',
+        feature: 'bg-primary/5',
+        dot: 'bg-primary'
+      };
+    case 'accent':
+      return {
+        badge: 'from-accent to-accent/80',
+        icon: 'from-accent/10 to-accent/20',
+        iconColor: 'text-accent',
+        feature: 'bg-accent/5',
+        dot: 'bg-accent'
+      };
+    case 'success':
+      return {
+        badge: 'from-primary to-primary/90',
+        icon: 'from-primary/10 to-primary/20',
+        iconColor: 'text-primary',
+        feature: 'bg-primary/5',
+        dot: 'bg-primary'
+      };
+    default:
+      return {
+        badge: 'from-primary to-primary/80',
+        icon: 'from-primary/10 to-primary/20',
+        iconColor: 'text-primary',
+        feature: 'bg-primary/5',
+        dot: 'bg-primary'
+      };
+  }
+};
+
+const getRotation = (index: number) => {
+  const rotations = ['rotate-3', '-rotate-3', 'rotate-3'];
+  return rotations[index % rotations.length];
+};
+---
+
+<section class="process-section py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <div class="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
+          <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={badge.icon}/>
+          </svg>
+          <span class="text-primary font-semibold text-sm">{badge.text}</span>
+        </div>
+        <h2 class="text-5xl md:text-6xl font-bold mb-6 text-primary">
+          {title}
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          {subtitle}
+        </p>
+      </div>
+      
+      <!-- Process Timeline -->
+      <div class="relative">
+        <!-- Connection Line -->
+        <div class="hidden lg:block absolute top-24 left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-0.5">
+          <div class="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary opacity-20"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary opacity-40 animate-pulse"></div>
+        </div>
+        
+        <!-- Process Steps -->
+        <div class="grid lg:grid-cols-3 gap-12 lg:gap-8">
+          {steps.map((step, index) => {
+            const styles = getStepStyles(step.color);
+            const rotation = getRotation(index);
+            
+            return (
+              <div class="group relative">
+                <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                  <!-- Step Badge -->
+                  <div class="relative mb-8">
+                    <div class={`w-24 h-24 bg-gradient-to-br ${styles.badge} rounded-2xl flex items-center justify-center mx-auto shadow-lg transform ${rotation} group-hover:rotate-0 transition-transform duration-300 relative overflow-hidden`}>
+                      <!-- 3D Number Effect -->
+                      <span class="text-6xl font-black text-white relative z-10 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] transform perspective-1000" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 10px rgba(255,255,255,0.3);">{step.number}</span>
+                      <!-- 3D Depth Effect -->
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                      <!-- Highlight Effect -->
+                      <div class="absolute top-1 left-1 right-3 h-6 bg-gradient-to-r from-white/40 to-transparent rounded-t-xl"></div>
+                    </div>
+                    <!-- Floating Icon -->
+                    <div class={`absolute -top-2 -right-2 w-12 h-12 bg-gradient-to-br ${styles.icon} rounded-xl flex items-center justify-center shadow-lg`}>
+                      <svg class={`w-6 h-6 ${styles.iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={step.icon}/>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">{step.description}</p>
+                  </div>
+                  
+                  <div class="space-y-4">
+                    {step.features.map((feature) => (
+                      <div class={`flex items-center gap-4 p-3 ${styles.feature} rounded-xl`}>
+                        <div class={`w-2 h-2 ${styles.dot} rounded-full flex-shrink-0`}></div>
+                        <span class="text-gray-700 font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      
+      <!-- Call to Action -->
+      {cta && (
+        <div class="text-center mt-16">
+          <div class="bg-gradient-to-r from-primary to-primary/90 rounded-2xl p-8 shadow-2xl">
+            <h3 class="text-2xl font-bold text-white mb-4">{cta.title}</h3>
+            <p class="text-white/90 mb-6 text-lg">{cta.subtitle}</p>
+            <a href={cta.buttonLink} class="inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <span>{cta.buttonText}</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
