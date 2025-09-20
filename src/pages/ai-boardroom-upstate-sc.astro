@@ -9,7 +9,7 @@ import FAQAccordion from "../components/FAQAccordion";
 <Layout title="AI Boardroom for Upstate SC Tech Leaders | Clifton T. Canady">
   <main>
     <!-- Header Section -->
-    <header class="bg-white shadow-sm">
+    <header class="ai-boardroom-header bg-white shadow-sm">
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-center md:justify-between py-4">
           <!-- Logo -->
@@ -32,7 +32,7 @@ import FAQAccordion from "../components/FAQAccordion";
     </header>
 
     <!-- Hero Section -->
-    <section class="h-screen md:h-[700px] flex items-center justify-center relative text-primary-foreground overflow-hidden">
+    <section class="ai-boardroom-hero h-screen md:h-[700px] flex items-center justify-center relative text-primary-foreground overflow-hidden">
       <!-- Background Image -->
       <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/ai-boardroom.jpg');"></div>
       
@@ -61,7 +61,7 @@ import FAQAccordion from "../components/FAQAccordion";
     </section>
 
     <!-- Urgency Section -->
-    <section class="py-8 bg-accent">
+    <section class="ai-boardroom-urgency py-8 bg-accent">
       <div class="container mx-auto px-4">
         <div class="text-center">
           <p class="text-2xl font-bold text-white">
@@ -72,7 +72,7 @@ import FAQAccordion from "../components/FAQAccordion";
     </section>
 
     <!-- The Problem Section -->
-    <section class="py-24 bg-muted/30">
+    <section class="ai-boardroom-problem py-24 bg-muted/30">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
@@ -123,7 +123,7 @@ import FAQAccordion from "../components/FAQAccordion";
     </section>
 
     <!-- The Solution Section -->
-    <section class="py-24 bg-gray-100">
+    <section class="py-24 bg-gray-100 solutions-section">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
@@ -176,7 +176,7 @@ import FAQAccordion from "../components/FAQAccordion";
                 </svg>
               </div>
               <h3 class="font-semibold text-sm mb-2">Growth Methods</h3>
-              <p class="text-xs text-muted-foreground">Proven methods to break through the $2M-$10M plateau</p>
+              <p class="text-xs text-muted-foreground">Proven methods to break through growth plateaus</p>
             </div>
           </div>
         </div>
@@ -184,18 +184,44 @@ import FAQAccordion from "../components/FAQAccordion";
     </section>
 
     <!-- Authority Section (Guide Credentials) -->
-    <section class="py-16" style="background-color: #F66733;">
+    <section class="ai-boardroom-authority py-16" style="background-color: #F66733;">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
-          <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Mobile Layout -->
+          <div class="lg:hidden">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white text-center">
+              Meet Your Strategic Guide: Clifton Canady 
+            </h2>
+            
+            <!-- Image First on Mobile -->
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <img 
+                  src="/clifton-canady-headstot.jpg" 
+                  alt="Clifton Canady - Strategic Guide" 
+                  class="w-[300px] h-[300px] object-cover rounded-lg shadow-xl"
+                >
+              </div>
+            </div>
+            
+            <!-- Content After Image on Mobile -->
+            <div class="text-white">
+              <p class="text-lg mb-8 leading-relaxed opacity-90 text-center">
+                "After 20+ years working inside multiple Upstate tech companies, I kept seeing the same pattern: brilliant technical teams hitting the same strategic walls during growth phases. The problem wasn't the technology or the talent - it was strategic isolation. Leadership teams making million-dollar decisions with only internal perspectives. So I stepped back, mastered AI-powered strategic thinking, and developed the AI Boardroom method to solve from the outside what I couldn't fix from the inside."
+              </p>
+            </div>
+          </div>
+          
+          <!-- Desktop Layout -->
+          <div class="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
             <!-- Left Side - Content -->
             <div class="text-white">
               <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                Clifton Canady
+                Meet Your Strategic Guide: Clifton Canady 
               </h2>
               
               <p class="text-lg mb-8 leading-relaxed opacity-90">
-                "After 20+ years working inside multiple Upstate tech companies, I kept seeing the same pattern: brilliant technical teams hitting the same strategic walls between $2M-$10M in revenue. The problem wasn't the technology or the talent - it was strategic isolation. Leadership teams making million-dollar decisions with only internal perspectives. So I stepped back, mastered AI-powered strategic thinking, and developed the AI Boardroom method to solve from the outside what I couldn't fix from the inside."
+                "After 20+ years working inside multiple Upstate tech companies, I kept seeing the same pattern: brilliant technical teams hitting the same strategic walls during growth phases. The problem wasn't the technology or the talent - it was strategic isolation. Leadership teams making million-dollar decisions with only internal perspectives. So I stepped back, mastered AI-powered strategic thinking, and developed the AI Boardroom method to solve from the outside what I couldn't fix from the inside."
               </p>
             </div>
             
@@ -215,27 +241,27 @@ import FAQAccordion from "../components/FAQAccordion";
           <div class="grid md:grid-cols-3 gap-8 mt-16 text-white">
             <div>
               <div class="border-b-2 border-white/30 pb-4 mb-4">
-                <h3 class="text-xl font-semibold">Experience</h3>
+                <h3 class="text-xl font-semibold" style="font-size: 1.25rem; text-align: inherit;">Experience</h3>
               </div>
-              <p class="text-sm opacity-80">
+              <p class="text-sm opacity-80" style="font-size: 0.875rem;">
                 20+ years inside Upstate tech companies. Witnessed the $2M-$10M growth plateau firsthand at multiple organizations.
               </p>
             </div>
             
             <div>
               <div class="border-b-2 border-white/30 pb-4 mb-4">
-                <h3 class="text-xl font-semibold">Tech Leader</h3>
+                <h3 class="text-xl font-semibold" style="font-size: 1.25rem; text-align: inherit;">Tech Leader</h3>
               </div>
-              <p class="text-sm opacity-80">
+              <p class="text-sm opacity-80" style="font-size: 0.875rem;">
                 Early AI adopter since 2023. Current Greenville WordPress Meetup organizer. Deep understanding of tech leadership challenges.
               </p>
             </div>
             
             <div>
               <div class="border-b-2 border-white/30 pb-4 mb-4">
-                <h3 class="text-xl font-semibold">Strategic Expert</h3>
+                <h3 class="text-xl font-semibold" style="font-size: 1.25rem; text-align: inherit;">Strategic Expert</h3>
               </div>
-              <p class="text-sm opacity-80">
+              <p class="text-sm opacity-80" style="font-size: 0.875rem;">
                 Adopted the AI Boardroom method from Corey Creed. I've seen what works and what doesn't from the inside. Now I help other companies avoid the same strategic pitfalls.
               </p>
             </div>
@@ -245,7 +271,7 @@ import FAQAccordion from "../components/FAQAccordion";
     </section>
 
     <!-- What's Coming Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section class="ai-boardroom-coming py-20 bg-gradient-to-br from-gray-50 to-white">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <!-- Section Header -->
@@ -333,7 +359,7 @@ import FAQAccordion from "../components/FAQAccordion";
     </section>
 
     <!-- Email Capture / CTA Section -->
-    <section id="reserve" class="py-24 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+    <section id="reserve" class="ai-boardroom-cta py-24 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
       <div class="container mx-auto px-4">
         <div class="max-w-2xl mx-auto text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-6">
@@ -404,7 +430,7 @@ import FAQAccordion from "../components/FAQAccordion";
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-24 bg-muted/30">
+    <section class="ai-boardroom-faq py-24 bg-muted/30">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">
@@ -417,7 +443,7 @@ import FAQAccordion from "../components/FAQAccordion";
     </section>
 
     <!-- Social Proof Section -->
-    <section class="py-24">
+    <section class="ai-boardroom-social-proof py-24">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
@@ -451,12 +477,12 @@ import FAQAccordion from "../components/FAQAccordion";
     </section>
 
     <!-- Custom Footer -->
-    <footer class="py-16 bg-gray-100">
+    <footer class="ai-boardroom-footer py-16 bg-gray-100">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <!-- Have a Project Header -->
           <h2 class="footer-title">
-            HAVE A PROJECT?
+            Have a question?  
           </h2>
           
           <!-- Main Message -->
@@ -493,6 +519,11 @@ import FAQAccordion from "../components/FAQAccordion";
             BOOK A MEETING
           </a>
           
+          <!-- Credit -->
+          <p class="footer-corey-creed mt-8">
+            The AI Boardroom methodology and framework was created by <a href="https://coreycreed.com/" target="_blank" rel="noopener noreferrer">Corey Creed</a>.
+          </p>
+          
         </div>
         
         <!-- Footer Bottom - Full Width -->
@@ -518,12 +549,45 @@ import FAQAccordion from "../components/FAQAccordion";
 </Layout>
 
 <style>
+  /* Responsive Font System using calc() */
+  html {
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+  }
+
+  h1 {
+    font-size: calc(1.5rem + 2.5vw);
+    line-height: calc(1.2 + 0.2vw);
+  }
+
+  h2 {
+    font-size: calc(1.25rem + 1.5vw);
+    line-height: calc(1.3 + 0.15vw);
+  }
+
+  h3 {
+    font-size: calc(1rem + 1vw);
+    line-height: calc(1.4 + 0.1vw);
+  }
+
+  h4, h5, h6 {
+    font-size: calc(0.875rem + 0.5vw);
+    line-height: calc(1.5 + 0.05vw);
+  }
+
+  p, span, div {
+    font-size: calc(0.875rem + 0.25vw);
+    line-height: calc(1.5 + 0.1vw);
+  }
+
+  /* Button responsive sizing */
   .orange-btn {
     background-color: #F66733;
     border: 2px solid #F66733;
     color: white;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
+    font-size: calc(0.875rem + 0.25vw);
+    padding: calc(0.5rem + 0.5vw) calc(1rem + 1vw);
   }
   
   .orange-btn:hover {
@@ -532,9 +596,34 @@ import FAQAccordion from "../components/FAQAccordion";
     color: white;
   }
 
+  /* Solutions section original font sizes */
+  .solutions-section h2 {
+    font-size: 2.25rem !important;
+    text-align: inherit !important;
+  }
+
+  .solutions-section p {
+    font-size: 1.125rem !important;
+  }
+
+  .solutions-section h3 {
+    font-size: 0.875rem !important;
+    text-align: inherit !important;
+  }
+
+  .solutions-section .text-xs {
+    font-size: 0.75rem !important;
+  }
+
+  @media (min-width: 768px) {
+    .solutions-section h2 {
+      font-size: 2.25rem !important;
+    }
+  }
+
   /* Footer Styles */
   .footer-title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 300;
     margin-bottom: 1rem;
     color: #F66733;
@@ -542,7 +631,7 @@ import FAQAccordion from "../components/FAQAccordion";
 
   @media (min-width: 768px) {
     .footer-title {
-      font-size: 3.75rem;
+      font-size: 2.75rem;
     }
   }
 
@@ -608,5 +697,29 @@ import FAQAccordion from "../components/FAQAccordion";
     font-size: 0.875rem;
     color: #6B7280;
     margin: 0;
+  }
+
+  .footer-corey-creed {
+    font-size: 16px;
+  }
+
+  .footer-corey-creed a {
+    color: #F66733;
+  }
+
+  .footer-corey-creed a:hover {
+    color: #e55a2d;
+    text-decoration: underline;
+  }
+
+  /* Solutions section mobile padding */
+  @media (max-width: 767px) {
+    .solutions-section .text-center {
+      padding: 1rem !important;
+    }
+    
+    .solutions-section .grid {
+      gap: 1.5rem !important;
+    }
   }
 </style>
