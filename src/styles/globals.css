@@ -23,7 +23,7 @@
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 220 33% 35%; /* #3D4E76 */
-    --radius: 0.5rem;
+    --radius: 5px;
   }
 
   .dark {
@@ -55,5 +55,28 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Global button border radius */
+  .btn, button, [class*="btn"], [class*="button"] {
+    border-radius: 5px !important;
+  }
+  
+  /* Apply 5px border radius to all buttons, inputs, and interactive elements */
+  button, 
+  input[type="button"], 
+  input[type="submit"], 
+  input[type="reset"],
+  .hire-me-btn,
+  .resume-btn,
+  .contact-blue-btn,
+  .contact-orange-btn,
+  .ai-boardroom-btn,
+  .call-btn,
+  a[class*="btn"],
+  a[class*="button"] {
+    border-radius: 5px !important;
   }
 }
