@@ -57,7 +57,7 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
       <div class="container mx-auto px-4">
         <div class="text-center">
           <p class="text-2xl font-bold text-white">
-            Next session: October 15th - Only 5 seats remaining for company leaders.
+            Next session: October 7th, 2025 - Only 5 seats remaining for company leaders.
           </p>
         </div>
       </div>
@@ -411,8 +411,8 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
                 <input type="text" id="companyName" name="companyName" required class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60" placeholder="Your Company Name">
               </div>
               <div>
-                <label for="nameAndTitle" class="block text-sm font-medium mb-2">Your Name & Title</label>
-                <input type="text" id="nameAndTitle" name="nameAndTitle" required class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60" placeholder="John Smith, CEO">
+                <label for="name" class="block text-sm font-medium mb-2">Your Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60" placeholder="Your Name">
               </div>
               <div>
                 <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
@@ -523,13 +523,13 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
         const formData = new FormData(form);
         const data = {
           companyName: formData.get('companyName'),
-          nameAndTitle: formData.get('nameAndTitle'),
+          name: formData.get('name'),
           email: formData.get('email'),
           strategicChallenge: formData.get('strategicChallenge') || ''
         };
         
         // Basic validation
-        if (!data.companyName || !data.nameAndTitle || !data.email) {
+        if (!data.companyName || !data.name || !data.email) {
           showMessage('Please fill in all required fields.', 'error');
           return;
         }
@@ -684,6 +684,19 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
   .price-mobile {
     font-size: 2.5rem !important;
     font-weight: 300 !important;
+  }
+
+  /* Urgency seats styling */
+  .urgency-seats {
+    font-weight: 900 !important;
+    color: white !important;
+  }
+
+  @media (min-width: 768px) {
+    .urgency-seats {
+      font-size: 1.6rem !important;
+      text-transform: uppercase !important;
+    }
   }
 
   /* Solutions section mobile padding */
