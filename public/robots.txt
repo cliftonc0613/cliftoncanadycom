@@ -1,0 +1,15 @@
+# robots.txt for cliftoncanady.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://cliftoncanady.com/sitemap-index.xml
+
+# Disallow crawling of thank you pages (conversion tracking)
+Disallow: /ai-boardroom-thank-you
+
+# Allow all other pages
+Allow: /
+Allow: /resume
+Allow: /ai-boardroom-upstate-sc
