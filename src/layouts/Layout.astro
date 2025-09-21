@@ -2,9 +2,16 @@
 export interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
 }
 
-const { title, description = "Multi-disciplinary digital professional specializing in WordPress development, content writing, speaking/seminars, and photography." } = Astro.props;
+const { 
+  title, 
+  description = "Multi-disciplinary digital professional specializing in WordPress development, content writing, speaking/seminars, and photography.",
+  ogImage = "/images/clifton-canady-default-og.jpg",
+  ogImageAlt = "Clifton T. Canady - WordPress Developer, Content Writer, Speaker & Photographer"
+} = Astro.props;
 
 // GTM Container ID - you can set this via environment variable
 const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
@@ -27,16 +34,16 @@ const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
     <meta property="og:url" content={Astro.url} />
     <meta property="og:site_name" content="Clifton T. Canady" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="/ai-boardrooms-og.jpg" />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="AI Boardroom Strategic Advisory for Upstate SC Tech Company Leaders" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:site" content="@cliftoncanady" />
-    <meta name="twitter:image" content="/ai-boardrooms-og.jpg" />
-    <meta name="twitter:image:alt" content="AI Boardroom Strategic Advisory for Upstate SC Tech Company Leaders" />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     
     <!-- Keywords -->
     <meta name="keywords" content="AI Boardroom, Upstate SC, tech company leaders, strategic planning, business advisory, growth plateau solutions, Greenville SC, Spartanburg SC, Anderson SC, tech consulting" />
@@ -212,8 +219,8 @@ const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Preload Critical Images -->
-    <link rel="preload" as="image" href="/ai-boardroom.jpg">
-    <link rel="preload" as="image" href="/logo/SVG/AI-bordroom-logo.svg">
+    <link rel="preload" as="image" href="/images/ai-boardroom.jpg">
+    <link rel="preload" as="image" href="/images/logo/SVG/AI-bordroom-logo.svg">
     
     <!-- Google Tag Manager -->
     <script is:inline>
