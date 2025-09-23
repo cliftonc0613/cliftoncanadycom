@@ -39,12 +39,12 @@
       </div>
       
       <!-- Pricing & Urgency -->
-      <div class="bg-accent/20 border border-accent/30 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+      <div class="bg-accent/20 border border-accent/30 rounded-lg p-6 mb-8 max-w-2xl mx-auto pricing-pulse">
         <p class="text-lg font-semibold mb-2">
           <span class="text-accent">Founding Member Rate: $125</span> 
           <span class="opacity-70">(Regular Price: $297)</span>
         </p>
-        <p class="text-sm opacity-80">Next session: October 15th - Only 5 seats remaining</p>
+        <p class="text-sm opacity-80">Next session: October 7th, 2025 - Only 5 seats remaining</p>
       </div>
       
       <!-- Call to Action Buttons -->
@@ -97,5 +97,26 @@
     background-color: white;
     border: 2px solid white;
     color: #1E40AF;
+  }
+  
+  /* Pricing pulse animation - matches navigation button */
+  .pricing-pulse {
+    animation: pricing-pulse-glow 2s infinite;
+  }
+  
+  @keyframes pricing-pulse-glow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(246, 103, 51, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(246, 103, 51, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(246, 103, 51, 0);
+    }
+  }
+  
+  .pricing-pulse:hover {
+    animation: none;
   }
 </style>
