@@ -223,6 +223,7 @@ const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
     <link rel="preload" as="image" href="/images/logo/SVG/AI-bordroom-logo.svg">
     
     <!-- Google Tag Manager -->
+    {import.meta.env.PROD && Astro.url.hostname === 'cliftoncanady.com' && (
     <script is:inline>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -230,13 +231,16 @@ const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-K2S4Q89Z');
     </script>
+    )}
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
+    {import.meta.env.PROD && Astro.url.hostname === 'cliftoncanady.com' && (
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2S4Q89Z"
         height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
+    )}
     
     <slot />
     
