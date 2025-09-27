@@ -1,0 +1,147 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "The Simple Path to 90% Faster Strategic Decisions",
+  subtitle = "From initial consultation to final installation, we follow a proven process to ensure your landscaping project exceeds expectations."
+} = Astro.props;
+---
+
+<section class="three-step-process-new py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+          The Plan (Process)
+        </h2>
+        <p class="text-xl text-muted-foreground max-w-3xl mx-auto font-semibold">
+          {title}
+        </p>
+      </div>
+      
+      <!-- Process Steps -->
+      <div class="grid md:grid-cols-3 gap-12 mb-20">
+        <!-- Step 1 -->
+        <div class="text-center">
+          <div class="relative mb-8">
+            <div class="w-40 h-40 mx-auto bg-gradient-to-br from-primary to-primary/90 step-square flex items-center justify-center shadow-xl">
+              <span class="text-8xl font-black text-white drop-shadow-lg">1</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-gray-900">Learn the Method</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Master the exact 4-step AI Boardroom technique that saved me 1,200+ hours
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center">
+          <div class="relative mb-8">
+            <div class="w-40 h-40 mx-auto bg-gradient-to-br from-accent to-accent/90 step-square flex items-center justify-center shadow-xl">
+              <span class="text-8xl font-black text-white drop-shadow-lg">2</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-gray-900">Practice Together</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Get hands-on coaching as you build your first expert advisory board live
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center">
+          <div class="relative mb-8">
+            <div class="w-40 h-40 mx-auto bg-gradient-to-br from-primary to-primary/90 step-square flex items-center justify-center shadow-xl">
+              <span class="text-8xl font-black text-white drop-shadow-lg">3</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-gray-900">Transform Your Decisions</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Walk away with a system that gives you expert guidance in minutes, not weeks
+          </p>
+        </div>
+      </div>
+
+      <!-- Call to Action Section -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+        <div class="text-center">
+          <h3 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+            Join the First Group Learning This Method
+          </h3>
+          
+          <!-- Session Details Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Duration</h4>
+              <p class="text-gray-600">90 minutes of breakthrough training</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Investment</h4>
+              <p class="text-gray-600">$49 (Introductory pricing for founding members)</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Group Size</h4>
+              <p class="text-gray-600">Limited to 12 professionals for personal coaching</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Format</h4>
+              <p class="text-gray-600">Interactive workshop where you build your first AI boardroom</p>
+            </div>
+          </div>
+          
+          <!-- CTA Button -->
+          <a 
+            href="#reserve" 
+            class="orange-btn inline-flex items-center justify-center px-8 py-4 font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+          >
+            Secure My Founding Member Spot
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          
+          <!-- Supporting Text -->
+          <p class="text-gray-500 mt-4 text-sm">
+            Ready to Start Your Project? Let's discuss your strategic decision-making vision and create something beautiful together.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Step square styling with 10px border radius */
+  .step-square {
+    border-radius: 10px;
+  }
+
+  /* Additional hover effects for the numbered squares */
+  .w-40:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  /* Make all headings primary blue */
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(var(--primary)) !important;
+  }
+
+  /* Orange button styling */
+  .orange-btn {
+    background-color: #F66733 !important;
+    border: 2px solid #F66733 !important;
+    color: white !important;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .orange-btn:hover {
+    background-color: #e55a2d !important;
+    border: 2px solid #e55a2d !important;
+    color: white !important;
+  }
+</style>

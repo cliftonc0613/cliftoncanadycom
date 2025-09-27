@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import FAQAccordion from "../components/FAQAccordion";
 import ProcessSection from "../components/ProcessSection.astro";
+import ThreeStepProcessNew from "../components/ThreeStepProcessNew.astro";
+import SuccessFailureStakes from "../components/SuccessFailureStakes.astro";
+import PricingStrategy from "../components/PricingStrategy.astro";
 import AIBoardroomHeader from '../components/AIBoardroomHeader.astro';
 import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
 ---
@@ -20,7 +23,7 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
     <AIBoardroomHeader />
 
     <!-- Hero Section -->
-    <section class="ai-boardroom-hero h-screen md:h-[700px] flex items-center justify-center relative text-primary-foreground overflow-hidden">
+    <section class="ai-boardroom-hero h-auto md:h-[800px] flex items-center justify-center relative text-primary-foreground overflow-hidden">
       <!-- Background Image -->
       <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/ai-boardroom.jpg');"></div>
       
@@ -37,14 +40,20 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
           </div>
           
           <!-- Main Headline -->
-          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Is Your Tech Company Stuck Between Startup and Scale?
+          <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            What If You Could Cut Strategic Decision Time from 30 Hours to 30 Minutes?
           </h1>
           
           <!-- Subheadline -->
-          <p class="text-xl md:text-2xl opacity-90 font-semibold mb-8">
-            Break Through Growth Plateaus with AI-Powered Strategic Planning Sessions in Greenville, Spartanburg & Anderson
+          <p class="hero-subheadline text-2xl md:text-2xl opacity-90 font-semibold mb-6">
+            Join the First Tech Professionals Learning the AI Method That Saved Me 1,200+ Hours This Year
           </p>
+          
+          <!-- Supporting paragraph -->
+          <p class="text-sm md:text-base opacity-85 mb-8 leading-relaxed">
+            18 months ago, I was drowning in strategic decisions like you. Then I discovered a method that changed everything. For the first time, I'm sharing exactly how I cut my decision time by 90% and eliminated thousands in consultant fees.
+          </p>
+          
           <!-- Call to Action Button -->
           <a href="#reserve" class="orange-btn inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
             Reserve My Leadership Seat
@@ -70,11 +79,11 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-            Strategic Planning Solutions for Upstate SC Tech Companies Facing Growth Plateaus
+            You're a capable tech professional, but strategic decisions are killing your productivity...
           </h2>
           
           <p class="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Stop making million-dollar strategic decisions with only internal perspectives. Join 11 other Upstate tech company leaders in exclusive, in-person AI Boardroom sessions. Finally, strategic planning that happens face-to-face, not through another Zoom screen.
+            You spend 25-40 hours per month wrestling with decisions alone, and every strategic choice feels like you're figuring it out from scratch. You're wasting thousands on consultants for guidance you could get instantly, while decision fatigue becomes real when you don't have a systematic approach. Meanwhile, you're stuck in analysis paralysis while opportunities pass you by, knowing there has to be a better way to handle the strategic challenges that keep landing on your desk.
           </p>
           
           <div class="grid md:grid-cols-2 gap-8 mt-12">
@@ -121,11 +130,15 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-            Introducing: The AI Boardroom Method for Tech Company Leaders
+            I Discovered the AI Boardroom Method That Changes Everything
           </h2>
           
-          <p class="text-lg text-muted-foreground mb-12">
+          <p class="text-lg text-muted-foreground mb-6">
             What You'll Learn:
+          </p>
+          
+          <p class="text-base text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+            You'll master the exact 4-step process I use to get expert strategic advice in minutes, discovering how I eliminated 30+ hours of decision-making per month. I'll share the specific AI prompts that saved me thousands in consultant fees and show you why this method works for any strategic challenge you're facing, whether it's technical decisions, business strategy, or career moves.
           </p>
           
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -184,7 +197,7 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
           <!-- Mobile Layout -->
           <div class="lg:hidden">
             <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white text-center">
-              Meet Your Strategic Guide: Clifton Canady 
+              I'm Clifton Canady - and I was drowning in strategic decisions just like you.
             </h2>
             
             <!-- Image First on Mobile -->
@@ -200,8 +213,14 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
             
             <!-- Content After Image on Mobile -->
             <div class="text-white">
+              <p class="text-lg mb-4 leading-relaxed opacity-90 text-center">
+                18 months ago, I was spending 30+ hours a month on strategic decisions, hiring expensive consultants, and still second-guessing myself. Then I discovered something that changed everything.
+              </p>
+              <p class="text-lg mb-4 leading-relaxed opacity-90 text-center">
+                Using AI in a completely new way, I developed a method that gives me instant access to expert strategic advice 24/7. It's saved me over 1,200 hours and thousands in consultant fees.
+              </p>
               <p class="text-lg mb-8 leading-relaxed opacity-90 text-center">
-                "After 20+ years working inside multiple Upstate tech companies, I kept seeing the same pattern: brilliant technical teams hitting the same strategic walls during growth phases. The problem wasn't the technology or the talent - it was strategic isolation. Leadership teams making million-dollar decisions with only internal perspectives. So I stepped back, mastered AI-powered strategic thinking, and developed the AI Boardroom method to solve from the outside what I couldn't fix from the inside."
+                Now, for the first time, I'm sharing this exact method with fellow professionals who are tired of wasting time on decisions they could solve in minutes.
               </p>
             </div>
           </div>
@@ -211,11 +230,17 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
             <!-- Left Side - Content -->
             <div class="text-white">
               <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                Meet Your Strategic Guide: Clifton Canady 
+                I'm Clifton Canady - and I was drowning in strategic decisions just like you.
               </h2>
               
+              <p class="text-lg mb-4 leading-relaxed opacity-90">
+                18 months ago, I was spending 30+ hours a month on strategic decisions, hiring expensive consultants, and still second-guessing myself. Then I discovered something that changed everything.
+              </p>
+              <p class="text-lg mb-4 leading-relaxed opacity-90">
+                Using AI in a completely new way, I developed a method that gives me instant access to expert strategic advice 24/7. It's saved me over 1,200 hours and thousands in consultant fees.
+              </p>
               <p class="text-lg mb-8 leading-relaxed opacity-90">
-                "After 20+ years working inside multiple Upstate tech companies, I kept seeing the same pattern: brilliant technical teams hitting the same strategic walls during growth phases. The problem wasn't the technology or the talent - it was strategic isolation. Leadership teams making million-dollar decisions with only internal perspectives. So I stepped back, mastered AI-powered strategic thinking, and developed the AI Boardroom method to solve from the outside what I couldn't fix from the inside."
+                Now, for the first time, I'm sharing this exact method with fellow professionals who are tired of wasting time on decisions they could solve in minutes.
               </p>
             </div>
             
@@ -231,14 +256,14 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
             </div>
           </div>
           
-          <!-- Three Column Features -->
-          <div class="grid md:grid-cols-3 gap-8 mt-16 text-white">
+          <!-- Two Column Features -->
+          <div class="grid md:grid-cols-2 gap-8 mt-16 text-white">
             <div>
               <div class="border-b-2 border-white/30 pb-4 mb-4">
                 <h3 class="text-xl font-semibold" style="font-size: 1.25rem; text-align: inherit;">Experience</h3>
               </div>
               <p class="text-sm opacity-80" style="font-size: 0.875rem;">
-                20+ years inside Upstate tech companies. Witnessed the middle-market growth plateau firsthand at multiple organizations.
+                With 20+ years in business and technology, I discovered and personally field-tested the AI Boardroom method that saved me 1,200+ hours in strategic decision time. I'm not a guru selling theory - I'm a fellow professional who found the solution and want to share what actually works.
               </p>
             </div>
             
@@ -247,16 +272,7 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
                 <h3 class="text-xl font-semibold" style="font-size: 1.25rem; text-align: inherit;">Tech Leader</h3>
               </div>
               <p class="text-sm opacity-80" style="font-size: 0.875rem;">
-                Early AI adopter since 2023. Current Greenville WordPress Meetup organizer. Deep understanding of tech leadership challenges.
-              </p>
-            </div>
-            
-            <div>
-              <div class="border-b-2 border-white/30 pb-4 mb-4">
-                <h3 class="text-xl font-semibold" style="font-size: 1.25rem; text-align: inherit;">Strategic Expert</h3>
-              </div>
-              <p class="text-sm opacity-80" style="font-size: 0.875rem;">
-                Adopted the AI Boardroom method from Corey Creed. I've seen what works and what doesn't from the inside. Now I help other companies avoid the same strategic pitfalls.
+                Early AI adopter since 2023 and current Greenville WordPress Meetup organizer. I adopted the AI Boardroom method from Corey Creed, adapted it for tech professionals, and have seen what works and what doesn't from the inside. Now I help other professionals avoid the same strategic pitfalls.
               </p>
             </div>
           </div>
@@ -264,129 +280,14 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
       </div>
     </section>
 
-    <!-- How It Works Section -->
-    <ProcessSection 
-      steps={[
-        {
-          number: "01",
-          title: "Strategic Discovery", 
-          description: "Identify your growth plateau challenges and assess strategic readiness",
-          icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
-          color: "primary",
-          features: ["15-minute strategic consultation", "Growth readiness evaluation", "Challenge identification"]
-        },
-        {
-          number: "02",
-          title: "Exclusive Enrollment",
-          description: "Join the elite cohort of Upstate tech leaders and prepare for transformation", 
-          icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
-          color: "accent",
-          features: ["Founding member pricing ($125)", "Strategic preparation materials", "Peer network connections"]
-        },
-        {
-          number: "03", 
-          title: "Strategic Transformation",
-          description: "Execute breakthrough strategies and implement AI-powered frameworks",
-          icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
-          color: "success",
-          features: ["In-person intensive session", "AI-powered decision frameworks", "90-day implementation plan"]
-        }
-      ]}
-      cta={{
-        title: "Ready to Transform Your Tech Company?",
-        subtitle: "Join the exclusive cohort of Upstate SC leaders breaking through growth plateaus", 
-        buttonText: "Start Your Strategic Transformation",
-        buttonLink: "#reserve"
-      }}
-    />
+    <!-- Three Step Process New Section -->
+    <ThreeStepProcessNew />
 
-    <!-- What's Coming Section -->
-    <section class="ai-boardroom-coming py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div class="container mx-auto px-4">
-        <div class="max-w-6xl mx-auto">
-          <!-- Section Header -->
-          <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-primary">
-              Strategic Planning Sessions for Upstate SC Tech Company Growth
-            </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-              Exclusive, in-person strategic planning sessions designed specifically for established tech companies in the Upstate SC region.
-            </p>
-          </div>
-          
-          <!-- Session Cards -->
-          <div class="grid lg:grid-cols-2 gap-12">
-            <!-- Strategic Planning Intensive -->
-            <div class="group relative flex">
-              <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 flex flex-col w-full">
-                <div class="mb-6">
-                  <div class="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mb-4">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-2xl font-bold text-primary mb-2">Strategic Planning Intensive</h3>
-                  <p class="text-lg text-primary font-semibold">AI Boardroom Fundamentals</p>
-                </div>
-                
-                <div class="space-y-4">
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-gray-700">Exclusive in-person sessions in Upstate SC</p>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-gray-700">Interactive workshops with real strategic challenges</p>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-gray-700">Limited to 12 company leaders per session</p>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-gray-700">Face-to-face strategic planning - no Zoom fatigue</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Growth Breakthrough Workshop -->
-            <div class="group relative flex">
-              <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 flex flex-col w-full">
-                <div class="mb-6">
-                  <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-2xl font-bold text-primary mb-2">Growth Breakthrough Workshop</h3>
-                  <p class="text-lg text-orange-600 font-semibold">Strategic Growth</p>
-                </div>
-                
-                <div class="space-y-4">
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-gray-700">Monthly exclusive sessions</p>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-gray-700">Intimate, focused discussions</p>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-gray-700">Real-world case studies from Upstate companies</p>
-                  </div>
-                  <div class="flex items-start gap-3">
-                    <div class="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p class="text-gray-700">Actionable strategies you can implement immediately</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Success and Failure Stakes Section -->
+    <SuccessFailureStakes />
+
+    <!-- Pricing Strategy Section -->
+    <PricingStrategy />
 
     <!-- Email Capture / CTA Section -->
     <section id="reserve" class="ai-boardroom-cta py-24 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
@@ -398,7 +299,7 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
           
           <div class="bg-white/10 backdrop-blur rounded-lg p-8 mb-8">
             <div class="text-center mb-8">
-              <p class="text-2xl font-bold text-accent mb-2 price-mobile">$125</p>
+              <p class="text-2xl font-bold text-accent mb-2 price-mobile">$49</p>
               <p class="text-sm opacity-90">Founding Member Rate</p>
               <p class="text-xs opacity-70">Limited to first 12 leaders</p>
             </div>
@@ -438,7 +339,7 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
           <!-- Scarcity Elements -->
           <div class="space-y-2 text-sm opacity-90">
             <p>Limited to 12 Upstate SC (Greenville-Spartanburg-Anderson) company leaders per session</p>
-            <p>Founding Member $125 rate ends after first session fills</p>
+            <p>Founding Member $49 rate ends after first session fills</p>
           </div>
           
           <div class="mt-8">
@@ -548,7 +449,7 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
         
         try {
           // Send to webhook
-          const response = await fetch('https://services.leadconnectorhq.com/hooks/tX7EZIOcnK23wPx4pp4S/webhook-trigger/3905f1f4-3f54-49bc-b5a9-3961a5854ffc', {
+          const response = await fetch('https://services.leadconnectorhq.com/hooks/O3A0THtKcMOzi34vEwru/webhook-trigger/m5542gbRcwVmRY8S0Rl2', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -562,7 +463,7 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
             
             // Redirect after 2 seconds
             setTimeout(() => {
-              window.location.href = 'https://links.ctwebdesignshop.com/payment-link/68cee9ee613b1b2853ce1f62';
+              window.location.href = 'https://links.ctwebdesignshop.com/payment-link/68d57ad067ee3bb601696088';
             }, 2000);
           } else {
             throw new Error('Submission failed');
@@ -615,7 +516,7 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
   }
 
   h1 {
-    font-size: calc(1.5rem + 2.5vw);
+    font-size: calc(1.25rem + 2vw);
     line-height: calc(1.2 + 0.2vw);
   }
 
@@ -728,5 +629,16 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
     font-size: 16px !important;
     letter-spacing: 0.05em;
     font-weight: 300;
+  }
+
+  /* Hero subheadline override */
+  .hero-subheadline {
+    font-size: 1.5rem !important; /* text-2xl equivalent */
+  }
+
+  @media (min-width: 768px) {
+    .hero-subheadline {
+      font-size: 1.5rem !important; /* text-2xl equivalent on desktop */
+    }
   }
 </style>
