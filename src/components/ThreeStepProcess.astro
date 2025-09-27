@@ -1,0 +1,155 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  steps: {
+    number: string;
+    title: string;
+    description: string;
+    icon?: string;
+  }[];
+}
+
+const {
+  title = "Simple 3-Step Process",
+  subtitle = "Get started in minutes with our proven methodology",
+  steps
+} = Astro.props;
+---
+
+<section class="three-step-process py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+          {title}
+        </h2>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          {subtitle}
+        </p>
+      </div>
+      
+      <!-- Process Steps -->
+      <div class="flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-0">
+        {steps.map((step, index) => (
+          <div class="flex-1 relative">
+            <!-- Arrow Shape Container -->
+            <div class={`step-arrow step-${index + 1} relative text-white overflow-hidden`}>
+              <!-- Arrow Point (Right Side) -->
+              <div class="arrow-point"></div>
+              
+              <!-- Content -->
+              <div class="relative z-10 p-8 pr-16">
+                <!-- Large Number -->
+                <div class="flex items-start gap-4 mb-4">
+                  <span class="text-6xl font-black text-white/20">
+                    {step.number}
+                  </span>
+                  {step.icon && (
+                    <div class="mt-2">
+                      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={step.icon}/>
+                      </svg>
+                    </div>
+                  )}
+                </div>
+                
+                <!-- Title -->
+                <h3 class="text-xl font-bold mb-3 text-white">
+                  {step.title}
+                </h3>
+                
+                <!-- Description -->
+                <p class="text-white/90 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .step-arrow {
+    position: relative;
+    min-height: 240px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary))/90);
+  }
+  
+  .step-2 {
+    background: linear-gradient(135deg, #F59E0B, #F59E0B/90);
+  }
+  
+  .step-3 {
+    background: linear-gradient(135deg, #10B981, #10B981/90);
+  }
+  
+  .arrow-point {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0 20px 20px;
+    border-color: transparent transparent transparent;
+    z-index: 1;
+  }
+  
+  .step-1 .arrow-point {
+    border-left-color: hsl(var(--primary));
+  }
+  
+  .step-2 .arrow-point {
+    border-left-color: #F59E0B;
+  }
+  
+  .step-3 .arrow-point {
+    border-left-color: #10B981;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1023px) {
+    .arrow-point {
+      display: none;
+    }
+    
+    .step-arrow {
+      border-radius: 8px;
+    }
+  }
+  
+  /* Desktop layout adjustments */
+  @media (min-width: 1024px) {
+    .step-arrow {
+      border-radius: 8px 0 0 8px;
+    }
+    
+    .step-3 {
+      border-radius: 8px;
+    }
+    
+    /* Overlap for arrow effect */
+    .flex-1:not(:last-child) {
+      margin-right: -20px;
+    }
+    
+    .flex-1:not(:first-child) {
+      z-index: 1;
+    }
+    
+    .flex-1:nth-child(2) {
+      z-index: 2;
+    }
+    
+    .flex-1:nth-child(3) {
+      z-index: 3;
+    }
+  }
+</style>
