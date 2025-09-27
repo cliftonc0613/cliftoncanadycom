@@ -1,0 +1,117 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  price?: string;
+  offerName?: string;
+}
+
+const {
+  title = "Join the Founding Members Learning This Breakthrough Method",
+  subtitle = "Exclusive introductory pricing for the first professionals to master AI-powered strategic decision-making",
+  price = "$49",
+  offerName = "AI Boardroom Fundamentals"
+} = Astro.props;
+---
+
+<section class="pricing-strategy py-20 bg-gradient-to-br from-gray-50 to-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-primary">
+          {title}
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          {subtitle}
+        </p>
+      </div>
+      
+      <!-- Pricing Card -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+        <!-- Price Display -->
+        <div class="text-center mb-8">
+          <div class="text-6xl font-black text-accent mb-2">{price}</div>
+          <h3 class="text-2xl font-bold text-primary">{offerName}</h3>
+        </div>
+        
+        <!-- Key Messages -->
+        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+          <!-- Positioning -->
+          <div class="flex items-start gap-4 p-6 bg-primary/5 rounded-xl">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/90 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-primary mb-2">Founding Member Access</h4>
+              <p class="text-gray-700">Founding member pricing for the first professionals learning this method</p>
+            </div>
+          </div>
+
+          <!-- Promise -->
+          <div class="flex items-start gap-4 p-6 bg-green-50 rounded-xl">
+            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-primary mb-2">Proven Results</h4>
+              <p class="text-gray-700">Learn the exact system that saved me 1,200+ hours</p>
+            </div>
+          </div>
+
+          <!-- Urgency -->
+          <div class="flex items-start gap-4 p-6 bg-red-50 rounded-xl md:col-span-2">
+            <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-primary mb-2">Limited Time Opportunity</h4>
+              <p class="text-gray-700">Join the first group before I raise prices based on results</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="text-center mt-8">
+          <a 
+            href="#reserve" 
+            class="orange-btn inline-flex items-center justify-center px-8 py-4 font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+          >
+            Secure My Founding Member Spot
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Make all headings primary blue */
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(var(--primary)) !important;
+  }
+
+  /* Orange button styling */
+  .orange-btn {
+    background-color: #F66733 !important;
+    border: 2px solid #F66733 !important;
+    color: white !important;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .orange-btn:hover {
+    background-color: #e55a2d !important;
+    border: 2px solid #e55a2d !important;
+    color: white !important;
+  }
+</style>

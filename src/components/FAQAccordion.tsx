@@ -25,7 +25,7 @@ export default function FAQAccordion() {
       <AccordionItem value="item-3">
         <AccordionTrigger>How much time does this require?</AccordionTrigger>
         <AccordionContent>
-          The AI Boardroom method is designed for busy executives. Most strategic sessions take 30-60 minutes, and the workshop is a half-day intensive.
+          The AI Boardroom method is designed for busy executives. The AI Boardroom Fundamentals will last 90 minutes.
         </AccordionContent>
       </AccordionItem>
       
