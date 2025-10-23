@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import AIBoardroomHeader from '../components/AIBoardroomHeader.astro';
 import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
-import FAQAccordionReusable from '../components/FAQAccordionReusable';
+import FAQAccordionReusable from '../components/FAQAccordionReusable.jsx';
 
 const trainingFAQs = [
   {
@@ -149,8 +149,8 @@ const trainingFAQs = [
           </h2>
 
           <!-- FAQ Accordion -->
-          <div class="mb-12">
-            <FAQAccordionReusable client:load faqs={trainingFAQs} />
+          <div class="mb-12 p-6">
+            <FAQAccordionReusable client:visible faqs={trainingFAQs} />
           </div>
 
           <!-- Contact Card -->
