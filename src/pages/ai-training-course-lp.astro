@@ -1,0 +1,522 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import AIBoardroomHeader from '../components/AIBoardroomHeader.astro';
+import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
+import { AITrainingModal } from '@/components/AITrainingModal';
+---
+
+<Layout
+  title="AI Training Course | Microsoft AI-900 Certification"
+  description="Professional AI training course for career advancement. Get Microsoft AI-certified and learn in-demand automation skills."
+  ogImage="/images/ai-training-hero.jpg"
+  ogImageAlt="AI Training Course"
+  noindex={true}
+>
+  <main>
+    <!-- Hero Section -->
+    <section class="ai-training-hero h-auto md:h-[600px] flex items-center justify-center relative text-primary-foreground overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/ai-training-hero.jpg');"></div>
+
+      <!-- Glassy Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/55 to-primary/50 backdrop-blur-[2px]"></div>
+
+      <div class="mx-auto px-4 py-24 relative z-10" style="max-width: 1180px;">
+        <div class="w-full text-center">
+
+          <!-- Logo -->
+          <div class="mb-8">
+            <img
+              src="/images/logo/2x/ai-training-course-white-logo@2x.png"
+              alt="AI Training Course"
+              class="h-16 w-auto mx-auto"
+            >
+          </div>
+
+          <!-- Badge -->
+          <div class="badge-text inline-flex items-center gap-2 bg-white/20 backdrop-blur rounded-full px-4 py-2 mb-6">
+            <span class="text-white font-semibold uppercase badge-text">AI Training Program</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            From Laid Off to AI-Ready in 6 Weeks
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-lg md:text-xl mb-8 leading-relaxed">
+            No tech background? No problem. Get Microsoft AI-certified, learn in-demand automation skills,
+            and get job-ready for roles earning $45K-$65K.
+          </p>
+
+          <!-- Call to Action Button -->
+          <button onclick="window.dispatchEvent(new Event('openAITrainingModal'))" class="orange-btn inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
+            Claim Your Pilot Spot
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Urgency Section -->
+    <section class="ai-training-urgency py-8 bg-accent">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-2xl font-bold text-white">
+            Only 15 spots available - Pilot cohort starts soon - Early-bird pricing ends [DATE]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem Section -->
+    <section class="ai-training-problem py-24 bg-muted/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+            Lost Your Job? The Workplace Has Changed.
+          </h2>
+
+          <p class="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
+            You've been told "learn AI" to stay competitive. But most training programs are:
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 mt-12">
+            <Card>
+              <CardContent className="p-8">
+                <div class="text-left space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p><strong>Too expensive</strong> ($5,000-$15,000)</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p><strong>Too technical</strong> (require coding background)</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p><strong>Too long</strong> (6-12 months you don't have)</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-8">
+                <div class="text-left space-y-4">
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p><strong>Too risky</strong> (no guarantee of results)</p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Meanwhile, AI jobs are growing <strong>25% annually</strong></p>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="w-2 h-2 bg-destructive rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Companies are hiring <strong>NOW</strong></p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <p class="text-xl text-foreground font-semibold mt-12">
+            You need a fast, affordable path to get certified and back to work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Plan Section -->
+    <section class="three-step-process-new py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+              Get AI-Certified in Just 6 Weeks
+            </h2>
+            <p class="text-xl text-muted-foreground max-w-3xl mx-auto font-semibold">
+              Here's How It Works:
+            </p>
+          </div>
+
+          <!-- Process Steps -->
+          <div class="grid md:grid-cols-3 gap-12 mb-20">
+            <!-- Step 1 -->
+            <div class="text-center">
+              <div class="relative mb-8">
+                <div class="w-40 h-40 mx-auto bg-gradient-to-br from-primary to-primary/90 step-square flex items-center justify-center shadow-xl">
+                  <span class="step-number font-black text-white drop-shadow-lg">1</span>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-primary">Enroll Today</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Secure your spot in our pilot cohort starting [DATE]. No tech background required. Just commitment.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="text-center">
+              <div class="relative mb-8">
+                <div class="w-40 h-40 mx-auto bg-gradient-to-br from-accent to-accent/90 step-square flex items-center justify-center shadow-xl">
+                  <span class="step-number font-black text-white drop-shadow-lg">2</span>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-primary">Train (6 Weeks)</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Hybrid training (evenings/weekends). Learn AI fundamentals, prompt engineering, and Microsoft Azure AI tools. Pass your certification exam.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="text-center">
+              <div class="relative mb-8">
+                <div class="w-40 h-40 mx-auto bg-gradient-to-br from-primary to-primary/90 step-square flex items-center justify-center shadow-xl">
+                  <span class="step-number font-black text-white drop-shadow-lg">3</span>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-primary">Get Hired</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Job-ready resume, LinkedIn profile, interview prep, and direct employer connections. Land your new AI career.
+              </p>
+            </div>
+          </div>
+
+          <!-- What's Included Section -->
+          <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <div class="text-center mb-8">
+              <h3 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+                What's Included:
+              </h3>
+            </div>
+
+            <!-- Included Items Grid -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                <span class="text-gray-700 font-medium">Microsoft AI-900 Certification (included)</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                <span class="text-gray-700 font-medium">Hybrid classes (flexible learning experience)</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                <span class="text-gray-700 font-medium">Job placement support (we help you get hired)</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                <span class="text-gray-700 font-medium">Real AI tools training (ChatGPT, Claude, and more)</span>
+              </div>
+            </div>
+
+            <!-- Pricing -->
+            <div class="text-center mt-8 p-6 bg-accent/10 rounded-lg">
+              <p class="text-lg text-gray-700 mb-2">Early-Bird Pilot Pricing:</p>
+              <p class="text-5xl font-bold text-accent mb-2">$750</p>
+              <p class="text-sm text-gray-600">(Regular price: $2,500 after WIOA approval)</p>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center mt-8">
+              <button
+                onclick="window.dispatchEvent(new Event('openAITrainingModal'))"
+                class="orange-btn inline-flex items-center justify-center px-8 py-4 font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              >
+                Apply Now - Secure Your Spot
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success and Failure Stakes Section -->
+    <section class="success-failure-stakes py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-7xl mx-auto">
+          <!-- Section Header -->
+          <div class="text-center mb-20">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6 text-primary">
+              Two Paths Forward. You Choose.
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              The choice is yours. Which future do you want?
+            </p>
+          </div>
+
+          <!-- Success and Failure Cards -->
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 lg:items-stretch">
+            <!-- Success Card - PATH 1 -->
+            <div class="group relative flex">
+              <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col w-full">
+                <!-- Success Icon -->
+                <div class="relative mb-8">
+                  <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="text-center mb-6">
+                  <h3 class="text-3xl font-bold text-primary mb-4">PATH 1: Take Action Today</h3>
+                </div>
+
+                <div class="space-y-4">
+                  <div class="flex items-start gap-4 p-3 bg-green-50 rounded-xl">
+                    <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium">6 weeks from now: Microsoft AI-certified</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-green-50 rounded-xl">
+                    <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium">3 months from now: Employed in growing field</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-green-50 rounded-xl">
+                    <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium">New career: $45,000-$65,000 starting salary</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-green-50 rounded-xl">
+                    <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium">Future-proof skills: AI isn't going anywhere</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Failure Card - PATH 2 -->
+            <div class="group relative flex">
+              <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col w-full">
+                <!-- Failure Icon -->
+                <div class="relative mb-8">
+                  <div class="w-24 h-24 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="text-center mb-6">
+                  <h3 class="text-3xl font-bold text-primary mb-4">PATH 2: Wait and Hope</h3>
+                </div>
+
+                <div class="space-y-4">
+                  <div class="flex items-start gap-4 p-3 bg-red-50 rounded-xl">
+                    <div class="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium">Job market keeps changing without you</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-red-50 rounded-xl">
+                    <div class="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium">AI skills gap keeps growing</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-red-50 rounded-xl">
+                    <div class="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium">Other candidates get certified first</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-red-50 rounded-xl">
+                    <div class="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium">You're still searching 6 months from now</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Urgency Message -->
+          <div class="text-center mt-16">
+            <p class="text-2xl font-bold text-gray-900 mb-4">
+              Only 15 spots available for pilot cohort.
+            </p>
+            <p class="text-xl text-gray-700 mb-8">
+              Starts [DATE]. Early-bird pricing ends [DATE].
+            </p>
+            <button onclick="window.dispatchEvent(new Event('openAITrainingModal'))" class="orange-btn inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
+              Apply Now - Secure Your Spot
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Authority Section (About Instructor) -->
+    <section class="ai-training-authority py-16" style="background-color: #F66733;">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <!-- Mobile Layout -->
+          <div class="lg:hidden">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white text-center">
+              About Your Instructor
+            </h2>
+
+            <!-- Image First on Mobile -->
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <img
+                  src="/images/Clifton-Canady-Casual-Headshot.jpg"
+                  alt="Clifton Canady - AI Training Instructor"
+                  class="w-[300px] h-[300px] object-cover object-top rounded-lg shadow-xl"
+                >
+              </div>
+            </div>
+
+            <!-- Content After Image on Mobile -->
+            <div class="text-white">
+              <p class="text-lg mb-4 leading-relaxed opacity-90 text-center">
+                I'm Clifton Canady, and I've been in the trenches of business and technology for over 20 years. I understand what it's like to face career transitions and the need to stay relevant in a rapidly changing workplace.
+              </p>
+              <p class="text-lg mb-4 leading-relaxed opacity-90 text-center">
+                As an early AI adopter since 2023, I've witnessed firsthand how AI is transforming industries and creating new opportunities. I developed the AI Boardroom method that has saved professionals countless hours and thousands in consultant fees.
+              </p>
+              <p class="text-lg mb-8 leading-relaxed opacity-90 text-center">
+                Now, I'm bringing this expertise to displaced workers in South Carolina, helping them get Microsoft AI-certified and back into the workforce with future-proof skills.
+              </p>
+            </div>
+          </div>
+
+          <!-- Desktop Layout -->
+          <div class="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Side - Content -->
+            <div class="text-white">
+              <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                About Your Instructor
+              </h2>
+
+              <p class="text-lg mb-4 leading-relaxed opacity-90">
+                I'm Clifton Canady, and I've been in the trenches of business and technology for over 20 years. I understand what it's like to face career transitions and the need to stay relevant in a rapidly changing workplace.
+              </p>
+              <p class="text-lg mb-4 leading-relaxed opacity-90">
+                As an early AI adopter since 2023, I've witnessed firsthand how AI is transforming industries and creating new opportunities. I developed the AI Boardroom method that has saved professionals countless hours and thousands in consultant fees.
+              </p>
+              <p class="text-lg mb-8 leading-relaxed opacity-90">
+                Now, I'm bringing this expertise to displaced workers in South Carolina, helping them get Microsoft AI-certified and back into the workforce with future-proof skills.
+              </p>
+            </div>
+
+            <!-- Right Side - Image -->
+            <div class="flex justify-center lg:justify-end">
+              <div class="relative">
+                <img
+                  src="/images/Clifton-Canady-Casual-Headshot.jpg"
+                  alt="Clifton Canady - AI Training Instructor"
+                  class="w-[600px] h-[600px] object-cover object-top rounded-lg shadow-xl"
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Two Column Features -->
+          <div class="grid md:grid-cols-2 gap-8 mt-16 text-white">
+            <div>
+              <div class="border-b-2 border-white/30 pb-4 mb-4">
+                <h3 class="text-xl font-semibold" style="font-size: 1.25rem; text-align: inherit;">Experience</h3>
+              </div>
+              <p class="text-sm opacity-80" style="font-size: 0.875rem;">
+                With 20+ years in business and technology, I discovered and personally field-tested the AI Boardroom method that saved me 1,200+ hours in strategic decision time. I'm not a guru selling theory - I'm a fellow professional who found the solution and want to share what actually works.
+              </p>
+            </div>
+
+            <div>
+              <div class="border-b-2 border-white/30 pb-4 mb-4">
+                <h3 class="text-xl font-semibold" style="font-size: 1.25rem; text-align: inherit;">Tech Leader</h3>
+              </div>
+              <p class="text-sm opacity-80" style="font-size: 0.875rem;">
+                I've trained hundreds of professionals in AI fundamentals and Microsoft certification programs, and understand exactly what displaced workers need to succeed. Now I help workers transition into high-demand AI careers with proven, practical training.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Training Modal -->
+    <AITrainingModal client:load />
+
+    <!-- Footer -->
+    <AIBoardroomFooter />
+  </main>
+</Layout>
+
+<style>
+  /* Responsive Font System using calc() */
+  html {
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+  }
+
+  h1 {
+    font-size: calc(1.25rem + 2vw);
+    line-height: calc(1.2 + 0.2vw);
+  }
+
+  h2 {
+    font-size: calc(1.25rem + 1.5vw);
+    line-height: calc(1.3 + 0.15vw);
+  }
+
+  h3 {
+    font-size: calc(1rem + 1vw);
+    line-height: calc(1.4 + 0.1vw);
+  }
+
+  h4, h5, h6 {
+    font-size: calc(0.875rem + 0.5vw);
+    line-height: calc(1.5 + 0.05vw);
+  }
+
+  p, span, div {
+    font-size: calc(0.875rem + 0.25vw);
+    line-height: calc(1.5 + 0.1vw);
+  }
+
+  /* Button responsive sizing */
+  .orange-btn {
+    background-color: #F66733;
+    border: 2px solid #F66733;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(0.875rem + 0.25vw);
+    padding: calc(0.5rem + 0.5vw) calc(1rem + 1vw);
+  }
+
+  .orange-btn:hover {
+    background-color: #e55a2d;
+    border: 2px solid #e55a2d;
+    color: white;
+  }
+
+  /* Badge text - very small */
+  .badge-text {
+    font-size: 16px !important;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+  }
+
+  /* Step square styling with 10px border radius */
+  .step-square {
+    border-radius: 10px;
+  }
+
+  /* Step numbers - override global span sizing */
+  .step-number {
+    font-size: 6rem !important;
+  }
+
+  /* Price styling - bigger on all devices */
+  .price-mobile {
+    font-size: 2.5rem !important;
+    font-weight: 300 !important;
+  }
+</style>

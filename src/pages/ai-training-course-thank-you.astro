@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import AIBoardroomHeader from '../components/AIBoardroomHeader.astro';
+import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
+import FAQAccordionReusable from '../components/FAQAccordionReusable';
+
+const trainingFAQs = [
+  {
+    question: "When will the AI Training Course start?",
+    answer: "We're currently gauging interest and will announce the official start date soon. Early registrants will receive priority notification and special founding member pricing."
+  },
+  {
+    question: "What certifications can I prepare for?",
+    answer: "This course prepares you for Microsoft Azure AI Fundamentals (AI-900), AWS Certified AI Practitioner, or Google Cloud Professional Machine Learning Engineer certifications. You choose which certification path aligns with your career goals."
+  },
+  {
+    question: "Do I need prior programming experience?",
+    answer: "No prior programming experience is required. We start with AI fundamentals and build up to more advanced topics. However, basic computer literacy and willingness to learn technical concepts are helpful."
+  },
+  {
+    question: "How long is the course?",
+    answer: "The comprehensive AI Training Course is designed to be completed in 8-12 weeks with flexible self-paced learning modules. This includes video lessons, hands-on labs, and certification prep materials."
+  }
+];
+---
+
+<Layout
+  title="Thank You | AI Training - Registration Confirmed"
+  description="Thank you for registering for AI Training. Your learning journey begins now."
+  ogImage="/images/ai-boardrooms-og.jpg"
+  ogImageAlt="AI Training Registration Confirmed"
+  noindex={true}
+>
+  <main>
+    <!-- Header Section -->
+    <AIBoardroomHeader
+      logoSrc="/images/logo/2x/ai-training-course-logo@2x.png"
+      logoAlt="AI Training Course"
+      logoHeight="h-16"
+      ctaText="Book a Call"
+      ctaLink="https://links.ctwebdesignshop.com/widget/bookings/clifton-canady"
+    />
+
+    <!-- Thank You Hero Section -->
+    <section class="ai-boardroom-hero flex items-center justify-center relative text-primary-foreground overflow-hidden py-16">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/ai-training-hero.jpg');"></div>
+
+      <!-- Glassy Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-primary/35 backdrop-blur-[1px]"></div>
+
+      <div class="max-w-4xl mx-auto px-4 py-24 relative z-10 text-center">
+
+        <!-- Success Badge -->
+        <div class="inline-flex items-center gap-2 bg-accent/20 backdrop-blur rounded-full px-6 py-3 mb-8">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="text-white font-semibold text-sm uppercase tracking-wide hero-badge-text">Interest Confirmed</span>
+        </div>
+
+        <!-- Main Thank You Message -->
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-center">
+          Thank You for Your Interest!
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-xl md:text-2xl opacity-90 font-semibold mb-12 max-w-3xl mx-auto">
+          Please check your email inbox and confirm your interest in the AI Training Course.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- What Happens Next Section -->
+    <section class="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary text-center">
+            What Happens Next?
+          </h2>
+          <p class="text-lg text-gray-600 mb-12 text-center">
+            We're currently gauging interest for our AI Training Course. Here's what to do now:
+          </p>
+
+          <!-- Three Column Layout -->
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Column 1 - Check Your Email -->
+            <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+              <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4 icon-box-header text-center">Check Your Email</h3>
+              <p class="text-gray-600 icon-box-text leading-relaxed text-center">
+                Please confirm your email address to stay updated. You'll be the first to know when course dates are announced and enrollment opens.
+              </p>
+            </div>
+
+            <!-- Column 2 - Book a Discovery Call -->
+            <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+              <div class="w-20 h-20 bg-gradient-to-br from-accent to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4 icon-box-header text-center">Book a 1-on-1 Discovery Call</h3>
+              <p class="text-gray-600 icon-box-text leading-relaxed text-center mb-6">
+                Schedule consultation about course fit
+              </p>
+              <div class="text-center">
+                <Button asChild variant="default" size="lg" className="w-full">
+                  <a href="https://links.ctwebdesignshop.com/widget/bookings/clifton-canady" target="_blank" rel="noopener noreferrer">Schedule Call</a>
+                </Button>
+              </div>
+            </div>
+
+            <!-- Column 3 - Join Community -->
+            <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+              <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-4 icon-box-header text-center">Join Pre-Launch Community</h3>
+              <p class="text-gray-600 icon-box-text leading-relaxed text-center mb-6">
+                Access to exclusive group for early adopters
+              </p>
+              <div class="text-center">
+                <Button asChild variant="default" size="lg" className="w-full">
+                  <a href="https://www.facebook.com/groups/smartdecisionmakers/" target="_blank" rel="noopener noreferrer">Join Community</a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Questions Section -->
+    <section class="py-24 bg-muted/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-12 text-primary text-center">
+            Have Questions?
+          </h2>
+
+          <!-- FAQ Accordion -->
+          <div class="mb-12">
+            <FAQAccordionReusable client:load faqs={trainingFAQs} />
+          </div>
+
+          <!-- Contact Card -->
+          <div class="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100">
+            <p class="text-gray-600 text-lg mb-8 leading-relaxed text-center">
+              Still have questions? We're here to help.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+              <a href="tel:+18647528017" class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold rounded-md shadow-lg bg-primary text-white hover:bg-primary/90 transition-all duration-200">
+                Call +1 (864) 752-8017
+              </a>
+              <a href="https://links.ctwebdesignshop.com/widget/bookings/clifton-canady" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold rounded-md shadow-lg border-2 border-primary text-primary hover:bg-primary/10 transition-all duration-200">
+                Schedule a Call
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <AIBoardroomFooter
+      logoSrc="/images/logo/2x/ai-training-course-logo@2x.png"
+      logoAlt="AI Training Course"
+    />
+  </main>
+</Layout>
+
+<style>
+  /* Responsive Font System using calc() */
+  html {
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+  }
+
+  h1 {
+    font-size: calc(1.5rem + 2.5vw);
+    line-height: calc(1.2 + 0.2vw);
+  }
+
+  h2 {
+    font-size: calc(1.25rem + 1.5vw);
+    line-height: calc(1.3 + 0.15vw);
+  }
+
+  h3 {
+    font-size: calc(1rem + 1vw);
+    line-height: calc(1.4 + 0.1vw);
+  }
+
+  h4, h5, h6 {
+    font-size: calc(0.875rem + 0.5vw);
+    line-height: calc(1.5 + 0.05vw);
+  }
+
+  p, span, div {
+    font-size: calc(0.875rem + 0.25vw);
+    line-height: calc(1.5 + 0.1vw);
+  }
+
+  /* Icon box header text override - desktop only */
+  @media (min-width: 768px) {
+    .icon-box-header {
+      font-size: 1em !important;
+    }
+  }
+
+  /* Icon box paragraph text override */
+  .icon-box-text {
+    font-size: 16px !important;
+    font-family: 'Poppins', sans-serif !important;
+  }
+
+  /* Hero badge text override */
+  .hero-badge-text {
+    font-size: 16px !important;
+  }
+
+  /* Hero height overrides */
+  .ai-boardroom-hero {
+    min-height: 100vh;
+  }
+
+  @media (min-width: 768px) {
+    .ai-boardroom-hero {
+      height: 78vh !important;
+      min-height: auto;
+    }
+  }
+</style>
