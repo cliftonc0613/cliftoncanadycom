@@ -4,11 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import AIBoardroomHeader from '../components/AIBoardroomHeader.astro';
 import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
-import { AITrainingModal } from '@/components/AITrainingModal';
 ---
 
 <Layout
-  title="AI Training Course | Microsoft AI-900 Certification"
+  title="AI Training Course | AI Certification Prep"
   description="Professional AI training course for career advancement. Get Microsoft AI-certified and learn in-demand automation skills."
   ogImage="/images/ai-training-hero.jpg"
   ogImageAlt="AI Training Course"
@@ -52,9 +51,9 @@ import { AITrainingModal } from '@/components/AITrainingModal';
           </p>
 
           <!-- Call to Action Button -->
-          <button onclick="window.dispatchEvent(new Event('openAITrainingModal'))" class="orange-btn inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
+          <a href="#apply" class="orange-btn inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
             Claim Your Pilot Spot
-          </button>
+          </a>
 
         </div>
       </div>
@@ -65,7 +64,7 @@ import { AITrainingModal } from '@/components/AITrainingModal';
       <div class="container mx-auto px-4">
         <div class="text-center">
           <p class="text-2xl font-bold text-white">
-            Only 15 spots available - Pilot cohort starts soon - Early-bird pricing ends [DATE]
+            Only 15 spots available - Pilot course coming soon - Early-bird pricing limited time only
           </p>
         </div>
       </div>
@@ -155,7 +154,7 @@ import { AITrainingModal } from '@/components/AITrainingModal';
               </div>
               <h3 class="text-xl font-bold mb-4 text-primary">Enroll Today</h3>
               <p class="text-gray-600 leading-relaxed">
-                Secure your spot in our pilot cohort starting [DATE]. No tech background required. Just commitment.
+                Secure your spot in our pilot course coming soon. No tech background required. Just commitment.
               </p>
             </div>
 
@@ -168,7 +167,7 @@ import { AITrainingModal } from '@/components/AITrainingModal';
               </div>
               <h3 class="text-xl font-bold mb-4 text-primary">Train (6 Weeks)</h3>
               <p class="text-gray-600 leading-relaxed">
-                Hybrid training (evenings/weekends). Learn AI fundamentals, prompt engineering, and Microsoft Azure AI tools. Pass your certification exam.
+                Hybrid training. Learn AI fundamentals, prompt engineering, and Microsoft Azure AI tools. Pass your certification exam.
               </p>
             </div>
 
@@ -198,7 +197,7 @@ import { AITrainingModal } from '@/components/AITrainingModal';
             <div class="grid md:grid-cols-2 gap-6 mb-8">
               <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
                 <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
-                <span class="text-gray-700 font-medium">Microsoft AI-900 Certification (included)</span>
+                <span class="text-gray-700 font-medium">AI Certification Prep (included)</span>
               </div>
               <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
                 <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
@@ -223,15 +222,15 @@ import { AITrainingModal } from '@/components/AITrainingModal';
 
             <!-- CTA Button -->
             <div class="text-center mt-8">
-              <button
-                onclick="window.dispatchEvent(new Event('openAITrainingModal'))"
+              <a
+                href="#apply"
                 class="orange-btn inline-flex items-center justify-center px-8 py-4 font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               >
                 Apply Now - Secure Your Spot
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -338,14 +337,14 @@ import { AITrainingModal } from '@/components/AITrainingModal';
           <!-- Urgency Message -->
           <div class="text-center mt-16">
             <p class="text-2xl font-bold text-gray-900 mb-4">
-              Only 15 spots available for pilot cohort.
+              Only 15 spots available for pilot course.
             </p>
             <p class="text-xl text-gray-700 mb-8">
-              Starts [DATE]. Early-bird pricing ends [DATE].
+              Coming soon. Early-bird pricing available for a limited time.
             </p>
-            <button onclick="window.dispatchEvent(new Event('openAITrainingModal'))" class="orange-btn inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
+            <a href="#apply" class="orange-btn inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
               Apply Now - Secure Your Spot
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -441,11 +440,59 @@ import { AITrainingModal } from '@/components/AITrainingModal';
       </div>
     </section>
 
-    <!-- AI Training Modal -->
-    <AITrainingModal client:load />
+    <!-- Application Form Section -->
+    <section id="apply" class="py-24 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Express Your Interest in AI Training
+          </h2>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg p-8 mb-8">
+            <div class="text-center mb-8">
+              <p class="text-2xl font-bold text-accent mb-2">$750</p>
+              <p class="text-sm opacity-90">Early-Bird Pilot Pricing</p>
+              <p class="text-xs opacity-70">Limited to first 15 participants</p>
+            </div>
+
+            <!-- Simple Interest Form -->
+            <form action="/ai-training-course-thank-you" method="get" class="space-y-4 text-left">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-2">Your Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60" placeholder="Your Name">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/60" placeholder="your@email.com">
+              </div>
+
+              <button type="submit" class="w-full mt-6 text-lg py-6 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200">
+                Express Interest
+              </button>
+            </form>
+          </div>
+
+          <!-- Scarcity Elements -->
+          <div class="space-y-2 text-sm opacity-90">
+            <p>Limited to 15 participants per course</p>
+            <p>Early-bird $750 pricing ends after first course fills</p>
+          </div>
+
+          <div class="mt-8">
+            <p class="text-white mb-4">Questions? Contact us:</p>
+            <a href="tel:+18647528017" class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold rounded-md border-2 border-white/30 text-white hover:bg-white/10 transition-all duration-200">
+              Call +1 (864) 752-8017
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <AIBoardroomFooter />
+    <AIBoardroomFooter
+      logoSrc="/images/logo/2x/ai-training-course-logo@2x.png"
+      logoAlt="AI Training Course"
+    />
   </main>
 </Layout>
 
