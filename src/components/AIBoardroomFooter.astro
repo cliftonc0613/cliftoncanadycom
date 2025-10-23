@@ -1,10 +1,20 @@
 ---
 export interface Props {
+  logoSrc?: string;
+  logoAlt?: string;
+  email?: string;
+  footerTitle?: string;
+  footerSubtitle?: string;
   ctaText?: string;
   ctaLink?: string;
 }
 
-const { 
+const {
+  logoSrc = "/images/logo/SVG/AI-bordroom-logo.svg",
+  logoAlt = "AI Boardroom Strategic Advisory - Upstate SC Tech Company Growth Solutions",
+  email = "HELLO@CLIFTONCANADY.COM",
+  footerTitle = "Have a question?",
+  footerSubtitle = "Do not hesitate to get in touch with us",
   ctaText = "BOOK A MEETING",
   ctaLink = "https://links.ctwebdesignshop.com/widget/bookings/clifton-canady"
 } = Astro.props;
@@ -15,17 +25,17 @@ const {
     <div class="max-w-4xl mx-auto text-center">
       <!-- Have a Project Header -->
       <h2 class="footer-title">
-        Have a question?  
+        {footerTitle}
       </h2>
-      
+
       <!-- Main Message -->
       <h3 class="footer-subtitle">
-        Do not hesitate to get in touch with us
+        {footerSubtitle}
       </h3>
-      
+
       <!-- Email -->
       <p class="footer-email">
-        HELLO@CLIFTONCANADY.COM
+        {email}
       </p>
       
       <!-- Call to Action Button -->
@@ -45,9 +55,9 @@ const {
       <div class="container mx-auto px-4">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div class="footer-logo-section">
-            <img 
-              src="/images/logo/SVG/AI-bordroom-logo.svg" 
-              alt="AI Boardroom Strategic Advisory - Upstate SC Tech Company Growth Solutions" 
+            <img
+              src={logoSrc}
+              alt={logoAlt}
               class="footer-logo"
             >
           </div>
