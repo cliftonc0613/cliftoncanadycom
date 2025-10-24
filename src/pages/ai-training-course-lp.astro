@@ -6,14 +6,176 @@ import AIBoardroomHeader from '../components/AIBoardroomHeader.astro';
 import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
 import AITrainingModalManager from '../components/AITrainingModalManager';
 import AITrainingButton from '../components/AITrainingButton';
+
+// Course Schema with Geographic Targeting
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "AI Training Course - Microsoft AI Certification Prep",
+  "description": "6-week professional AI training program for displaced workers in South Carolina. Get Microsoft AI-certified, learn in-demand automation skills, and secure job placement support.",
+  "provider": {
+    "@type": "Person",
+    "name": "Clifton T. Canady",
+    "jobTitle": "AI Training Instructor",
+    "description": "Early AI adopter since 2023 with 20+ years in business and technology. Developer of the AI Boardroom method.",
+    "telephone": "+1-864-752-8017",
+    "url": "https://cliftoncanady.com"
+  },
+  "courseMode": "blended",
+  "educationalLevel": "Beginner",
+  "timeRequired": "P6W",
+  "inLanguage": "en-US",
+  "availableLanguage": "en-US",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "blended",
+    "duration": "P6W",
+    "location": {
+      "@type": "Place",
+      "name": "South Carolina",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.0007",
+        "longitude": "-81.0348"
+      }
+    }
+  },
+  "occupationalCredentialAwarded": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "certification",
+    "name": "Microsoft AI Certification"
+  },
+  "coursePrerequisites": "No tech background required. Just commitment.",
+  "offers": {
+    "@type": "Offer",
+    "price": "750",
+    "priceCurrency": "USD",
+    "description": "Early-Bird Pilot Pricing (Regular price: $2,500 after WIOA approval)",
+    "availability": "https://schema.org/LimitedAvailability",
+    "validFrom": "2025-01-01",
+    "eligibleRegion": {
+      "@type": "Place",
+      "name": "South Carolina, USA"
+    }
+  },
+  "educationalCredentialAwarded": "Microsoft AI Certification",
+  "teaches": [
+    "AI fundamentals",
+    "Prompt engineering",
+    "Microsoft Azure AI tools",
+    "ChatGPT professional usage",
+    "Claude AI applications",
+    "AI automation skills",
+    "Job interview preparation",
+    "Resume optimization",
+    "LinkedIn profile building"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "1"
+  },
+  "audience": {
+    "@type": "EducationalAudience",
+    "audienceType": "Displaced workers seeking career transition"
+  }
+};
+
+// Organization Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "AI Training Course by Clifton Canady",
+  "description": "Professional AI training for displaced workers in South Carolina. Microsoft AI certification preparation and job placement support.",
+  "url": "https://cliftoncanady.com/ai-training-course-lp",
+  "telephone": "+1-864-752-8017",
+  "founder": {
+    "@type": "Person",
+    "name": "Clifton T. Canady"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "South Carolina"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "AI Training Programs",
+    "itemListElement": [
+      {
+        "@type": "Course",
+        "name": "AI Certification Prep Course",
+        "description": "6-week Microsoft AI certification training with job placement"
+      }
+    ]
+  }
+};
+
+// FAQ Schema for AI Training Course
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need tech experience to take the AI training course?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No tech background required. The 6-week course is designed for displaced workers with no prior AI or technical experience. Just bring commitment to learning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What certification will I receive from the AI training?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You'll receive Microsoft AI certification upon completing the course and passing the certification exam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does the AI training course cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Early-bird pilot pricing is $750 for the first 15 participants. Regular pricing will be $2,500 after WIOA approval."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's included in the AI training course?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The course includes AI certification prep, hybrid classes, job placement support, and training on real AI tools like ChatGPT and Claude. You'll also receive resume optimization, LinkedIn profile building, and interview preparation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What salary can I expect after completing AI training?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entry-level AI positions typically offer starting salaries of $45,000-$65,000 annually."
+      }
+    }
+  ]
+};
+
+const structuredData = [courseSchema, organizationSchema, faqSchema];
 ---
 
 <Layout
-  title="AI Training Course | AI Certification Prep"
-  description="Professional AI training course for career advancement. Get Microsoft AI-certified and learn in-demand automation skills."
+  title="AI Training Course | Microsoft AI Certification Prep - South Carolina"
+  description="6-week AI training for displaced workers in SC. Get Microsoft AI-certified, learn automation skills, job placement support. $750 early-bird pricing. No tech background needed."
   ogImage="/images/ai-training-hero.jpg"
-  ogImageAlt="AI Training Course"
+  ogImageAlt="AI Training Course - Microsoft AI Certification Prep for South Carolina Workers"
   noindex={true}
+  twitterTitle="AI Training Course | Get Microsoft AI-Certified in 6 Weeks"
+  twitterDescription="From laid off to AI-ready. No tech background needed. $750 early-bird pricing for SC displaced workers. Microsoft certification + job placement."
+  geoRegion="US-SC"
+  geoPlacename="South Carolina"
+  geoPosition="34.0007;-81.0348"
+  keywords="AI training South Carolina, Microsoft AI certification, displaced worker training SC, AI skills training, career transition AI, job training South Carolina, AI certification prep, tech training SC, ChatGPT training, AI automation skills"
+  structuredData={structuredData}
 >
   <!-- Single Modal Manager for entire page -->
   <AITrainingModalManager client:load />
