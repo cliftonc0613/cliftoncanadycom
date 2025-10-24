@@ -5,14 +5,14 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import AITrainingButton from './AITrainingButton';
 
-// Shared state outside component to track if modal has been shown
+// Shared state to track if modal has been shown
 let globalHasShownModal = false;
 
-export default function AITrainingModal() {
+export default function AITrainingModalManager() {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -26,7 +26,7 @@ export default function AITrainingModal() {
       }
     }, 5000);
 
-    // Exit intent detection - only add listener once per page
+    // Exit intent detection
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY <= 0 && !globalHasShownModal) {
         setOpen(true);
@@ -36,9 +36,18 @@ export default function AITrainingModal() {
 
     document.addEventListener('mouseleave', handleMouseLeave);
 
+    // Global event listener for button clicks
+    const handleOpenModal = () => {
+      setOpen(true);
+      globalHasShownModal = true;
+    };
+
+    window.addEventListener('openAITrainingModal', handleOpenModal);
+
     return () => {
       clearTimeout(timer);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('openAITrainingModal', handleOpenModal);
     };
   }, []);
 
@@ -67,11 +76,6 @@ export default function AITrainingModal() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button className="orange-btn inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
-          Claim Your Pilot Spot
-        </Button>
-      </DialogTrigger>
       <DialogContent className="w-full md:w-3/4 lg:w-1/2 max-w-none bg-gradient-to-br from-primary to-primary text-primary-foreground border-none">
         <DialogHeader>
           <DialogTitle className="text-2xl md:text-3xl font-bold text-center text-white">
@@ -130,7 +134,6 @@ export default function AITrainingModal() {
         </form>
 
         <div className="space-y-2 text-sm opacity-90 text-center mt-6 text-white">
-          <p>Limited to 15 participants per course</p>
           <p>Early-bird $750 pricing ends after first course fills</p>
         </div>
       </DialogContent>
