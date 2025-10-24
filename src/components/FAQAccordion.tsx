@@ -42,6 +42,13 @@ export default function FAQAccordion() {
           Yes! Leadership teams often benefit from attending together. Contact us about team rates for 2+ attendees from the same company.
         </AccordionContent>
       </AccordionItem>
+
+      <AccordionItem value="item-6">
+        <AccordionTrigger>What if I'm not in the tech industry?</AccordionTrigger>
+        <AccordionContent>
+          While AI Boardroom is specifically designed for tech company leaders and draws from 20+ years of technology industry experience, we occasionally accept select executives from adjacent industries (SaaS, fintech, digital marketing, e-commerce) who face similar strategic challenges. Contact us to discuss your specific situation.
+        </AccordionContent>
+      </AccordionItem>
     </Accordion>
   );
 }
