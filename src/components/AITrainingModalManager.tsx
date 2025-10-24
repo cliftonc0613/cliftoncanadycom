@@ -13,12 +13,20 @@ export default function AITrainingModalManager() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
+  // Separate effect for one-time 5-second timer
   useEffect(() => {
-    // Auto-open modal after 5 seconds (first time only)
+    // Auto-open modal after 5 seconds (ONLY runs once on mount)
     const timer = setTimeout(() => {
       setOpen(true);
     }, 5000);
 
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []); // Empty dependency array = runs only once on mount
+
+  // Separate effect for exit intent that depends on 'open' state
+  useEffect(() => {
     // Exit intent detection - triggers EVERY time user tries to leave (if modal not already open)
     const handleMouseOut = (e: MouseEvent) => {
       // Detect when cursor moves to top of page (like closing tab or changing URL)
@@ -44,11 +52,10 @@ export default function AITrainingModalManager() {
     window.addEventListener('openAITrainingModal', handleOpenModal);
 
     return () => {
-      clearTimeout(timer);
       document.documentElement.removeEventListener('mouseout', handleMouseOut);
       window.removeEventListener('openAITrainingModal', handleOpenModal);
     };
-  }, [open]); // Re-run effect when 'open' state changes
+  }, [open]); // Re-run effect when 'open' state changes (but timer not affected)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
