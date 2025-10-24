@@ -7,6 +7,7 @@ export interface Props {
   footerSubtitle?: string;
   ctaText?: string;
   ctaLink?: string;
+  hideCoreyCreedCredit?: boolean;
 }
 
 const {
@@ -16,7 +17,8 @@ const {
   footerTitle = "Have a question?",
   footerSubtitle = "Do not hesitate to get in touch with us",
   ctaText = "BOOK A MEETING",
-  ctaLink = "https://links.ctwebdesignshop.com/widget/bookings/clifton-canady"
+  ctaLink = "https://links.ctwebdesignshop.com/widget/bookings/clifton-canady",
+  hideCoreyCreedCredit = false
 } = Astro.props;
 ---
 
@@ -42,11 +44,13 @@ const {
       <a href={ctaLink} target="_blank" rel="noopener noreferrer" class="orange-btn inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
         {ctaText}
       </a>
-      
+
       <!-- Credit -->
-      <p class="footer-corey-creed mt-8">
-        The AI Boardroom methodology and framework was created by <a href="https://coreycreed.com/" target="_blank" rel="noopener noreferrer">Corey Creed</a>.
-      </p>
+      {!hideCoreyCreedCredit && (
+        <p class="footer-corey-creed mt-8">
+          The AI Boardroom methodology and framework was created by <a href="https://coreycreed.com/" target="_blank" rel="noopener noreferrer">Corey Creed</a>.
+        </p>
+      )}
       
     </div>
     

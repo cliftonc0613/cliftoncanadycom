@@ -4,17 +4,30 @@ export interface Props {
   description?: string;
   ogImage?: string;
   ogImageAlt?: string;
+  noindex?: boolean;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  geoRegion?: string;
+  geoPlacename?: string;
+  geoPosition?: string;
+  keywords?: string;
+  structuredData?: any[];
 }
 
-const { 
-  title, 
+const {
+  title,
   description = "Multi-disciplinary digital professional specializing in WordPress development, content writing, speaking/seminars, and photography.",
   ogImage = "/images/clifton-canady-default-og.jpg",
-  ogImageAlt = "Clifton T. Canady - WordPress Developer, Content Writer, Speaker & Photographer"
+  ogImageAlt = "Clifton T. Canady - WordPress Developer, Content Writer, Speaker & Photographer",
+  noindex = false,
+  twitterTitle,
+  twitterDescription,
+  geoRegion,
+  geoPlacename,
+  geoPosition,
+  keywords,
+  structuredData = []
 } = Astro.props;
-
-// GTM Container ID - you can set this via environment variable
-const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
 ---
 
 <!doctype html>
@@ -28,6 +41,7 @@ const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
     
     <!-- SEO Meta Tags -->
     <title>{title}</title>
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -39,14 +53,24 @@ const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={twitterTitle || title} />
+    <meta name="twitter:description" content={twitterDescription || description} />
     <meta name="twitter:site" content="@cliftoncanady" />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
-    
+
+    <!-- Geographic Meta Tags -->
+    {geoRegion && <meta name="geo.region" content={geoRegion} />}
+    {geoPlacename && <meta name="geo.placename" content={geoPlacename} />}
+    {geoPosition && (
+      <>
+        <meta name="geo.position" content={geoPosition} />
+        <meta name="ICBM" content={geoPosition} />
+      </>
+    )}
+
     <!-- Keywords -->
-    <meta name="keywords" content="AI Boardroom, Upstate SC, tech company leaders, strategic planning, business advisory, growth plateau solutions, Greenville SC, Spartanburg SC, Anderson SC, tech consulting" />
+    <meta name="keywords" content={keywords || "AI Boardroom, Upstate SC, tech company leaders, strategic planning, business advisory, growth plateau solutions, Greenville SC, Spartanburg SC, Anderson SC, tech consulting"} />
     
     <!-- Person Schema Markup -->
     <script type="application/ld+json">
@@ -174,7 +198,7 @@ const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
           }
         },
         {
-          "@type": "Question", 
+          "@type": "Question",
           "name": "Is AI Boardroom just for Upstate SC companies?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -185,7 +209,7 @@ const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
           "@type": "Question",
           "name": "How much time does AI Boardroom strategic planning require?",
           "acceptedAnswer": {
-            "@type": "Answer", 
+            "@type": "Answer",
             "text": "The AI Boardroom method is designed for busy executives. Most strategic sessions take 30-60 minutes, and the workshop is a half-day intensive."
           }
         },
@@ -208,6 +232,11 @@ const GTM_CONTAINER_ID = import.meta.env.GTM_CONTAINER_ID || "GTM-K2S4Q89Z";
       ]
     }
     </script>
+
+    <!-- Custom Structured Data -->
+    {structuredData.map(schema => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
     
     <!-- Performance Optimization -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
