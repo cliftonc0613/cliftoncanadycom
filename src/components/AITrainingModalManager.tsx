@@ -7,49 +7,55 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import AITrainingButton from './AITrainingButton';
-
-// Shared state to track if modal has been shown
-let globalHasShownModal = false;
 
 export default function AITrainingModalManager() {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
+  // Separate effect for one-time 5-second timer
   useEffect(() => {
-    // Auto-open modal after 5 seconds
+    // Auto-open modal after 5 seconds (ONLY runs once on mount)
     const timer = setTimeout(() => {
-      if (!globalHasShownModal) {
-        setOpen(true);
-        globalHasShownModal = true;
-      }
+      setOpen(true);
     }, 5000);
 
-    // Exit intent detection
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !globalHasShownModal) {
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []); // Empty dependency array = runs only once on mount
+
+  // Separate effect for exit intent that depends on 'open' state
+  useEffect(() => {
+    // Exit intent detection - triggers EVERY time user tries to leave (if modal not already open)
+    const handleMouseOut = (e: MouseEvent) => {
+      // Detect when cursor moves to top of page (like closing tab or changing URL)
+      const mouseY = e.clientY;
+
+      if (
+        !open && // Only trigger if modal is NOT currently open
+        mouseY <= 5 && // Very close to top of viewport
+        !e.relatedTarget // Cursor left document
+      ) {
         setOpen(true);
-        globalHasShownModal = true;
       }
     };
 
-    document.addEventListener('mouseleave', handleMouseLeave);
+    // Use mouseout on document to detect leaving viewport
+    document.documentElement.addEventListener('mouseout', handleMouseOut);
 
     // Global event listener for button clicks
     const handleOpenModal = () => {
       setOpen(true);
-      globalHasShownModal = true;
     };
 
     window.addEventListener('openAITrainingModal', handleOpenModal);
 
     return () => {
-      clearTimeout(timer);
-      document.removeEventListener('mouseleave', handleMouseLeave);
+      document.documentElement.removeEventListener('mouseout', handleMouseOut);
       window.removeEventListener('openAITrainingModal', handleOpenModal);
     };
-  }, []);
+  }, [open]); // Re-run effect when 'open' state changes (but timer not affected)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
