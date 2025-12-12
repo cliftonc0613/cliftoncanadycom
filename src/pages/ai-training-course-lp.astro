@@ -12,7 +12,7 @@ const courseSchema = {
   "@context": "https://schema.org",
   "@type": "Course",
   "name": "AI Training Course - Microsoft AI Certification Prep",
-  "description": "6-week professional AI training program for displaced workers in South Carolina. Get Microsoft AI-certified, learn in-demand automation skills, and secure job placement support.",
+  "description": "8-week professional AI training program for displaced workers in South Carolina. Get Microsoft AI-certified, learn in-demand automation skills, and secure job placement support.",
   "provider": {
     "@type": "Person",
     "name": "Clifton T. Canady",
@@ -23,13 +23,13 @@ const courseSchema = {
   },
   "courseMode": "blended",
   "educationalLevel": "Beginner",
-  "timeRequired": "P6W",
+  "timeRequired": "P8W",
   "inLanguage": "en-US",
   "availableLanguage": "en-US",
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": "blended",
-    "duration": "P6W",
+    "duration": "P8W",
     "location": {
       "@type": "Place",
       "name": "South Carolina",
@@ -46,18 +46,6 @@ const courseSchema = {
     "name": "Microsoft AI Certification"
   },
   "coursePrerequisites": "No tech background required. Just commitment.",
-  "offers": {
-    "@type": "Offer",
-    "price": "750",
-    "priceCurrency": "USD",
-    "description": "Early-Bird Pilot Pricing (Regular price: $2,500 after WIOA approval)",
-    "availability": "https://schema.org/LimitedAvailability",
-    "validFrom": "2025-01-01",
-    "eligibleRegion": {
-      "@type": "Place",
-      "name": "South Carolina, USA"
-    }
-  },
   "educationalCredentialAwarded": "Microsoft AI Certification",
   "teaches": [
     "AI fundamentals",
@@ -122,7 +110,7 @@ const faqSchema = {
       "name": "Do I need tech experience to take the AI training course?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No tech background required. The 6-week course is designed for displaced workers with no prior AI or technical experience. Just bring commitment to learning."
+        "text": "No tech background required. The 8-week course is designed for displaced workers with no prior AI or technical experience. Just bring commitment to learning."
       }
     },
     {
@@ -135,10 +123,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "How much does the AI training course cost?",
+      "name": "How soon can I start the AI training course?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Early-bird pilot pricing is $750 for the first 15 participants. Regular pricing will be $2,500 after WIOA approval."
+        "text": "The pilot course is coming soon. Only 15 spots available for the first cohort. Reserve your spot now to secure your place."
       }
     },
     {
@@ -165,12 +153,12 @@ const structuredData = [courseSchema, organizationSchema, faqSchema];
 
 <Layout
   title="AI Training Course | Microsoft AI Certification Prep - South Carolina"
-  description="6-week AI training for displaced workers in SC. Get Microsoft AI-certified, learn automation skills, job placement support. $750 early-bird pricing. No tech background needed."
+  description="8-week AI training for displaced workers in SC. Get Microsoft AI-certified, learn automation skills, job placement support. No tech background needed."
   ogImage="/images/ai-training-hero.jpg"
   ogImageAlt="AI Training Course - Microsoft AI Certification Prep for South Carolina Workers"
   noindex={true}
-  twitterTitle="AI Training Course | Get Microsoft AI-Certified in 6 Weeks"
-  twitterDescription="From laid off to AI-ready. No tech background needed. $750 early-bird pricing for SC displaced workers. Microsoft certification + job placement."
+  twitterTitle="AI Training Course | Get Microsoft AI-Certified in 8 Weeks"
+  twitterDescription="From laid off to AI-ready. No tech background needed. Microsoft certification + job placement. Limited spots for first cohort."
   geoRegion="US-SC"
   geoPlacename="South Carolina"
   geoPosition="34.0007;-81.0348"
@@ -208,7 +196,7 @@ const structuredData = [courseSchema, organizationSchema, faqSchema];
 
           <!-- Main Headline -->
           <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            From Laid Off to AI-Ready in 6 Weeks
+            From Laid Off to AI-Ready in 8 Weeks
           </h1>
 
           <!-- Subheadline -->
@@ -229,7 +217,7 @@ const structuredData = [courseSchema, organizationSchema, faqSchema];
       <div class="container mx-auto px-4">
         <div class="text-center">
           <p class="text-2xl font-bold text-white">
-            Only 15 spots available - Pilot course coming soon - Early-bird pricing limited time only
+            Only 15 spots available for the first cohort - Pilot course coming soon
           </p>
         </div>
       </div>
@@ -330,7 +318,7 @@ const structuredData = [courseSchema, organizationSchema, faqSchema];
                   <span class="step-number font-black text-white drop-shadow-lg">2</span>
                 </div>
               </div>
-              <h3 class="text-xl font-bold mb-4 text-primary">Train (6 Weeks)</h3>
+              <h3 class="text-xl font-bold mb-4 text-primary">Train (8 Weeks)</h3>
               <p class="text-gray-600 leading-relaxed">
                 Hybrid training. Learn AI fundamentals, prompt engineering, and AI tools. Pass your certification exam.
               </p>
@@ -378,11 +366,10 @@ const structuredData = [courseSchema, organizationSchema, faqSchema];
               </div>
             </div>
 
-            <!-- Pricing -->
-            <div class="text-center mt-8 p-6 bg-accent/10 rounded-lg">
-              <p class="text-lg text-gray-700 mb-2">Early-Bird Pilot Pricing:</p>
-              <p class="text-5xl font-bold text-accent mb-2">$750</p>
-              <p class="text-sm text-gray-600">(Regular price: $2,500 after WIOA approval)</p>
+            <!-- Limited Availability Notice -->
+            <div class="text-center mt-8 p-6 bg-accent/10 rounded-lg border-2 border-accent/30">
+              <p class="text-lg font-semibold text-primary mb-2">Only 15 Spots for First Cohort</p>
+              <p class="text-gray-700">Pilot course launching soon. Reserve your place now to secure your spot before the first cohort fills.</p>
             </div>
 
             <!-- CTA Button -->
@@ -605,17 +592,17 @@ const structuredData = [courseSchema, organizationSchema, faqSchema];
 
           <div class="bg-white/10 backdrop-blur rounded-lg p-8 mb-8">
             <div class="text-center mb-8">
-              <p class="font-bold text-accent mb-2" style="font-size: 4rem !important;">$750</p>
-              <p class="text-sm opacity-90">Early-Bird Pilot Pricing</p>
-              <p class="text-xs opacity-70">Limited to first 15 participants</p>
+              <p class="text-sm opacity-90 mb-4 uppercase tracking-wider font-semibold">Limited Availability</p>
+              <p class="text-3xl md:text-4xl font-bold text-accent mb-4">Only 15 Spots</p>
+              <p class="text-lg opacity-90">For the first cohort launching soon</p>
             </div>
 
             <AITrainingButton client:load />
 
             <!-- Scarcity Elements -->
             <div class="space-y-2 text-sm opacity-90 mt-6">
-              <p>Limited to 15 participants per course</p>
-              <p>Early-bird $750 pricing ends after first course fills</p>
+              <p>Limited to 15 participants for the pilot course</p>
+              <p>Reserve your spot now before they fill up</p>
             </div>
           </div>
 
