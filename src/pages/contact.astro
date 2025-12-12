@@ -53,10 +53,15 @@ import { Code, PenTool, Mic, Camera, Phone, ExternalLink } from 'lucide-react';
             </p>
 
             <!-- Secondary CTA -->
-            <a href="https://cliftoncanady.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-primary/10 hover:bg-primary/20 text-primary border-2 border-primary hover:border-accent px-8 py-4 rounded-lg font-semibold transition-all duration-300 group">
-              <span>Explore Portfolio</span>
-              <ExternalLink size={20} class="group-hover:translate-x-1 transition-transform" />
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="https://cliftoncanady.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-primary/10 hover:bg-primary/20 text-primary border-2 border-primary hover:border-accent px-8 py-4 rounded-lg font-semibold transition-all duration-300 group">
+                <span>Explore Portfolio</span>
+                <ExternalLink size={20} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="https://links.ctwebdesignshop.com/widget/bookings/clifton-canady" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent/90 text-white border-2 border-accent px-8 py-4 rounded-lg font-semibold transition-all duration-300 group">
+                <span>Schedule Meeting</span>
+              </a>
+            </div>
           </div>
 
           <!-- Right Side - Phone CTA -->
