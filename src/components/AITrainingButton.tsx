@@ -21,7 +21,7 @@ export default function AITrainingButton() {
         e.currentTarget.style.borderColor = '#F66733';
       }}
     >
-      Claim Your Pilot Spot
+      Reserve Your Spot
     </button>
   );
 }
