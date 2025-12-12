@@ -88,14 +88,14 @@ export default function AITrainingModalManager() {
             Express Your Interest in AI Training
           </DialogTitle>
           <DialogDescription className="text-center text-white/90">
-            Join our pilot course and get AI-certified in 6 weeks
+            Join our pilot course and get AI-certified in 8 weeks
           </DialogDescription>
         </DialogHeader>
 
         <div className="text-center mb-6">
-          <p className="text-2xl font-bold text-accent mb-2">$750</p>
-          <p className="text-sm opacity-90 text-white">Early-Bird Pilot Pricing</p>
-          <p className="text-xs opacity-70 text-white">Limited to first 15 participants</p>
+          <p className="text-sm opacity-90 text-white uppercase tracking-wider font-semibold mb-2">Limited Availability</p>
+          <p className="text-2xl md:text-3xl font-bold text-accent mb-2">Only 15 Spots</p>
+          <p className="text-sm opacity-90 text-white">For the first cohort launching soon</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -140,7 +140,8 @@ export default function AITrainingModalManager() {
         </form>
 
         <div className="space-y-2 text-sm opacity-90 text-center mt-6 text-white">
-          <p>Early-bird $750 pricing ends after first course fills</p>
+          <p>Limited to 15 participants for the pilot course</p>
+          <p>Reserve your spot now before they fill up</p>
         </div>
       </DialogContent>
     </Dialog>

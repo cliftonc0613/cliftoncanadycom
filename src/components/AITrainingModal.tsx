@@ -69,7 +69,7 @@ export default function AITrainingModal() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button className="orange-btn inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
-          Claim Your Pilot Spot
+          Reserve Your Spot
         </Button>
       </DialogTrigger>
       <DialogContent className="w-full md:w-3/4 lg:w-1/2 max-w-none bg-gradient-to-br from-primary to-primary text-primary-foreground border-none">
@@ -78,14 +78,14 @@ export default function AITrainingModal() {
             Express Your Interest in AI Training
           </DialogTitle>
           <DialogDescription className="text-center text-white/90">
-            Join our pilot course and get AI-certified in 6 weeks
+            Join our pilot course and get AI-certified in 8 weeks
           </DialogDescription>
         </DialogHeader>
 
         <div className="text-center mb-6">
-          <p className="text-2xl font-bold text-accent mb-2">$750</p>
-          <p className="text-sm opacity-90 text-white">Early-Bird Pilot Pricing</p>
-          <p className="text-xs opacity-70 text-white">Limited to first 15 participants</p>
+          <p className="text-sm opacity-90 text-white uppercase tracking-wider font-semibold mb-2">Limited Availability</p>
+          <p className="text-2xl md:text-3xl font-bold text-accent mb-2">Only 15 Spots</p>
+          <p className="text-sm opacity-90 text-white">For the first cohort launching soon</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -130,8 +130,8 @@ export default function AITrainingModal() {
         </form>
 
         <div className="space-y-2 text-sm opacity-90 text-center mt-6 text-white">
-          <p>Limited to 15 participants per course</p>
-          <p>Early-bird $750 pricing ends after first course fills</p>
+          <p>Limited to 15 participants for the pilot course</p>
+          <p>Reserve your spot now before they fill up</p>
         </div>
       </DialogContent>
     </Dialog>
