@@ -1,0 +1,165 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+
+// Get all blog posts
+const allPosts = await getCollection('blog', ({ data }) => {
+  // In production, exclude drafts. In development, include all.
+  return import.meta.env.PROD ? !data.draft : true;
+});
+
+// Sort posts by date (newest first)
+const sortedPosts = allPosts.sort((a, b) =>
+  new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+
+// Separate featured and regular posts
+const featuredPosts = sortedPosts.filter(post => post.data.featured);
+const regularPosts = sortedPosts.filter(post => !post.data.featured);
+
+// Category badge colors
+const categoryColors: Record<string, { bg: string; text: string }> = {
+  'WordPress Development': { bg: 'bg-blue-100', text: 'text-blue-900' },
+  'Content Writing': { bg: 'bg-green-100', text: 'text-green-900' },
+  'AI Training': { bg: 'bg-purple-100', text: 'text-purple-900' },
+  'Speaking': { bg: 'bg-orange-100', text: 'text-orange-900' },
+  'Photography': { bg: 'bg-pink-100', text: 'text-pink-900' },
+  'General': { bg: 'bg-gray-100', text: 'text-gray-900' }
+};
+
+// Format date
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+// Get category color
+function getCategoryColor(category: string) {
+  return categoryColors[category] || categoryColors['General'];
+}
+---
+
+<Layout title="Blog - Insights on WordPress, AI, Content & More" description="Explore articles on WordPress development, AI training, content strategy, speaking, and professional insights from Clifton T. Canady.">
+  <div class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-5xl font-bold font-[Poppins] text-foreground mb-4">
+            Insights & Articles
+          </h1>
+          <p class="text-xl text-gray-600 mb-8">
+            Thoughts on WordPress development, AI, content strategy, speaking, and professional growth
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Posts Section -->
+    {featuredPosts.length > 0 && (
+      <section class="py-16">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold font-[Poppins] text-foreground mb-12">
+            Featured Posts
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {featuredPosts.map(post => (
+              <article class="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                {post.data.image && (
+                  <div class="relative h-48 overflow-hidden">
+                    <img
+                      src={post.data.image.url}
+                      alt={post.data.image.alt}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+                <div class="p-6">
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class={`text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(post.data.category).bg} ${getCategoryColor(post.data.category).text}`}>
+                      {post.data.category}
+                    </span>
+                  </div>
+                  <h3 class="text-xl font-bold font-[Poppins] text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <a href={`/blog/${post.slug}`}>
+                      {post.data.title}
+                    </a>
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    {post.data.description}
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs text-gray-500">
+                      {formatDate(post.data.pubDate)}
+                    </span>
+                    <a href={`/blog/${post.slug}`} class="text-primary hover:text-primary/80 font-semibold text-sm transition-colors">
+                      Read More →
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- All Posts Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold font-[Poppins] text-foreground mb-12">
+          {featuredPosts.length > 0 ? 'More Articles' : 'Latest Articles'}
+        </h2>
+        {regularPosts.length > 0 ? (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {regularPosts.map(post => (
+              <article class="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                {post.data.image && (
+                  <div class="relative h-40 overflow-hidden">
+                    <img
+                      src={post.data.image.url}
+                      alt={post.data.image.alt}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+                <div class="p-5">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class={`text-xs font-semibold px-2 py-1 rounded-full ${getCategoryColor(post.data.category).bg} ${getCategoryColor(post.data.category).text}`}>
+                      {post.data.category}
+                    </span>
+                  </div>
+                  <h3 class="text-lg font-bold font-[Poppins] text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                    <a href={`/blog/${post.slug}`}>
+                      {post.data.title}
+                    </a>
+                  </h3>
+                  <p class="text-gray-600 text-xs mb-3 line-clamp-2">
+                    {post.data.description}
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs text-gray-500">
+                      {formatDate(post.data.pubDate)}
+                    </span>
+                    <a href={`/blog/${post.slug}`} class="text-primary hover:text-primary/80 font-semibold text-xs transition-colors">
+                      Read →
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-12">
+            <p class="text-gray-600 text-lg">
+              No articles published yet. Check back soon!
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
+  </div>
+</Layout>

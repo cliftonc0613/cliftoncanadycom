@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+
+// Generate static paths for all blog posts
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  return blogPosts.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// Calculate reading time (200 words per minute)
+const wordCount = post.body.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200);
+
+// Format date
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+// Category badge colors
+const categoryColors: Record<string, { bg: string; text: string }> = {
+  'WordPress Development': { bg: 'bg-blue-100', text: 'text-blue-900' },
+  'Content Writing': { bg: 'bg-green-100', text: 'text-green-900' },
+  'AI Training': { bg: 'bg-purple-100', text: 'text-purple-900' },
+  'Speaking': { bg: 'bg-orange-100', text: 'text-orange-900' },
+  'Photography': { bg: 'bg-pink-100', text: 'text-pink-900' },
+  'General': { bg: 'bg-gray-100', text: 'text-gray-900' }
+};
+
+function getCategoryColor(category: string) {
+  return categoryColors[category] || categoryColors['General'];
+}
+
+// Generate SEO-friendly title and description
+const pageTitle = `${post.data.title} | Blog`;
+const pageDescription = post.data.description;
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <article class="min-h-screen bg-white">
+    <!-- Article Hero Section -->
+    <section class="py-12 bg-gradient-to-br from-primary/5 to-accent/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <!-- Category Badge -->
+          <div class="mb-4">
+            <span class={`text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(post.data.category).bg} ${getCategoryColor(post.data.category).text}`}>
+              {post.data.category}
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="text-4xl md:text-5xl font-bold font-[Poppins] text-foreground mb-4">
+            {post.data.title}
+          </h1>
+
+          <!-- Meta Info -->
+          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-6">
+            <span>By {post.data.author}</span>
+            <span>•</span>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {formatDate(post.data.pubDate)}
+            </time>
+            <span>•</span>
+            <span>{readingTime} min read</span>
+          </div>
+
+          <!-- Featured Image -->
+          {post.data.image && (
+            <div class="rounded-lg overflow-hidden mb-8">
+              <img
+                src={post.data.image.url}
+                alt={post.data.image.alt}
+                class="w-full h-auto object-cover"
+              />
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="prose">
+            <Content />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Links -->
+    <section class="py-8 border-t border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <nav class="flex justify-between items-center">
+            <a href="/blog" class="text-primary hover:text-primary/80 font-semibold transition-colors">
+              ← Back to Blog
+            </a>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>
