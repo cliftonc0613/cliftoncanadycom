@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Star, BookOpen } from 'lucide-react';
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation.astro';
 import Footer from '@/components/Footer.astro';
@@ -57,9 +58,10 @@ function getCategoryColor(category: string) {
     <!-- Featured Posts Section -->
     {featuredPosts.length > 0 && (
       <section class="py-16 px-4" id="featured">
-        <div class="container mx-auto">
-          <h2 class="text-4xl font-black font-[Poppins] text-foreground mb-12 px-4">
-            ⭐ Featured Articles
+        <div class="container mx-auto max-w-4xl">
+          <h2 class="text-4xl font-black font-[Poppins] text-foreground mb-12 px-4 flex items-center gap-3">
+            <Star class="w-10 h-10 text-orange-500 fill-orange-500" />
+            Featured Articles
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 px-4">
             {featuredPosts.map(post => (
@@ -81,8 +83,9 @@ function getCategoryColor(category: string) {
     <!-- All Posts Section -->
     <section class={`py-16 px-4 ${featuredPosts.length > 0 ? 'bg-gray-50' : 'bg-white'}`}>
       <div class="container mx-auto">
-        <h2 class="text-4xl font-black font-[Poppins] text-foreground mb-12 px-4">
-          {featuredPosts.length > 0 ? '📚 More Articles' : '📚 Latest Articles'}
+        <h2 class="text-4xl font-black font-[Poppins] text-foreground mb-12 px-4 flex items-center gap-3">
+          <BookOpen class="w-10 h-10 text-blue-600" />
+          {featuredPosts.length > 0 ? 'More Articles' : 'Latest Articles'}
         </h2>
         {regularPosts.length > 0 ? (
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">

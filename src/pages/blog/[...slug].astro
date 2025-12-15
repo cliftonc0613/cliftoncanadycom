@@ -24,17 +24,12 @@ interface Props {
 
 const { post } = Astro.props;
 
-// Extract intro paragraph and remaining content
+// Extract content after first heading for TOC generation
 const firstHeadingIndex = post.body.indexOf('## ');
-const introMarkdown = firstHeadingIndex > 0 ? post.body.substring(0, firstHeadingIndex).trim() : '';
 const contentAfterIntro = firstHeadingIndex > 0 ? post.body.substring(firstHeadingIndex) : post.body;
 
-// Create two separate post objects for rendering
-const postIntro = { ...post, body: introMarkdown };
-const postContent = { ...post, body: contentAfterIntro };
-
-const { Content: IntroContent } = await postIntro.render();
-const { Content: MainContent } = await postContent.render();
+// Render the full content
+const { Content } = await post.render();
 
 // Calculate reading time (200 words per minute)
 const wordCount = post.body.split(/\s+/).length;
@@ -125,7 +120,7 @@ const articleSchema = {
 
   <article class="min-h-screen bg-white">
     <!-- Article Hero Section with Background Image -->
-    <section class="relative h-[550px] flex items-center justify-center text-white overflow-hidden">
+    <section class="relative min-h-[400px] flex items-center justify-center text-white overflow-hidden pt-36 md:pt-48 pb-6 md:pb-8">
       <!-- Background Image -->
       {post.data.image && (
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${post.data.image.url}');`}></div>
@@ -135,7 +130,7 @@ const articleSchema = {
       <div class="absolute inset-0 bg-gradient-to-br from-primary/85 to-accent/85"></div>
 
       <!-- Content -->
-      <div class="relative z-10 container mx-auto px-4 max-w-7xl text-center w-full pt-32">
+      <div class="relative z-10 container mx-auto px-4 max-w-7xl text-center w-full">
         <!-- Category Badge -->
         <div class="mb-4 flex justify-center">
           <span class={`text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(post.data.category).bg} ${getCategoryColor(post.data.category).text}`}>
@@ -144,18 +139,18 @@ const articleSchema = {
         </div>
 
         <!-- Title -->
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-[Poppins] text-white mb-4">
+        <h1 class="blog-title text-3xl sm:text-5xl md:text-6xl font-bold font-[Poppins] text-white mb-4">
           {post.data.title}
         </h1>
 
         <!-- Meta Info -->
-        <div class="flex flex-wrap items-center justify-center gap-4 text-sm text-blue-100 mb-6">
+        <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-blue-100 mb-6">
           <span>By {post.data.author}</span>
-          <span>•</span>
+          <span class="hidden md:inline">•</span>
           <time datetime={post.data.pubDate.toISOString()}>
             {formatDate(post.data.pubDate)}
           </time>
-          <span>•</span>
+          <span class="hidden md:inline">•</span>
           <span>{readingTime} min read</span>
         </div>
 
@@ -167,20 +162,15 @@ const articleSchema = {
     </section>
 
     <!-- Article Content -->
-    <section class="py-16">
+    <section class="py-8 md:py-16">
       <div class="container mx-auto px-4">
-        <div class="max-w-7xl mx-auto">
-          {introMarkdown && (
-            <div class="prose mb-8">
-              <IntroContent />
-            </div>
-          )}
-
-          <!-- Table of Contents (positioned after intro, before main content) -->
+        <div class="max-w-4xl mx-auto">
+          <!-- Table of Contents (positioned before main content) -->
           <TableOfContents content={contentAfterIntro} />
 
+          <!-- Full Article Content -->
           <div class="prose mt-8">
-            <MainContent />
+            <Content />
           </div>
         </div>
       </div>
@@ -189,9 +179,11 @@ const articleSchema = {
     <!-- Social Share (Bottom) -->
     <section class="py-8 bg-gray-50">
       <div class="container mx-auto px-4">
-        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <span class="text-sm font-semibold text-foreground">Share this article:</span>
-          <SocialShare url={currentUrl} title={post.data.title} />
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-center md:text-left">
+          <span class="text-xs md:text-sm font-semibold text-foreground">Share this article:</span>
+          <div class="flex justify-center md:justify-start">
+            <SocialShare url={currentUrl} title={post.data.title} />
+          </div>
         </div>
       </div>
     </section>
