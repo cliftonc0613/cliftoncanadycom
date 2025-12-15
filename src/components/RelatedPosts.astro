@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  currentPostSlug: string;
+  category: string;
+}
+
+const { currentPostSlug, category } = Astro.props;
+
+// Get all blog posts
+const allPosts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+});
+
+// Filter posts: same category, exclude current post, sort by date
+const relatedPosts = allPosts
+  .filter(post => post.data.category === category && post.slug !== currentPostSlug)
+  .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf())
+  .slice(0, 3); // Get top 3
+
+// Category badge colors
+const categoryColors: Record<string, { bg: string; text: string }> = {
+  'WordPress Development': { bg: 'bg-blue-100', text: 'text-blue-900' },
+  'Content Writing': { bg: 'bg-green-100', text: 'text-green-900' },
+  'AI Training': { bg: 'bg-purple-100', text: 'text-purple-900' },
+  'Speaking': { bg: 'bg-orange-100', text: 'text-orange-900' },
+  'Photography': { bg: 'bg-pink-100', text: 'text-pink-900' },
+  'General': { bg: 'bg-gray-100', text: 'text-gray-900' }
+};
+
+function getCategoryColor(cat: string) {
+  return categoryColors[cat] || categoryColors['General'];
+}
+
+// Format date
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+---
+
+{relatedPosts.length > 0 && (
+  <section class="py-16 border-t border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold font-[Poppins] text-foreground mb-12">
+          Related Articles
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {relatedPosts.map(post => (
+            <article class="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden h-full flex flex-col">
+              {post.data.image && (
+                <div class="relative h-40 overflow-hidden">
+                  <img
+                    src={post.data.image.url}
+                    alt={post.data.image.alt}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
+              <div class="p-5 flex flex-col flex-grow">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class={`text-xs font-semibold px-2 py-1 rounded-full ${getCategoryColor(post.data.category).bg} ${getCategoryColor(post.data.category).text}`}>
+                    {post.data.category}
+                  </span>
+                </div>
+
+                <h3 class="text-lg font-bold font-[Poppins] text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2 flex-grow">
+                  <a href={`/blog/${post.slug}`} class="hover:underline">
+                    {post.data.title}
+                  </a>
+                </h3>
+
+                <p class="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">
+                  {post.data.description}
+                </p>
+
+                <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <span class="text-xs text-gray-500">
+                    {formatDate(post.data.pubDate)}
+                  </span>
+                  <a href={`/blog/${post.slug}`} class="text-primary hover:text-primary/80 font-semibold text-xs transition-colors">
+                    Read →
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+)}

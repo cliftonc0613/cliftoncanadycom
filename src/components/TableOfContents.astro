@@ -1,0 +1,78 @@
+---
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+
+// Extract H2 and H3 headings from the markdown content
+// This regex looks for markdown heading syntax (## and ###)
+const headingRegex = /^(#{2,3})\s+(.+)$/gm;
+const headings: Array<{ level: number; text: string; id: string }> = [];
+
+let match;
+while ((match = headingRegex.exec(content)) !== null) {
+  const level = match[1].length; // 2 for ##, 3 for ###
+  const text = match[2].trim();
+  // Convert heading text to URL-friendly ID (lowercase, replace spaces with hyphens)
+  const id = text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+
+  headings.push({ level, text, id });
+}
+
+// Only show TOC if there are headings
+const hasTOC = headings.length > 0;
+---
+
+{hasTOC && (
+  <div class="hidden xl:block fixed left-0 top-20 w-80 px-4 pt-8">
+    <div class="sticky top-24 max-h-[calc(100vh-6rem)] overflow-y-auto">
+      <nav class="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
+        <h3 class="text-sm font-bold font-[Poppins] text-foreground mb-4 uppercase tracking-wide">
+          On this page
+        </h3>
+        <ul class="space-y-2">
+          {headings.map(heading => (
+            <li class={heading.level === 3 ? 'ml-4' : ''}>
+              <a
+                href={`#${heading.id}`}
+                class="text-sm text-gray-600 hover:text-primary transition-colors font-[Roboto_Mono]"
+              >
+                {heading.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
+)}
+
+<style>
+  /* Smooth scroll behavior for TOC links */
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar for modern browsers while keeping functionality */
+  div::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  div::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  div::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+
+  div::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+</style>

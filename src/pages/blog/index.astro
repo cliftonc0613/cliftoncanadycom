@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
+import BlogHero from '@/components/BlogHero.astro';
+import BlogCard from '@/components/BlogCard.astro';
 
 // Get all blog posts
 const allPosts = await getCollection('blog', ({ data }) => {
@@ -43,64 +45,28 @@ function getCategoryColor(category: string) {
 ---
 
 <Layout title="Blog - Insights on WordPress, AI, Content & More" description="Explore articles on WordPress development, AI training, content strategy, speaking, and professional insights from Clifton T. Canady.">
-  <div class="min-h-screen bg-white">
-    <!-- Hero Section -->
-    <section class="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center">
-          <h1 class="text-5xl font-bold font-[Poppins] text-foreground mb-4">
-            Insights & Articles
-          </h1>
-          <p class="text-xl text-gray-600 mb-8">
-            Thoughts on WordPress development, AI, content strategy, speaking, and professional growth
-          </p>
-        </div>
-      </div>
-    </section>
+  <!-- Hero Section with new BlogHero component -->
+  <BlogHero postCount={sortedPosts.length} />
 
+  <div class="bg-white">
     <!-- Featured Posts Section -->
     {featuredPosts.length > 0 && (
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold font-[Poppins] text-foreground mb-12">
-            Featured Posts
+      <section class="py-16 px-4" id="featured">
+        <div class="container mx-auto">
+          <h2 class="text-4xl font-black font-[Poppins] text-foreground mb-12 px-4">
+            ⭐ Featured Articles
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 px-4">
             {featuredPosts.map(post => (
-              <article class="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                {post.data.image && (
-                  <div class="relative h-48 overflow-hidden">
-                    <img
-                      src={post.data.image.url}
-                      alt={post.data.image.alt}
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                )}
-                <div class="p-6">
-                  <div class="flex items-center gap-2 mb-3">
-                    <span class={`text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(post.data.category).bg} ${getCategoryColor(post.data.category).text}`}>
-                      {post.data.category}
-                    </span>
-                  </div>
-                  <h3 class="text-xl font-bold font-[Poppins] text-foreground mb-3 group-hover:text-primary transition-colors">
-                    <a href={`/blog/${post.slug}`}>
-                      {post.data.title}
-                    </a>
-                  </h3>
-                  <p class="text-gray-600 text-sm mb-4">
-                    {post.data.description}
-                  </p>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs text-gray-500">
-                      {formatDate(post.data.pubDate)}
-                    </span>
-                    <a href={`/blog/${post.slug}`} class="text-primary hover:text-primary/80 font-semibold text-sm transition-colors">
-                      Read More →
-                    </a>
-                  </div>
-                </div>
-              </article>
+              <BlogCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                category={post.data.category}
+                slug={post.slug}
+                image={post.data.image}
+                featured={true}
+              />
             ))}
           </div>
         </div>
@@ -108,57 +74,44 @@ function getCategoryColor(category: string) {
     )}
 
     <!-- All Posts Section -->
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold font-[Poppins] text-foreground mb-12">
-          {featuredPosts.length > 0 ? 'More Articles' : 'Latest Articles'}
+    <section class={`py-16 px-4 ${featuredPosts.length > 0 ? 'bg-gray-50' : 'bg-white'}`}>
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-black font-[Poppins] text-foreground mb-12 px-4">
+          {featuredPosts.length > 0 ? '📚 More Articles' : '📚 Latest Articles'}
         </h2>
         {regularPosts.length > 0 ? (
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
             {regularPosts.map(post => (
-              <article class="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                {post.data.image && (
-                  <div class="relative h-40 overflow-hidden">
-                    <img
-                      src={post.data.image.url}
-                      alt={post.data.image.alt}
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                )}
-                <div class="p-5">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class={`text-xs font-semibold px-2 py-1 rounded-full ${getCategoryColor(post.data.category).bg} ${getCategoryColor(post.data.category).text}`}>
-                      {post.data.category}
-                    </span>
-                  </div>
-                  <h3 class="text-lg font-bold font-[Poppins] text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                    <a href={`/blog/${post.slug}`}>
-                      {post.data.title}
-                    </a>
-                  </h3>
-                  <p class="text-gray-600 text-xs mb-3 line-clamp-2">
-                    {post.data.description}
-                  </p>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs text-gray-500">
-                      {formatDate(post.data.pubDate)}
-                    </span>
-                    <a href={`/blog/${post.slug}`} class="text-primary hover:text-primary/80 font-semibold text-xs transition-colors">
-                      Read →
-                    </a>
-                  </div>
-                </div>
-              </article>
+              <BlogCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                category={post.data.category}
+                slug={post.slug}
+                image={post.data.image}
+                featured={false}
+              />
             ))}
           </div>
         ) : (
-          <div class="text-center py-12">
-            <p class="text-gray-600 text-lg">
+          <div class="text-center py-16 px-4">
+            <p class="text-gray-600 text-lg font-[Roboto_Mono]">
               No articles published yet. Check back soon!
             </p>
           </div>
         )}
+      </div>
+    </section>
+
+    <!-- Newsletter CTA Section -->
+    <section class="py-16 px-4 bg-gradient-to-r from-blue-50 to-orange-50 border-t-2 border-blue-100" id="newsletter">
+      <div class="container mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-black font-[Poppins] text-foreground mb-4">
+          Never miss an update
+        </h2>
+        <p class="text-gray-600 font-[Roboto_Mono] mb-8">
+          Get new articles delivered to your inbox every Friday
+        </p>
       </div>
     </section>
   </div>

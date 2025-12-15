@@ -1,6 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
+import SocialShare from '@/components/SocialShare.astro';
+import RelatedPosts from '@/components/RelatedPosts.astro';
+import NewsletterSignup from '@/components/NewsletterSignup.astro';
+import AuthorBio from '@/components/AuthorBio.astro';
+import TableOfContents from '@/components/TableOfContents.astro';
 
 // Generate static paths for all blog posts
 export async function getStaticPaths() {
@@ -48,10 +53,16 @@ function getCategoryColor(category: string) {
 // Generate SEO-friendly title and description
 const pageTitle = `${post.data.title} | Blog`;
 const pageDescription = post.data.description;
+
+// Get current URL for social sharing
+const currentUrl = `https://cliftoncanady.com/blog/${post.slug}`;
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
   <article class="min-h-screen bg-white">
+    <!-- Table of Contents (sticky left sidebar on desktop) -->
+    <TableOfContents content={post.body} />
+
     <!-- Article Hero Section -->
     <section class="py-12 bg-gradient-to-br from-primary/5 to-accent/5">
       <div class="container mx-auto px-4">
@@ -79,6 +90,11 @@ const pageDescription = post.data.description;
             <span>{readingTime} min read</span>
           </div>
 
+          <!-- Social Share (Top) -->
+          <div class="mb-8">
+            <SocialShare url={currentUrl} title={post.data.title} />
+          </div>
+
           <!-- Featured Image -->
           {post.data.image && (
             <div class="rounded-lg overflow-hidden mb-8">
@@ -104,13 +120,36 @@ const pageDescription = post.data.description;
       </div>
     </section>
 
-    <!-- Navigation Links -->
-    <section class="py-8 border-t border-gray-200">
+    <!-- Social Share (Bottom) -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto flex items-center justify-between gap-4">
+          <span class="text-sm font-semibold text-foreground">Share this article:</span>
+          <SocialShare url={currentUrl} title={post.data.title} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <NewsletterSignup
+      title="Stay Updated"
+      description="Get weekly AI insights and updates delivered to your inbox"
+      ctaText="Subscribe Now"
+    />
+
+    <!-- Author Bio -->
+    <AuthorBio />
+
+    <!-- Related Posts -->
+    <RelatedPosts currentPostSlug={post.slug} category={post.data.category} />
+
+    <!-- Back to Blog -->
+    <section class="py-12 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto">
-          <nav class="flex justify-between items-center">
-            <a href="/blog" class="text-primary hover:text-primary/80 font-semibold transition-colors">
-              ← Back to Blog
+          <nav class="flex justify-center">
+            <a href="/blog" class="text-primary hover:text-primary/80 font-semibold transition-colors flex items-center gap-2">
+              ← Back to All Articles
             </a>
           </nav>
         </div>
