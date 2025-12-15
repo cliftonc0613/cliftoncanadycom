@@ -29,27 +29,32 @@ const hasTOC = headings.length > 0;
 ---
 
 {hasTOC && (
-  <div class="hidden xl:block fixed left-0 top-20 w-80 px-4 pt-8">
-    <div class="sticky top-24 max-h-[calc(100vh-6rem)] overflow-y-auto">
-      <nav class="bg-white rounded-lg border border-gray-200 p-4 shadow-sm">
-        <h3 class="text-sm font-bold font-[Poppins] text-foreground mb-4 uppercase tracking-wide">
-          On this page
-        </h3>
-        <ul class="space-y-2">
-          {headings.map(heading => (
-            <li class={heading.level === 3 ? 'ml-4' : ''}>
-              <a
-                href={`#${heading.id}`}
-                class="text-sm text-gray-600 hover:text-primary transition-colors font-[Roboto_Mono]"
-              >
-                {heading.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
-  </div>
+  <nav class="bg-slate-900 rounded-lg p-6 my-8 border border-slate-700 shadow-lg">
+    <h3 class="text-base font-bold font-[Poppins] text-white mb-4">
+      Table Of Contents
+    </h3>
+    <ul class="space-y-2">
+      {headings.map((heading, index) => {
+        const h2Count = headings.filter((h, i) => i < index && h.level === 2).length;
+        const numberPrefix = heading.level === 2 ? `${h2Count + 1}. ` : '';
+
+        return (
+          <li class={heading.level === 3 ? 'ml-6' : ''}>
+            <a
+              href={`#${heading.id}`}
+              class={`text-sm transition-colors font-[Roboto_Mono] ${
+                heading.level === 2
+                  ? 'text-blue-300 hover:text-blue-100 font-semibold'
+                  : 'text-slate-300 hover:text-slate-100'
+              }`}
+            >
+              {numberPrefix}{heading.text}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
 )}
 
 <style>

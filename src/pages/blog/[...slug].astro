@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
+import Navigation from '@/components/Navigation.astro';
+import Footer from '@/components/Footer.astro';
 import SocialShare from '@/components/SocialShare.astro';
 import RelatedPosts from '@/components/RelatedPosts.astro';
 import NewsletterSignup from '@/components/NewsletterSignup.astro';
@@ -21,7 +23,18 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+
+// Extract intro paragraph and remaining content
+const firstHeadingIndex = post.body.indexOf('## ');
+const introMarkdown = firstHeadingIndex > 0 ? post.body.substring(0, firstHeadingIndex).trim() : '';
+const contentAfterIntro = firstHeadingIndex > 0 ? post.body.substring(firstHeadingIndex) : post.body;
+
+// Create two separate post objects for rendering
+const postIntro = { ...post, body: introMarkdown };
+const postContent = { ...post, body: contentAfterIntro };
+
+const { Content: IntroContent } = await postIntro.render();
+const { Content: MainContent } = await postContent.render();
 
 // Calculate reading time (200 words per minute)
 const wordCount = post.body.split(/\s+/).length;
@@ -56,55 +69,99 @@ const pageDescription = post.data.description;
 
 // Get current URL for social sharing
 const currentUrl = `https://cliftoncanady.com/blog/${post.slug}`;
+
+// Generate Article schema for SEO
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.pubDate.toISOString(),
+  "dateModified": post.data.updatedDate ? new Date(post.data.updatedDate).toISOString() : post.data.pubDate.toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": "Clifton T. Canady",
+    "url": "https://cliftoncanady.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Clifton T. Canady",
+    "url": "https://cliftoncanady.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cliftoncanady.com/images/ctc-logo.png"
+    }
+  },
+  "image": post.data.image ? {
+    "@type": "ImageObject",
+    "url": post.data.image.url,
+    "alt": post.data.image.alt,
+    "width": 1200,
+    "height": 630
+  } : undefined,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": currentUrl
+  },
+  "articleSection": post.data.category,
+  "keywords": post.data.tags?.join(", ") || post.data.category,
+  "wordCount": wordCount,
+  "articleBody": post.body
+};
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={post.data.image?.url}
+  ogImageAlt={post.data.image?.alt}
+  twitterTitle={post.data.title}
+  twitterDescription={post.data.description}
+  keywords={post.data.tags?.join(", ") || post.data.category}
+  structuredData={[articleSchema]}
+>
+  <!-- Navigation Header -->
+  <Navigation />
+
   <article class="min-h-screen bg-white">
-    <!-- Table of Contents (sticky left sidebar on desktop) -->
-    <TableOfContents content={post.body} />
+    <!-- Article Hero Section with Background Image -->
+    <section class="relative h-[550px] flex items-center justify-center text-white overflow-hidden">
+      <!-- Background Image -->
+      {post.data.image && (
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${post.data.image.url}');`}></div>
+      )}
 
-    <!-- Article Hero Section -->
-    <section class="py-12 bg-gradient-to-br from-primary/5 to-accent/5">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto">
-          <!-- Category Badge -->
-          <div class="mb-4">
-            <span class={`text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(post.data.category).bg} ${getCategoryColor(post.data.category).text}`}>
-              {post.data.category}
-            </span>
-          </div>
+      <!-- Diagonal Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/85 to-accent/85"></div>
 
-          <!-- Title -->
-          <h1 class="text-4xl md:text-5xl font-bold font-[Poppins] text-foreground mb-4">
-            {post.data.title}
-          </h1>
+      <!-- Content -->
+      <div class="relative z-10 container mx-auto px-4 max-w-7xl text-center w-full pt-32">
+        <!-- Category Badge -->
+        <div class="mb-4 flex justify-center">
+          <span class={`text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(post.data.category).bg} ${getCategoryColor(post.data.category).text}`}>
+            {post.data.category}
+          </span>
+        </div>
 
-          <!-- Meta Info -->
-          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-6">
-            <span>By {post.data.author}</span>
-            <span>•</span>
-            <time datetime={post.data.pubDate.toISOString()}>
-              {formatDate(post.data.pubDate)}
-            </time>
-            <span>•</span>
-            <span>{readingTime} min read</span>
-          </div>
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-[Poppins] text-white mb-4">
+          {post.data.title}
+        </h1>
 
-          <!-- Social Share (Top) -->
-          <div class="mb-8">
-            <SocialShare url={currentUrl} title={post.data.title} />
-          </div>
+        <!-- Meta Info -->
+        <div class="flex flex-wrap items-center justify-center gap-4 text-sm text-blue-100 mb-6">
+          <span>By {post.data.author}</span>
+          <span>•</span>
+          <time datetime={post.data.pubDate.toISOString()}>
+            {formatDate(post.data.pubDate)}
+          </time>
+          <span>•</span>
+          <span>{readingTime} min read</span>
+        </div>
 
-          <!-- Featured Image -->
-          {post.data.image && (
-            <div class="rounded-lg overflow-hidden mb-8">
-              <img
-                src={post.data.image.url}
-                alt={post.data.image.alt}
-                class="w-full h-auto object-cover"
-              />
-            </div>
-          )}
+        <!-- Social Share (Top) -->
+        <div class="mb-8 flex justify-center">
+          <SocialShare url={currentUrl} title={post.data.title} />
         </div>
       </div>
     </section>
@@ -112,9 +169,18 @@ const currentUrl = `https://cliftoncanady.com/blog/${post.slug}`;
     <!-- Article Content -->
     <section class="py-16">
       <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto">
-          <div class="prose">
-            <Content />
+        <div class="max-w-7xl mx-auto">
+          {introMarkdown && (
+            <div class="prose mb-8">
+              <IntroContent />
+            </div>
+          )}
+
+          <!-- Table of Contents (positioned after intro, before main content) -->
+          <TableOfContents content={contentAfterIntro} />
+
+          <div class="prose mt-8">
+            <MainContent />
           </div>
         </div>
       </div>
@@ -123,7 +189,7 @@ const currentUrl = `https://cliftoncanady.com/blog/${post.slug}`;
     <!-- Social Share (Bottom) -->
     <section class="py-8 bg-gray-50">
       <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto flex items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
           <span class="text-sm font-semibold text-foreground">Share this article:</span>
           <SocialShare url={currentUrl} title={post.data.title} />
         </div>
@@ -146,7 +212,7 @@ const currentUrl = `https://cliftoncanady.com/blog/${post.slug}`;
     <!-- Back to Blog -->
     <section class="py-12 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-7xl mx-auto">
           <nav class="flex justify-center">
             <a href="/blog" class="text-primary hover:text-primary/80 font-semibold transition-colors flex items-center gap-2">
               ← Back to All Articles
@@ -156,4 +222,7 @@ const currentUrl = `https://cliftoncanady.com/blog/${post.slug}`;
       </div>
     </section>
   </article>
+
+  <!-- Footer -->
+  <Footer />
 </Layout>

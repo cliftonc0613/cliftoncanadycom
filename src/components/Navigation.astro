@@ -12,6 +12,9 @@
       
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
+        <a href="/blog" class="nav-link text-white hover:text-white/80 transition-colors font-medium">
+          Blog
+        </a>
         <a href="/resume" class="nav-link text-white hover:text-white/80 transition-colors font-medium">
           My Resume CV
         </a>
@@ -66,6 +69,9 @@
             <nav class="flex flex-col space-y-6 h-full">
               <!-- Navigation Links -->
               <div class="space-y-3 flex flex-col">
+                <a href="/blog" class="text-lg font-medium text-gray-800 hover:text-orange-600 transition-colors mobile-menu-link">
+                  Blog
+                </a>
                 <a href="/resume" class="text-lg font-medium text-gray-800 hover:text-orange-600 transition-colors mobile-menu-link">
                   My Resume CV
                 </a>
@@ -148,6 +154,31 @@
 </header>
 
 <script>
+  // Function to set active navigation link based on current URL
+  function updateActiveNavLink() {
+    const currentPath = window.location.pathname;
+
+    // Get all nav links
+    const desktopNavLinks = document.querySelectorAll('.nav-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-menu-link');
+    const allNavLinks = [...desktopNavLinks, ...mobileNavLinks];
+
+    // Remove active state from all links
+    allNavLinks.forEach(link => {
+      link.classList.remove('nav-active');
+    });
+
+    // Add active state to matching link
+    allNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && currentPath.startsWith(href) && href !== '/') {
+        link.classList.add('nav-active');
+      } else if (href === '/' && currentPath === '/') {
+        link.classList.add('nav-active');
+      }
+    });
+  }
+
   // Mobile menu functionality
   document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -155,26 +186,29 @@
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-    
+
     function openMenu() {
       mobileMenu?.classList.add('menu-open');
       document.body.style.overflow = 'hidden';
     }
-    
+
     function closeMenu() {
       mobileMenu?.classList.remove('menu-open');
       document.body.style.overflow = '';
     }
-    
+
     mobileMenuButton?.addEventListener('click', openMenu);
     mobileMenuClose?.addEventListener('click', closeMenu);
     mobileMenuBackdrop?.addEventListener('click', closeMenu);
-    
+
     // Close menu when clicking on a link
     mobileMenuLinks.forEach(link => {
       link.addEventListener('click', closeMenu);
     });
-    
+
+    // Update active nav link on page load
+    updateActiveNavLink();
+
     // Add scroll detection for navigation background
     window.addEventListener('scroll', () => {
       const header = document.querySelector('#navigation');
@@ -216,9 +250,29 @@
   .headroom--not-top .nav-link {
     color: white;
   }
-  
+
   .headroom--not-top .nav-link:hover {
     color: #F66733;
+  }
+
+  /* Active navigation link styling */
+  .nav-link.nav-active {
+    color: #F66733;
+    border-bottom: 3px solid #F66733;
+    padding-bottom: 2px;
+  }
+
+  .nav-link.nav-active:hover {
+    color: #F59E0B;
+  }
+
+  .mobile-menu-link.nav-active {
+    color: #F66733;
+    font-weight: 600;
+  }
+
+  .mobile-menu-link.nav-active:hover {
+    color: #F59E0B;
   }
   
   .headroom--not-top #mobile-menu-button {
