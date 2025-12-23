@@ -1,0 +1,129 @@
+---
+import { getCollection } from 'astro:content';
+import { Star, BookOpen } from 'lucide-react';
+import Layout from '@/layouts/Layout.astro';
+import Navigation from '@/components/Navigation.astro';
+import Footer from '@/components/Footer.astro';
+import BlogHero from '@/components/BlogHero.astro';
+import BlogCard from '@/components/BlogCard.astro';
+
+// Get all blog posts
+const allPosts = await getCollection('blog', ({ data }) => {
+  // In production, exclude drafts. In development, include all.
+  return import.meta.env.PROD ? !data.draft : true;
+});
+
+// Sort posts by date (newest first)
+const sortedPosts = allPosts.sort((a, b) =>
+  new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+
+// Separate featured and regular posts
+const featuredPosts = sortedPosts.filter(post => post.data.featured);
+const regularPosts = sortedPosts.filter(post => !post.data.featured);
+
+// Category badge colors
+const categoryColors: Record<string, { bg: string; text: string }> = {
+  'WordPress Development': { bg: 'bg-blue-100', text: 'text-blue-900' },
+  'Content Writing': { bg: 'bg-green-100', text: 'text-green-900' },
+  'AI Training': { bg: 'bg-purple-100', text: 'text-purple-900' },
+  'Speaking': { bg: 'bg-orange-100', text: 'text-orange-900' },
+  'Photography': { bg: 'bg-pink-100', text: 'text-pink-900' },
+  'General': { bg: 'bg-gray-100', text: 'text-gray-900' }
+};
+
+// Format date
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+// Get category color
+function getCategoryColor(category: string) {
+  return categoryColors[category] || categoryColors['General'];
+}
+---
+
+<Layout title="Blog - Insights on WordPress, AI, Content & More" description="Explore articles on WordPress development, AI training, content strategy, speaking, and professional insights from Clifton T. Canady.">
+  <!-- Navigation Header -->
+  <Navigation />
+
+  <!-- Hero Section with new BlogHero component -->
+  <BlogHero postCount={sortedPosts.length} />
+
+  <div class="bg-white">
+    <!-- Featured Posts Section -->
+    {featuredPosts.length > 0 && (
+      <section class="py-16 px-4" id="featured">
+        <div class="container mx-auto max-w-4xl">
+          <h2 class="text-4xl font-black font-[Poppins] text-foreground mb-12 px-4 flex items-center gap-3">
+            <Star class="w-10 h-10 text-orange-500 fill-orange-500" />
+            Featured Articles
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 px-4">
+            {featuredPosts.map(post => (
+              <BlogCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                category={post.data.category}
+                slug={post.slug}
+                image={post.data.image}
+                featured={true}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- All Posts Section -->
+    <section class={`py-16 px-4 ${featuredPosts.length > 0 ? 'bg-gray-50' : 'bg-white'}`}>
+      <div class="container mx-auto">
+        <h2 class="text-4xl font-black font-[Poppins] text-foreground mb-12 px-4 flex items-center gap-3">
+          <BookOpen class="w-10 h-10 text-blue-600" />
+          {featuredPosts.length > 0 ? 'More Articles' : 'Latest Articles'}
+        </h2>
+        {regularPosts.length > 0 ? (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+            {regularPosts.map(post => (
+              <BlogCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                category={post.data.category}
+                slug={post.slug}
+                image={post.data.image}
+                featured={false}
+              />
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-16 px-4">
+            <p class="text-gray-600 text-lg font-[Roboto_Mono]">
+              No articles published yet. Check back soon!
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Newsletter CTA Section -->
+    <section class="py-16 px-4 bg-gradient-to-r from-blue-50 to-orange-50 border-t-2 border-blue-100" id="newsletter">
+      <div class="container mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-black font-[Poppins] text-foreground mb-4">
+          Never miss an update
+        </h2>
+        <p class="text-gray-600 font-[Roboto_Mono] mb-8">
+          Get new articles delivered to your inbox every Friday
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <Footer />
+</Layout>

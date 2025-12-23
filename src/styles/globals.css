@@ -63,11 +63,11 @@
   .btn, button, [class*="btn"], [class*="button"] {
     border-radius: 5px !important;
   }
-  
+
   /* Apply 5px border radius to all buttons, inputs, and interactive elements */
-  button, 
-  input[type="button"], 
-  input[type="submit"], 
+  button,
+  input[type="button"],
+  input[type="submit"],
   input[type="reset"],
   .hire-me-btn,
   .resume-btn,
@@ -78,5 +78,98 @@
   a[class*="btn"],
   a[class*="button"] {
     border-radius: 5px !important;
+  }
+
+  /* Blog prose typography styles */
+  .prose {
+    @apply max-w-none;
+  }
+
+  .prose h1 {
+    @apply text-2xl md:text-4xl font-bold font-[Poppins] mt-6 md:mt-8 mb-3 md:mb-4 text-foreground;
+  }
+
+  .prose h2 {
+    @apply text-xl md:text-3xl font-bold font-[Poppins] mt-6 md:mt-8 mb-3 md:mb-4 text-foreground;
+  }
+
+  .prose h3 {
+    @apply text-lg md:text-2xl font-bold font-[Poppins] mt-5 md:mt-6 mb-2 md:mb-3 text-foreground;
+  }
+
+  .prose h4, .prose h5, .prose h6 {
+    @apply text-base md:text-lg font-bold font-[Poppins] mt-4 mb-2 text-foreground;
+  }
+
+  .prose p {
+    @apply text-sm md:text-lg font-[Roboto_Mono] leading-relaxed mb-4 text-foreground;
+  }
+
+  .prose a {
+    @apply text-primary hover:underline transition-colors;
+  }
+
+  .prose strong {
+    @apply font-bold text-foreground;
+  }
+
+  .prose em {
+    @apply italic;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-4 ml-4 md:ml-6;
+  }
+
+  .prose li {
+    @apply mb-2 text-sm md:text-base font-[Roboto_Mono];
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-accent pl-3 md:pl-4 italic text-gray-600 my-3 md:my-4 text-sm md:text-base;
+  }
+
+  .prose code {
+    @apply bg-gray-100 px-2 py-1 rounded text-xs md:text-sm font-mono text-accent;
+  }
+
+  .prose pre {
+    @apply bg-gray-900 text-gray-100 p-3 md:p-4 rounded-lg overflow-x-auto my-3 md:my-4 text-xs md:text-sm;
+  }
+
+  .prose pre code {
+    @apply bg-transparent px-0 py-0 text-gray-100;
+  }
+
+  .prose table {
+    @apply w-full border-collapse border border-gray-300 mb-4 text-sm md:text-base;
+  }
+
+  .prose th {
+    @apply bg-gray-100 font-bold px-2 md:px-4 py-2 text-left border border-gray-300 text-xs md:text-sm;
+  }
+
+  .prose td {
+    @apply px-2 md:px-4 py-2 border border-gray-300 text-xs md:text-sm;
+  }
+
+  .prose img {
+    @apply max-w-full h-auto rounded-lg my-4;
+  }
+
+  .prose hr {
+    @apply border-t-2 border-gray-300 my-6;
+  }
+
+  /* Blog post title styles */
+  .blog-title {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  /* Blog hero title styles */
+  .blog-title-hero {
+    font-size: 4.5rem;
+    line-height: 1.5;
   }
 }

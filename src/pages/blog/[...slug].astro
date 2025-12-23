@@ -1,0 +1,220 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import Navigation from '@/components/Navigation.astro';
+import Footer from '@/components/Footer.astro';
+import SocialShare from '@/components/SocialShare.astro';
+import RelatedPosts from '@/components/RelatedPosts.astro';
+import NewsletterSignup from '@/components/NewsletterSignup.astro';
+import AuthorBio from '@/components/AuthorBio.astro';
+import TableOfContents from '@/components/TableOfContents.astro';
+
+// Generate static paths for all blog posts
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  return blogPosts.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+
+// Extract content after first heading for TOC generation
+const firstHeadingIndex = post.body.indexOf('## ');
+const contentAfterIntro = firstHeadingIndex > 0 ? post.body.substring(firstHeadingIndex) : post.body;
+
+// Render the full content
+const { Content } = await post.render();
+
+// Calculate reading time (200 words per minute)
+const wordCount = post.body.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200);
+
+// Format date
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+// Category badge colors
+const categoryColors: Record<string, { bg: string; text: string }> = {
+  'WordPress Development': { bg: 'bg-blue-100', text: 'text-blue-900' },
+  'Content Writing': { bg: 'bg-green-100', text: 'text-green-900' },
+  'AI Training': { bg: 'bg-purple-100', text: 'text-purple-900' },
+  'Speaking': { bg: 'bg-orange-100', text: 'text-orange-900' },
+  'Photography': { bg: 'bg-pink-100', text: 'text-pink-900' },
+  'General': { bg: 'bg-gray-100', text: 'text-gray-900' }
+};
+
+function getCategoryColor(category: string) {
+  return categoryColors[category] || categoryColors['General'];
+}
+
+// Generate SEO-friendly title and description
+const pageTitle = `${post.data.title} | Blog`;
+const pageDescription = post.data.description;
+
+// Get current URL for social sharing
+const currentUrl = `https://cliftoncanady.com/blog/${post.slug}`;
+
+// Generate Article schema for SEO
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.pubDate.toISOString(),
+  "dateModified": post.data.updatedDate ? new Date(post.data.updatedDate).toISOString() : post.data.pubDate.toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": "Clifton T. Canady",
+    "url": "https://cliftoncanady.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Clifton T. Canady",
+    "url": "https://cliftoncanady.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cliftoncanady.com/images/ctc-logo.png"
+    }
+  },
+  "image": post.data.image ? {
+    "@type": "ImageObject",
+    "url": post.data.image.url,
+    "alt": post.data.image.alt,
+    "width": 1200,
+    "height": 630
+  } : undefined,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": currentUrl
+  },
+  "articleSection": post.data.category,
+  "keywords": post.data.tags?.join(", ") || post.data.category,
+  "wordCount": wordCount,
+  "articleBody": post.body
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  ogImage={post.data.image?.url}
+  ogImageAlt={post.data.image?.alt}
+  twitterTitle={post.data.title}
+  twitterDescription={post.data.description}
+  keywords={post.data.tags?.join(", ") || post.data.category}
+  structuredData={[articleSchema]}
+>
+  <!-- Navigation Header -->
+  <Navigation />
+
+  <article class="min-h-screen bg-white">
+    <!-- Article Hero Section with Background Image -->
+    <section class="relative min-h-[400px] flex items-center justify-center text-white overflow-hidden pt-36 md:pt-48 pb-6 md:pb-8">
+      <!-- Background Image -->
+      {post.data.image && (
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style={`background-image: url('${post.data.image.url}');`}></div>
+      )}
+
+      <!-- Diagonal Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/85 to-accent/85"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 container mx-auto px-4 max-w-7xl text-center w-full">
+        <!-- Category Badge -->
+        <div class="mb-4 flex justify-center">
+          <span class={`text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(post.data.category).bg} ${getCategoryColor(post.data.category).text}`}>
+            {post.data.category}
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="blog-title text-3xl sm:text-5xl md:text-6xl font-bold font-[Poppins] text-white mb-4">
+          {post.data.title}
+        </h1>
+
+        <!-- Meta Info -->
+        <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-xs md:text-sm text-blue-100 mb-6">
+          <span>By {post.data.author}</span>
+          <span class="hidden md:inline">•</span>
+          <time datetime={post.data.pubDate.toISOString()}>
+            {formatDate(post.data.pubDate)}
+          </time>
+          <span class="hidden md:inline">•</span>
+          <span>{readingTime} min read</span>
+        </div>
+
+        <!-- Social Share (Top) -->
+        <div class="mb-8 flex justify-center">
+          <SocialShare url={currentUrl} title={post.data.title} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="py-8 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <!-- Table of Contents (positioned before main content) -->
+          <TableOfContents content={contentAfterIntro} />
+
+          <!-- Full Article Content -->
+          <div class="prose mt-8">
+            <Content />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Share (Bottom) -->
+    <section class="py-8 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-center md:text-left">
+          <span class="text-xs md:text-sm font-semibold text-foreground">Share this article:</span>
+          <div class="flex justify-center md:justify-start">
+            <SocialShare url={currentUrl} title={post.data.title} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <NewsletterSignup
+      title="Stay Updated"
+      description="Get weekly AI insights and updates delivered to your inbox"
+      ctaText="Subscribe Now"
+    />
+
+    <!-- Author Bio -->
+    <AuthorBio />
+
+    <!-- Related Posts -->
+    <RelatedPosts currentPostSlug={post.slug} category={post.data.category} />
+
+    <!-- Back to Blog -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto">
+          <nav class="flex justify-center">
+            <a href="/blog" class="text-primary hover:text-primary/80 font-semibold transition-colors flex items-center gap-2">
+              ← Back to All Articles
+            </a>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <!-- Footer -->
+  <Footer />
+</Layout>
