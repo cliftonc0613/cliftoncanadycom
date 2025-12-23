@@ -10,7 +10,7 @@ Multi-disciplinary digital professional specializing in:
 - **Speaking & Seminars** - Keynotes, workshops, corporate training
 - **Photography** - Corporate, events, headshots, product photography
 
-**Contact**: +1 (864) 752-8017 | https://cliftoncanady.com/
+**Contact**: 1 (864) 252-2349 | https://cliftoncanady.com/
 
 ## 🚀 Technology Stack
 
