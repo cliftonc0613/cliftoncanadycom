@@ -347,6 +347,10 @@ Your career positioning matters. Your voice matters. Your strategic thinking mat
 
 That's how you advance.
 
+## Ready to Master Strategic Career Positioning?
+
+If you're ready to position yourself for career advancement and take control of your professional trajectory, [check out our AI Training course](/ai-training). Learn how to use strategic thinking tools like Claude Code to advance your career faster and land the opportunities you're targeting.
+
 ---
 
 ## Sources & Resources
