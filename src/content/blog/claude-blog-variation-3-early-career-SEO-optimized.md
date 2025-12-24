@@ -73,7 +73,7 @@ Claude Code (my development tool) has two modes that perfectly illustrate how st
 
 **Accept Edits**: Once you approve the plan, Claude executes. Builds. Makes changes. Tactical execution.
 
-Most people skip Plan Mode and jump straight to execution. That's backward. [This strategic approach to AI](/blog/ai-as-business-tool)—thinking before executing—is the same principle that separates successful AI implementation from tool-hopping.
+Most people skip Plan Mode and jump straight to execution. That's backward. This strategic approach to AI—[thinking before executing](/blog/ai-as-business-tool)—is the same principle that separates successful AI implementation from tool-hopping.
 
 **With career advancement, it's exactly the same:**
 
