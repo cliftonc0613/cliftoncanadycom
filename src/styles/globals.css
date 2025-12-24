@@ -158,7 +158,7 @@
   }
 
   .prose thead tr th {
-    @apply bg-accent font-bold px-2 md:px-4 py-2 text-left text-white border border-white text-xs md:text-sm;
+    @apply bg-accent font-bold px-2 md:px-4 py-2 text-left text-white text-xs md:text-sm;
   }
 
   .prose th {
