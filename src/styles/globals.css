@@ -175,7 +175,7 @@
 
   /* Blog hero title styles - responsive sizes handled by Tailwind classes */
   .blog-title-hero {
-    line-height: 1.2;
+    line-height: 1.4;
   }
 
   /* Override only on larger screens to maintain design intent */
