@@ -3,7 +3,7 @@ title: "How to Position Yourself for Career Advancement Using Claude"
 description: "Learn strategic positioning for career advancement using Claude. Think strategically first, execute tactically second. Real examples for early professionals and career changers."
 pubDate: 2025-12-23
 category: "AI Training"
-tags: ["career advancement", "Claude", "Claude Code", "AI"]
+tags: ["career advancement", "claude", "claude code", "ai"]
 keywords: "Career advancement, strategic positioning, AI, Claude, professional development"
 ---
 
