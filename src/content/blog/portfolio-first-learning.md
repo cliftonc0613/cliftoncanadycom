@@ -188,3 +188,7 @@ Here's why portfolio-first learning is becoming the standard in AI education:
 ✅ **Shows decision-making**: Projects reveal how you think, problem-solve, and approach work
 
 The message is clear: employers want to see what you can build, not what certificates you have. Portfolio-first learning puts you in the position to show exactly that.
+
+## Ready to Build Your Portfolio?
+
+If you're convinced that portfolio-first learning is the path to your AI career breakthrough, it's time to take action. [Check out our AI Training course](/ai-training) to start building the professional projects that will set you apart in the job market. Learn the methodologies, build the portfolio, and land the opportunities you're after.
