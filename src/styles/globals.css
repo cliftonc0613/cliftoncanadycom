@@ -50,6 +50,9 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   * {
     @apply border-border;
   }
@@ -148,11 +151,18 @@
   }
 
   .prose table {
-    @apply w-full border-collapse border border-gray-300 mb-4 text-sm md:text-base;
+    @apply w-full border-collapse mb-4 text-sm md:text-base;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .prose thead tr th {
+    @apply bg-accent font-bold px-2 md:px-4 py-2 text-left text-white text-xs md:text-sm;
   }
 
   .prose th {
-    @apply bg-gray-100 font-bold px-2 md:px-4 py-2 text-left border border-gray-300 text-xs md:text-sm;
+    @apply font-bold px-2 md:px-4 py-2 text-left border border-gray-300 text-xs md:text-sm;
   }
 
   .prose td {
@@ -213,5 +223,30 @@
   .toc-scroll {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--primary) / 0.3) transparent;
+  }
+
+  /* Responsive table horizontal scrollbar styling */
+  .prose > table {
+    /* Custom scrollbar for WebKit browsers */
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.4) hsl(var(--muted) / 0.3);
+  }
+
+  .prose > table::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .prose > table::-webkit-scrollbar-track {
+    background: hsl(var(--muted) / 0.3);
+    border-radius: 4px;
+  }
+
+  .prose > table::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.4);
+    border-radius: 4px;
+  }
+
+  .prose > table::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.6);
   }
 }
