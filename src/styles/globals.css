@@ -50,6 +50,9 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   * {
     @apply border-border;
   }
@@ -109,6 +112,10 @@
     @apply text-primary hover:underline transition-colors;
   }
 
+  main.prose a {
+    @apply text-accent hover:underline transition-colors;
+  }
+
   .prose strong {
     @apply font-bold text-foreground;
   }
@@ -119,10 +126,12 @@
 
   .prose ul, .prose ol {
     @apply mb-4 ml-4 md:ml-6;
+    font-family: 'Roboto Mono', monospace;
   }
 
   .prose li {
-    @apply mb-2 text-sm md:text-base font-[Roboto_Mono];
+    @apply mb-2 text-sm md:text-base;
+    font-family: 'Roboto Mono', monospace;
   }
 
   .prose blockquote {
@@ -142,11 +151,18 @@
   }
 
   .prose table {
-    @apply w-full border-collapse border border-gray-300 mb-4 text-sm md:text-base;
+    @apply w-full border-collapse mb-4 text-sm md:text-base;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .prose thead tr th {
+    @apply bg-accent font-bold px-2 md:px-4 py-2 text-left text-white text-xs md:text-sm;
   }
 
   .prose th {
-    @apply bg-gray-100 font-bold px-2 md:px-4 py-2 text-left border border-gray-300 text-xs md:text-sm;
+    @apply font-bold px-2 md:px-4 py-2 text-left border border-gray-300 text-xs md:text-sm;
   }
 
   .prose td {
@@ -167,9 +183,70 @@
     line-height: 1;
   }
 
-  /* Blog hero title styles */
+  /* Blog hero title styles - responsive sizes handled by Tailwind classes */
   .blog-title-hero {
-    font-size: 4.5rem;
-    line-height: 1.5;
+    line-height: 1.4 !important;
+  }
+
+  /* Override only on larger screens to maintain design intent */
+  @media (min-width: 1536px) {
+    .blog-title-hero {
+      font-size: 4.5rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* Table of Contents links styling */
+  .toc-links {
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  /* Custom scrollbar for Table of Contents */
+  .toc-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .toc-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 3px;
+  }
+
+  .toc-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.5);
+  }
+
+  /* Firefox scrollbar */
+  .toc-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.3) transparent;
+  }
+
+  /* Responsive table horizontal scrollbar styling */
+  .prose > table {
+    /* Custom scrollbar for WebKit browsers */
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.4) hsl(var(--muted) / 0.3);
+  }
+
+  .prose > table::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .prose > table::-webkit-scrollbar-track {
+    background: hsl(var(--muted) / 0.3);
+    border-radius: 4px;
+  }
+
+  .prose > table::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.4);
+    border-radius: 4px;
+  }
+
+  .prose > table::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.6);
   }
 }
