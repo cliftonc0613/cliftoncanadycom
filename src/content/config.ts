@@ -12,6 +12,7 @@ const blogCollection = defineCollection({
       url: z.string(),
       alt: z.string()
     }).optional(),
+    slug: z.string().optional(),
     tags: z.array(z.string()).default([]),
     category: z.enum([
       'WordPress Development',
