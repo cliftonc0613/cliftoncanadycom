@@ -11,7 +11,7 @@ tags:
   - Portfolio Projects
   - Career Development
   - Hands-On Learning
-featured: true
+featured: false
 image:
   url: /images/blog/portfolio-first-learning.jpg
   alt: Building AI portfolio projects for career advancement

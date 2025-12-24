@@ -1,13 +1,20 @@
 ---
-title: "AI as a Business Tool, Not a Dependency: Building Sustainable AI Strategy"
-description: "Learn how to leverage AI as a strategic business tool without creating dependency. Build sustainable AI strategy aligned with real business goals using the Teach and Build method."
-pubDate: 2026-01-03
-category: "AI Training"
-tags: ["AI", "Business Strategy", "AI Implementation", "Digital Transformation"]
-featured: false
+title: 'AI as a Business Tool, Not a Dependency: Building Sustainable AI Strategy'
+description: >-
+  Learn how to leverage AI as a strategic business tool without creating
+  dependency. Build sustainable AI strategy aligned with real business goals
+  using the Teach and Build method.
+pubDate: 2026-01-03T00:00:00.000Z
+category: AI Training
+tags:
+  - AI
+  - Business Strategy
+  - AI Implementation
+  - Digital Transformation
+featured: true
 image:
-  url: "/images/blog/ai-business-tool.jpg"
-  alt: "Strategic AI implementation for businesses"
+  url: /images/blog/ai-business-tool.jpg
+  alt: Strategic AI implementation for businesses
 draft: false
 ---
 

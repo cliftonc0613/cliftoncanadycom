@@ -217,4 +217,32 @@
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--primary) / 0.3) transparent;
   }
+
+  /* Responsive table wrapper with horizontal scroll */
+  .table-wrapper {
+    @apply overflow-x-auto -mx-4 md:mx-0;
+  }
+
+  .table-wrapper table {
+    @apply min-w-full;
+  }
+
+  /* Custom scrollbar for tables */
+  .table-wrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .table-wrapper::-webkit-scrollbar-track {
+    background: hsl(var(--muted) / 0.3);
+    border-radius: 4px;
+  }
+
+  .table-wrapper::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.4);
+    border-radius: 4px;
+  }
+
+  .table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.6);
+  }
 }
