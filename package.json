@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "enforce-featured": "node scripts/enforce-featured.js",
+    "prebuild": "npm run enforce-featured"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -36,6 +38,8 @@
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.21",
     "baseline-browser-mapping": "^2.9.11",
+    "glob": "^13.0.0",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",
     "tailwindcss-animate": "^1.0.7"
   }
