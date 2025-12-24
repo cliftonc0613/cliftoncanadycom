@@ -180,12 +180,14 @@ Show different types of AI work:
 
 Here's why portfolio-first learning is becoming the standard in AI education:
 
-✅ **Proves real skills**: A portfolio proves you can execute, not just recite knowledge
-✅ **Builds confidence**: You know you can do the work because you've done it
-✅ **Impresses employers**: Portfolio projects are exactly what hiring managers want to see
-✅ **Teaches more**: Hands-on learning is more effective than lecture learning
-✅ **Creates faster results**: 8 weeks of focused project work > 24 weeks of theory
-✅ **Shows decision-making**: Projects reveal how you think, problem-solve, and approach work
+| Benefit | Description |
+|---------|-------------|
+| **Proves real skills** | A portfolio proves you can execute, not just recite knowledge |
+| **Builds confidence** | You know you can do the work because you've done it |
+| **Impresses employers** | Portfolio projects are exactly what hiring managers want to see |
+| **Teaches more** | Hands-on learning is more effective than lecture learning |
+| **Creates faster results** | 8 weeks of focused project work > 24 weeks of theory |
+| **Shows decision-making** | Projects reveal how you think, problem-solve, and approach work |
 
 The message is clear: employers want to see what you can build, not what certificates you have. Portfolio-first learning puts you in the position to show exactly that.
 
