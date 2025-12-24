@@ -109,7 +109,7 @@
     @apply text-primary hover:underline transition-colors;
   }
 
-  main a {
+  main.prose a {
     @apply text-accent hover:underline transition-colors;
   }
 
