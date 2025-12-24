@@ -9,7 +9,7 @@ image:
 category: "AI Training"
 tags: ["career advancement", "claude", "claude code", "ai"]
 keywords: "Career advancement, strategic positioning, AI, Claude, professional development"
-featured: true
+featured: false
 ---
 
 # How to Position Yourself for Career Advancement Using Claude

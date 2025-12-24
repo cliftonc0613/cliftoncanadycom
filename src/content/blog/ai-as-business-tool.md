@@ -4,7 +4,7 @@ description: "Learn how to leverage AI as a strategic business tool without crea
 pubDate: 2026-01-03
 category: "AI Training"
 tags: ["AI", "Business Strategy", "AI Implementation", "Digital Transformation"]
-featured: true
+featured: false
 image:
   url: "/images/blog/ai-business-tool.jpg"
   alt: "Strategic AI implementation for businesses"

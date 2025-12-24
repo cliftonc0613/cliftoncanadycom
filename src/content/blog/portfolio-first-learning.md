@@ -4,7 +4,7 @@ description: "Learn why AI portfolio projects matter more to employers than cert
 pubDate: 2026-01-10
 category: "AI Training"
 tags: ["AI Learning", "Portfolio Projects", "Career Development", "Hands-On Learning"]
-featured: false
+featured: true
 image:
   url: "/images/blog/portfolio-first-learning.jpg"
   alt: "Building AI portfolio projects for career advancement"
