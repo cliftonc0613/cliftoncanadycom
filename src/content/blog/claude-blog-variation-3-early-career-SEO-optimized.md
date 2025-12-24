@@ -41,13 +41,11 @@ They let Claude do all the thinking: the strategy, the positioning, the narrativ
 
 The opposite approach (strategic thinking about your career positioning FIRST, using Claude tactically for execution SECOND) is what separates professionals who advance quickly from those who get stuck in generic applications.
 
----
-
 ## Why Your Career Strategy Comes First (Strategic Positioning Matters)
 
 Strategic thinking about your career advancement means something specific:
 
-- **Understanding what you've actually learned and built** (not just listing job duties, but what specific results you've created)
+- **Understanding what you've actually learned and built** (not just listing job duties, but what specific results you've created)—[portfolio projects demonstrate this better than credentials alone](/blog/portfolio-first-learning)
 - **Knowing your target audience** (not writing for "a hiring manager," but THIS hiring manager at THIS company with their specific challenges)
 - **Finding YOUR competitive advantage** (what's your specific perspective, experience, or proven skill that actually solves their problem?)
 - **Being clear about your goal** (what do you want to happen after they read this? What conversation do you want to have?)
@@ -75,7 +73,7 @@ Claude Code (my development tool) has two modes that perfectly illustrate how st
 
 **Accept Edits**: Once you approve the plan, Claude executes. Builds. Makes changes. Tactical execution.
 
-Most people skip Plan Mode and jump straight to execution. That's backward.
+Most people skip Plan Mode and jump straight to execution. That's backward. [This strategic approach to AI](/blog/ai-as-business-tool)—thinking before executing—is the same principle that separates successful AI implementation from tool-hopping.
 
 **With career advancement, it's exactly the same:**
 
@@ -83,8 +81,6 @@ Most people skip Plan Mode and jump straight to execution. That's backward.
 2. **Use Claude tactically SECOND** (How do I express this positioning clearly? What language resonates? How do I make the connection obvious?)
 
 Not the other way around.
-
----
 
 ## The Three Strategic Principles for Career Advancement Writing
 
@@ -121,8 +117,6 @@ This is the career advancement secret most people miss:
 **Your strategic thinking (YOU do it)**: "What's the specific result I've created that matters to this company?"
 
 **Claude's help**: "How do I present this so they immediately see why I'm right for their challenge?"
-
----
 
 ## How Early-Career Professionals Actually Advance (Strategic Positioning + Claude)
 
@@ -224,8 +218,6 @@ Help me write a LinkedIn headline and summary that:
 
 **What Claude Does**: Helps you package your professional positioning so opportunities find you.
 
----
-
 ## The Common Mistakes Early-Career Professionals Make (And How to Avoid Them)
 
 ### Mistake 1: Letting Claude Define Your Career Value
@@ -242,8 +234,6 @@ Help me write a LinkedIn headline and summary that:
 **Problem**: It doesn't sound like you. Hiring managers and decision-makers can tell it's templated or AI-written.
 
 **Strategic Approach**: Always edit Claude's output heavily. Make sure it sounds like you and represents your actual career thinking.
-
----
 
 ## Your Strategic Career Advancement Process (Step-by-Step)
 
@@ -270,8 +260,6 @@ Here's how successful professionals use Claude to advance their careers:
 
 **Total Time**: 45 minutes of strategic career thinking + Claude's help = professional communication that actually advances your career.
 
----
-
 ## The Real Power: Claude as Your Career Communication Coach
 
 Here's what happens when you use Claude strategically for career advancement:
@@ -283,8 +271,6 @@ Here's what happens when you use Claude strategically for career advancement:
 5. **Competitive advantage** (Most people just copy Claude. You're strategic.)
 
 You're not letting Claude define your career or positioning. You're using Claude as a coach to help you communicate your career strategy clearly and persuasively.
-
----
 
 ## Why Strategic Positioning Matters for Your Career Advancement
 
@@ -302,8 +288,6 @@ If you learn now to do YOUR strategic thinking about your value and use Claude t
 
 You bring the career strategy, the lived experience, and the authentic voice. Claude brings the help communicating it clearly and persuasively.
 
----
-
 ## The Framework You're Learning
 
 This is actually the first principle of my AI Boardroom framework: strategic thinking before tactical action. I teach a complete decision-making system for professionals built on this foundation. Think strategically first, then execute tactically.
@@ -311,8 +295,6 @@ This is actually the first principle of my AI Boardroom framework: strategic thi
 When you apply it to career advancement, opportunity creation, and professional communication, your entire trajectory accelerates. The thinking becomes clear. The execution becomes sharp. The opportunities come to you.
 
 **Want a strategic decision-making framework for your career and life?** I teach the complete system in my AI Boardroom Workshop. It's the methodology behind this principle, applied to every major career decision and opportunity you'll face.
-
----
 
 ## FAQ: Common Questions About Strategic Positioning + Claude
 
@@ -331,8 +313,6 @@ A: That's actually the most important work. Do this first: Write down 3 accompli
 **Q: Can I use the same Claude output for multiple applications?**
 A: No. Each company and role is different. Your strategic thinking should change for each opportunity. Claude helps articulate THAT thinking, which will be different each time.
 
----
-
 ## Your Next Step
 
 Apply this to your next career move, whether that's a job application, outreach to a target company, or professional positioning update:
@@ -350,26 +330,3 @@ That's how you advance.
 ## Ready to Master Strategic Career Positioning?
 
 If you're ready to position yourself for career advancement and take control of your professional trajectory, [check out our AI Training course](/ai-training). Learn how to use strategic thinking tools like Claude Code to advance your career faster and land the opportunities you're targeting.
-
----
-
-## Sources & Resources
-
-Research on professional positioning, career advancement, and AI-assisted communication:
-- [How to Use Claude AI for Strategic Thinking](https://philmace.com/how-i-use-claude-ai-for-strategic-thinking-not-just-content-writing/)
-- [Best Practices for Using Claude Effectively](https://www.meetjamie.ai/blog/how-to-use-claude)
-- [AI as a Professional Writing Assistant](https://medium.com/@niall.mcnulty/ai-assisted-writing-how-to-use-claude-for-effortless-content-creation-1f2abe3c211d)
-- [Claude Best Practices for Professional Communication](https://skywork.ai/blog/claude-4-5-best-practices-creative-writing-brainstorming-ideation-2025/)
-- [Advanced Prompting Techniques with Claude](https://creatoreconomy.so/p/claude-7-advanced-ai-prompting-tips)
-- [Why Claude Excels at Professional Writing](https://www.arsturn.com/blog/why-i-ditched-gpt-4-for-claude-a-creative-writers-secret-weapon)
-
----
-
-**SEO Implementation Notes:**
-- **H1**: How to Position Yourself for Career Advancement Using Claude
-- **Primary keywords throughout**: Career advancement, strategic positioning, professional positioning, career strategy, positioning yourself
-- **LSI keywords naturally integrated**: Career change, early career, professional communication, job advancement, career positioning
-- **Internal linking opportunities**: Link to AI Boardroom Workshop page, any career strategy resources
-- **Schema markup**: Implement Article schema + FAQ schema (for the FAQ section above)
-- **Meta title**: How to Position Yourself for Career Advancement Using Claude (56 chars)
-- **Meta description**: Learn strategic positioning for career advancement using Claude. Think strategically first, execute tactically second. Real examples for early professionals and career changers. (155 chars)
