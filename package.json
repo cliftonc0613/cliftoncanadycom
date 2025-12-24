@@ -35,6 +35,7 @@
     "@playwright/test": "^1.56.1",
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.21",
+    "baseline-browser-mapping": "^2.9.11",
     "gsap": "^3.13.0",
     "tailwindcss-animate": "^1.0.7"
   }
