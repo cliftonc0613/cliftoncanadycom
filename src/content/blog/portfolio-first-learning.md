@@ -4,7 +4,7 @@ description: >-
   Learn why AI portfolio projects matter more to employers than certifications.
   See how hands-on projects build real skills and job-ready credentials that
   actually get interviews.
-pubDate: 2026-01-10T00:00:00.000Z
+pubDate: 2025-12-09T00:00:00.000Z
 category: AI Training
 tags:
   - AI Learning

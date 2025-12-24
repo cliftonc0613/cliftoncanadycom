@@ -292,20 +292,6 @@ const {
           headroom.init();
         }
       });
-      
-      // Basic smooth scrolling
-      document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const href = (e.target as HTMLAnchorElement).getAttribute('href');
-            const target = href ? document.querySelector(href) : null;
-            if (target) {
-              target.scrollIntoView({ behavior: 'smooth' });
-            }
-          });
-        });
-      });
     </script>
   </body>
 </html>
