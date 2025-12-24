@@ -118,7 +118,7 @@
   }
 
   .prose ul, .prose ol {
-    @apply mb-4 ml-4 md:ml-6;
+    @apply mb-4 ml-4 md:ml-6 font-[Roboto_Mono];
   }
 
   .prose li {
