@@ -109,6 +109,10 @@
     @apply text-primary hover:underline transition-colors;
   }
 
+  main a {
+    @apply text-accent hover:underline transition-colors;
+  }
+
   .prose strong {
     @apply font-bold text-foreground;
   }
