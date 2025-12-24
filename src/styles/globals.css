@@ -151,7 +151,7 @@
   }
 
   .prose table {
-    @apply w-full border-collapse border border-gray-300 mb-4 text-sm md:text-base;
+    @apply w-full border-collapse mb-4 text-sm md:text-base;
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
