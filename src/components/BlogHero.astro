@@ -14,13 +14,13 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative pt-40 md:pt-56 pb-24 md:pb-32 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+<section class="relative pt-16 sm:pt-24 md:pt-56 pb-12 sm:pb-20 md:pb-32 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
   <!-- Animated background elements -->
   <div class="absolute inset-0 overflow-hidden">
     <!-- Floating gradient orbs -->
-    <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-    <div class="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+    <div class="absolute -top-40 -right-40 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+    <div class="absolute -bottom-40 -left-40 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-gradient-to-br from-blue-500/20 to-transparent rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+    <div class="absolute top-1/2 left-1/2 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
 
     <!-- Grid pattern overlay -->
     <div class="absolute inset-0 opacity-10">
@@ -48,16 +48,16 @@ const {
 
       <!-- Main title with gradient -->
       <div>
-        <h1 class="blog-title-hero font-black font-[Poppins] text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-orange-300 mb-4">
+        <h1 class="blog-title-hero text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black font-[Poppins] text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-orange-300 mb-4">
           {title}
         </h1>
-        <p class="text-lg md:text-2xl text-blue-100 font-[Roboto_Mono] leading-relaxed max-w-3xl mx-auto font-light">
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 font-[Roboto_Mono] leading-relaxed max-w-3xl mx-auto font-light">
           {description}
         </p>
       </div>
 
       <!-- CTA buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-8">
         <a
           href="#featured"
           class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/50 group"
@@ -76,7 +76,7 @@ const {
       </div>
 
       <!-- Stats or quick info -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-8 text-white/60 border-t border-white/10 mt-8">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-white/60 border-t border-white/10 mt-8">
         <div class="text-center">
           <p class="text-2xl font-black text-accent font-[Poppins]">150+</p>
           <p class="text-sm font-[Roboto_Mono] text-white/50">Readers Monthly</p>

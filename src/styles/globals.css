@@ -167,9 +167,16 @@
     line-height: 1;
   }
 
-  /* Blog hero title styles */
+  /* Blog hero title styles - responsive sizes handled by Tailwind classes */
   .blog-title-hero {
-    font-size: 4.5rem;
-    line-height: 1.5;
+    line-height: 1.2;
+  }
+
+  /* Override only on larger screens to maintain design intent */
+  @media (min-width: 1536px) {
+    .blog-title-hero {
+      font-size: 4.5rem;
+      line-height: 1.5;
+    }
   }
 }
