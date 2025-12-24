@@ -109,6 +109,10 @@
     @apply text-primary hover:underline transition-colors;
   }
 
+  main.prose a {
+    @apply text-accent hover:underline transition-colors;
+  }
+
   .prose strong {
     @apply font-bold text-foreground;
   }
@@ -119,10 +123,12 @@
 
   .prose ul, .prose ol {
     @apply mb-4 ml-4 md:ml-6;
+    font-family: 'Roboto Mono', monospace;
   }
 
   .prose li {
-    @apply mb-2 text-sm md:text-base font-[Roboto_Mono];
+    @apply mb-2 text-sm md:text-base;
+    font-family: 'Roboto Mono', monospace;
   }
 
   .prose blockquote {
@@ -169,7 +175,7 @@
 
   /* Blog hero title styles - responsive sizes handled by Tailwind classes */
   .blog-title-hero {
-    line-height: 1.2;
+    line-height: 1.4 !important;
   }
 
   /* Override only on larger screens to maintain design intent */
@@ -178,5 +184,34 @@
       font-size: 4.5rem;
       line-height: 1.5;
     }
+  }
+
+  /* Table of Contents links styling */
+  .toc-links {
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  /* Custom scrollbar for Table of Contents */
+  .toc-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .toc-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 3px;
+  }
+
+  .toc-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.5);
+  }
+
+  /* Firefox scrollbar */
+  .toc-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.3) transparent;
   }
 }

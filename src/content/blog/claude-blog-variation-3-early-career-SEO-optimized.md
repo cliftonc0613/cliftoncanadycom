@@ -1,15 +1,24 @@
 ---
-title: "How to Position Yourself for Career Advancement Using Claude"
-description: "Learn strategic positioning for career advancement using Claude. Think strategically first, execute tactically second. Real examples for early professionals and career changers."
-pubDate: 2025-12-23
-slug: "career-advancement-using-claude"
+title: How to Position Yourself for Career Advancement Using Claude
+description: >-
+  Learn strategic positioning for career advancement using Claude. Think
+  strategically first, execute tactically second. Real examples for early
+  professionals and career changers.
+pubDate: 2025-12-23T00:00:00.000Z
+slug: career-advancement-using-claude
 image:
-  url: "/images/blog/career-advancement-using-claude.jpg"
-  alt: "Professional positioning for career advancement with Claude AI"
-category: "AI Training"
-tags: ["career advancement", "claude", "claude code", "ai"]
-keywords: "Career advancement, strategic positioning, AI, Claude, professional development"
-featured: true
+  url: /images/blog/career-advancement-using-claude.jpg
+  alt: Professional positioning for career advancement with Claude AI
+category: AI Training
+tags:
+  - career advancement
+  - claude
+  - claude code
+  - ai
+keywords: >-
+  Career advancement, strategic positioning, AI, Claude, professional
+  development
+featured: false
 ---
 
 # How to Position Yourself for Career Advancement Using Claude
@@ -337,6 +346,10 @@ Notice how much more effective your professional communication becomes when YOU 
 Your career positioning matters. Your voice matters. Your strategic thinking matters more than Claude's capabilities.
 
 That's how you advance.
+
+## Ready to Master Strategic Career Positioning?
+
+If you're ready to position yourself for career advancement and take control of your professional trajectory, [check out our AI Training course](/ai-training). Learn how to use strategic thinking tools like Claude Code to advance your career faster and land the opportunities you're targeting.
 
 ---
 
