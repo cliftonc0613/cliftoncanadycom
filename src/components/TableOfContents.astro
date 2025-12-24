@@ -1,83 +1,166 @@
 ---
 interface Props {
-  content: string;
+  headings: Array<{ level: number; text: string; id: string }>;
 }
 
-const { content } = Astro.props;
-
-// Extract H2 and H3 headings from the markdown content
-// This regex looks for markdown heading syntax (## and ###)
-const headingRegex = /^(#{2,3})\s+(.+)$/gm;
-const headings: Array<{ level: number; text: string; id: string }> = [];
-
-let match;
-while ((match = headingRegex.exec(content)) !== null) {
-  const level = match[1].length; // 2 for ##, 3 for ###
-  const text = match[2].trim();
-  // Convert heading text to URL-friendly ID (lowercase, replace spaces with hyphens)
-  const id = text
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-');
-
-  headings.push({ level, text, id });
-}
+const { headings } = Astro.props;
 
 // Only show TOC if there are headings
-const hasTOC = headings.length > 0;
+const hasTOC = headings && headings.length > 0;
 ---
 
 {hasTOC && (
-  <nav class="bg-slate-900 rounded-lg p-4 md:p-6 my-6 md:my-8 border border-slate-700 shadow-lg">
-    <h3 class="text-base md:text-lg font-bold font-[Poppins] text-white mb-4">
-      Table Of Contents
-    </h3>
-    <ul class="space-y-2">
-      {headings.map((heading, index) => {
-        const h2Count = headings.filter((h, i) => i < index && h.level === 2).length;
-        const numberPrefix = heading.level === 2 ? `${h2Count + 1}. ` : '';
+  <nav
+    id="toc-nav"
+    class="my-6 md:my-8 overflow-hidden bg-gradient-to-br from-primary/[0.03] to-accent/[0.03] border border-accent rounded-none"
+    aria-label="Table of Contents"
+  >
+    {/* Toggle Button */}
+    <button
+      id="toc-toggle"
+      class="flex items-center justify-between w-full p-4 md:p-6 hover:bg-primary/5 transition-colors duration-200"
+      aria-expanded="true"
+    >
+      <span class="font-[Poppins] font-bold text-primary flex items-center gap-2 text-base md:text-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        Table of Contents
+      </span>
+      <svg
+        id="toc-chevron"
+        class="w-5 h-5 text-accent transition-transform duration-300 shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </button>
 
-        return (
-          <li class={heading.level === 3 ? 'ml-6' : ''}>
-            <a
-              href={`#${heading.id}`}
-              class={`text-sm transition-colors font-[Roboto_Mono] ${
-                heading.level === 2
-                  ? 'text-blue-300 hover:text-blue-100 font-semibold'
-                  : 'text-slate-300 hover:text-slate-100'
-              }`}
-            >
-              {numberPrefix}{heading.text}
-            </a>
-          </li>
-        );
-      })}
-    </ul>
+    {/* Collapsible Content */}
+    <div
+      id="toc-content"
+      class="transition-all duration-300 ease-in-out overflow-hidden"
+      style="max-height: 500px;"
+    >
+      <div class="max-h-[250px] md:max-h-[350px] lg:max-h-[400px] overflow-y-auto px-4 md:px-6 pb-4 toc-scroll">
+        <ul class="space-y-2 toc-links">
+          {headings.map((heading, index) => {
+            const h2Count = headings.filter((h, i) => i < index && h.level === 2).length;
+            const numberPrefix = heading.level === 2 ? `${h2Count + 1}. ` : '';
+            const isH3 = heading.level === 3;
+
+            return (
+              <li class={isH3 ? 'ml-6' : ''}>
+                <a
+                  href={`#${heading.id}`}
+                  class={`text-sm transition-all duration-200 inline-block hover:translate-x-1 ${
+                    isH3
+                      ? 'text-foreground/70 hover:text-primary'
+                      : 'text-primary font-semibold hover:text-accent'
+                  }`}
+                >
+                  {numberPrefix}{heading.text}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
   </nav>
 )}
 
+<script>
+  // Handle Table of Contents toggle
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocChevron = document.getElementById('toc-chevron');
+
+  let isOpen = true;
+
+  if (tocToggle && tocContent && tocChevron) {
+    // Set initial border-bottom
+    tocToggle.style.borderBottom = '1px solid hsl(var(--accent))';
+
+    tocToggle.addEventListener('click', () => {
+      isOpen = !isOpen;
+
+      if (isOpen) {
+        tocContent.style.maxHeight = '500px';
+        tocChevron.style.transform = 'rotate(0deg)';
+        tocToggle.style.borderBottom = '1px solid hsl(var(--accent))';
+      } else {
+        tocContent.style.maxHeight = '0px';
+        tocChevron.style.transform = 'rotate(180deg)';
+        tocToggle.style.borderBottom = 'none';
+      }
+
+      tocToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Handle smooth scrolling for TOC links
+    const links = tocContent.querySelectorAll('a');
+    links.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href')?.substring(1);
+        if (targetId) {
+          const element = document.getElementById(targetId);
+          if (element) {
+            const offset = 100;
+            const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  }
+</script>
+
 <style>
+  /* Remove all border radius from TOC */
+  #toc-nav,
+  #toc-nav *,
+  #toc-toggle,
+  #toc-toggle:hover,
+  #toc-toggle:active,
+  #toc-toggle:focus {
+    border-radius: 0 !important;
+  }
+
+  /* Add orange border bottom to TOC button */
+  #toc-toggle {
+    border-bottom: 1px solid hsl(var(--accent));
+  }
+
   /* Smooth scroll behavior for TOC links */
   :global(html) {
     scroll-behavior: smooth;
   }
 
-  /* Hide scrollbar for modern browsers while keeping functionality */
-  div::-webkit-scrollbar {
+  /* Custom scrollbar for Table of Contents */
+  #toc-content .toc-scroll::-webkit-scrollbar {
     width: 6px;
   }
 
-  div::-webkit-scrollbar-track {
+  #toc-content .toc-scroll::-webkit-scrollbar-track {
     background: transparent;
   }
 
-  div::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
+  #toc-content .toc-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
     border-radius: 3px;
   }
 
-  div::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+  #toc-content .toc-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.5);
+  }
+
+  /* Firefox scrollbar */
+  #toc-content .toc-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.3) transparent;
   }
 </style>

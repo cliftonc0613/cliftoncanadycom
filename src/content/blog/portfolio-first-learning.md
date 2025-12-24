@@ -1,13 +1,20 @@
 ---
-title: "Portfolio-First Learning: Why Your AI Projects Matter More Than Certifications"
-description: "Learn why AI portfolio projects matter more to employers than certifications. See how hands-on projects build real skills and job-ready credentials that actually get interviews."
-pubDate: 2026-01-10
-category: "AI Training"
-tags: ["AI Learning", "Portfolio Projects", "Career Development", "Hands-On Learning"]
-featured: false
+title: 'Portfolio-First Learning: Why Your AI Projects Matter More Than Certifications'
+description: >-
+  Learn why AI portfolio projects matter more to employers than certifications.
+  See how hands-on projects build real skills and job-ready credentials that
+  actually get interviews.
+pubDate: 2026-01-10T00:00:00.000Z
+category: AI Training
+tags:
+  - AI Learning
+  - Portfolio Projects
+  - Career Development
+  - Hands-On Learning
+featured: true
 image:
-  url: "/images/blog/portfolio-first-learning.jpg"
-  alt: "Building AI portfolio projects for career advancement"
+  url: /images/blog/portfolio-first-learning.jpg
+  alt: Building AI portfolio projects for career advancement
 draft: false
 ---
 

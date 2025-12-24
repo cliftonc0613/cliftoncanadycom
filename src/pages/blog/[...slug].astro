@@ -28,6 +28,24 @@ const { post } = Astro.props;
 const firstHeadingIndex = post.body.indexOf('## ');
 const contentAfterIntro = firstHeadingIndex > 0 ? post.body.substring(firstHeadingIndex) : post.body;
 
+// Extract H2 and H3 headings from the markdown content
+const headingRegex = /^(#{2,3})\s+(.+)$/gm;
+const headings: Array<{ level: number; text: string; id: string }> = [];
+
+let match;
+while ((match = headingRegex.exec(contentAfterIntro)) !== null) {
+  const level = match[1].length; // 2 for ##, 3 for ###
+  const text = match[2].trim();
+  // Convert heading text to URL-friendly ID (lowercase, replace spaces with hyphens)
+  const id = text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+
+  headings.push({ level, text, id });
+}
+
 // Render the full content
 const { Content } = await post.render();
 
@@ -166,7 +184,7 @@ const articleSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <!-- Table of Contents (positioned before main content) -->
-          <TableOfContents content={contentAfterIntro} />
+          <TableOfContents headings={headings} />
 
           <!-- Full Article Content -->
           <div class="prose mt-8">

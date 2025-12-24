@@ -179,4 +179,33 @@
       line-height: 1.5;
     }
   }
+
+  /* Table of Contents links styling */
+  .toc-links {
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  /* Custom scrollbar for Table of Contents */
+  .toc-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .toc-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 3px;
+  }
+
+  .toc-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.5);
+  }
+
+  /* Firefox scrollbar */
+  .toc-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.3) transparent;
+  }
 }
