@@ -152,6 +152,14 @@
 
   .prose table {
     @apply w-full border-collapse border border-gray-300 mb-4 text-sm md:text-base;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Table wrapper for responsive scrolling */
+  .prose > table {
+    @apply -mx-4 md:mx-0 px-4 md:px-0;
   }
 
   .prose th {
@@ -218,31 +226,28 @@
     scrollbar-color: hsl(var(--primary) / 0.3) transparent;
   }
 
-  /* Responsive table wrapper with horizontal scroll */
-  .table-wrapper {
-    @apply overflow-x-auto -mx-4 md:mx-0;
+  /* Responsive table horizontal scrollbar styling */
+  .prose > table {
+    /* Custom scrollbar for WebKit browsers */
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.4) hsl(var(--muted) / 0.3);
   }
 
-  .table-wrapper table {
-    @apply min-w-full;
-  }
-
-  /* Custom scrollbar for tables */
-  .table-wrapper::-webkit-scrollbar {
+  .prose > table::-webkit-scrollbar {
     height: 8px;
   }
 
-  .table-wrapper::-webkit-scrollbar-track {
+  .prose > table::-webkit-scrollbar-track {
     background: hsl(var(--muted) / 0.3);
     border-radius: 4px;
   }
 
-  .table-wrapper::-webkit-scrollbar-thumb {
+  .prose > table::-webkit-scrollbar-thumb {
     background: hsl(var(--primary) / 0.4);
     border-radius: 4px;
   }
 
-  .table-wrapper::-webkit-scrollbar-thumb:hover {
+  .prose > table::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--accent) / 0.6);
   }
 }
