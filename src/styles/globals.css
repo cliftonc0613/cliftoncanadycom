@@ -118,11 +118,13 @@
   }
 
   .prose ul, .prose ol {
-    @apply mb-4 ml-4 md:ml-6 font-[Roboto_Mono];
+    @apply mb-4 ml-4 md:ml-6;
+    font-family: 'Roboto Mono', monospace;
   }
 
   .prose li {
-    @apply mb-2 text-sm md:text-base font-[Roboto_Mono];
+    @apply mb-2 text-sm md:text-base;
+    font-family: 'Roboto Mono', monospace;
   }
 
   .prose blockquote {
