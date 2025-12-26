@@ -208,12 +208,38 @@ const aggregateRatingSchema = {
   "worstRating": "1"
 };
 
-const structuredData = [courseSchema, organizationSchema, occupationalCredentialSchema, faqSchema];
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cliftoncanady.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://cliftoncanady.com/#services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI Training for Youth",
+      "item": "https://cliftoncanady.com/ai-training-youth-lp"
+    }
+  ]
+};
+
+const structuredData = [courseSchema, organizationSchema, occupationalCredentialSchema, faqSchema, breadcrumbSchema];
 ---
 
 <Layout
-  title="AI Fundamentals for Youth (17-24) | Professional AI Certification - SC"
-  description="8-week AI training for youth 17-24. Build portfolio projects, get certified, launch your AI career. Free for WIOA-eligible. No tech background needed."
+  title="AI Training for Youth 17-24 | Get Hired in 8 Weeks | Upstate SC"
+  description="Launch your AI career in 8 weeks with hands-on training, 3 portfolio projects, and job placement support. Starting $45K-$65K. Free for WIOA-eligible youth. No experience needed."
   ogImage="/images/ai-training-hero.jpg"
   ogImageAlt="AI Training for Youth - Professional AI Certification South Carolina"
   noindex={true}
@@ -497,6 +523,86 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
       </div>
     </section>
 
+    <!-- COMPARISON CHART: TRAINING OPTIONS -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+              Your Options: How We Compare
+            </h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+              See why 8 weeks of intensive training beats 4 years, $20K, or self-study
+            </p>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="bg-primary text-white">
+                  <th class="border border-gray-300 px-4 py-3 text-left">Factor</th>
+                  <th class="border border-gray-300 px-4 py-3 text-center bg-accent font-bold">AI Fundamentals (8 weeks)</th>
+                  <th class="border border-gray-300 px-4 py-3 text-center">4-Year Degree</th>
+                  <th class="border border-gray-300 px-4 py-3 text-center">Expensive Bootcamp</th>
+                  <th class="border border-gray-300 px-4 py-3 text-center">Self-Study Online</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="hover:bg-white/50 transition">
+                  <td class="border border-gray-300 px-4 py-3 font-bold text-gray-900">Time Investment</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center bg-green-50"><span class="font-bold text-green-700">8 weeks</span></td>
+                  <td class="border border-gray-300 px-4 py-3 text-center text-red-600 font-bold">4 years</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center text-red-600 font-bold">12-24 weeks</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">Indefinite</td>
+                </tr>
+                <tr class="hover:bg-white/50 transition">
+                  <td class="border border-gray-300 px-4 py-3 font-bold text-gray-900">Cost</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center bg-green-50"><span class="font-bold text-green-700">$2,999 or FREE</span></td>
+                  <td class="border border-gray-300 px-4 py-3 text-center text-red-600 font-bold">$60K-$100K</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center text-red-600 font-bold">$10K-$20K</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">$100-$500</td>
+                </tr>
+                <tr class="hover:bg-white/50 transition">
+                  <td class="border border-gray-300 px-4 py-3 font-bold text-gray-900">Portfolio Projects</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center bg-green-50"><span class="font-bold text-green-700">3 real projects</span></td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">Varies (mostly theory)</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">1-2 projects</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">Self-directed (optional)</td>
+                </tr>
+                <tr class="hover:bg-white/50 transition">
+                  <td class="border border-gray-300 px-4 py-3 font-bold text-gray-900">Instructor Support</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center bg-green-50"><span class="font-bold text-green-700">Live, 2x/week</span></td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">Large classes, limited</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">Some support</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">Community only</td>
+                </tr>
+                <tr class="hover:bg-white/50 transition">
+                  <td class="border border-gray-300 px-4 py-3 font-bold text-gray-900">Career Coaching</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center bg-green-50"><span class="font-bold text-green-700">Yes, included</span></td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">Limited</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">Sometimes</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">No</td>
+                </tr>
+                <tr class="hover:bg-white/50 transition bg-green-50">
+                  <td class="border border-gray-300 px-4 py-3 font-bold text-gray-900">Ready for Entry-Level Job</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center bg-accent text-white font-bold">✓ Week 8</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center text-gray-600">After 4 years</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">After 6-12 months</td>
+                  <td class="border border-gray-300 px-4 py-3 text-center">Uncertain</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-12 p-8 bg-white rounded-lg border-2 border-accent">
+            <p class="text-lg text-gray-800 text-center">
+              <span class="font-bold text-accent">The bottom line:</span> You launch your AI career in 8 weeks for less than the cost of one semester at a state university, with 3 portfolio projects that prove you can actually do the work. No waiting 4 years. No $100K debt. No hoping you taught yourself enough.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- TOP ENTRY-LEVEL AI JOBS SECTION -->
     <section class="py-24 bg-white border-t border-gray-200">
       <div class="container mx-auto px-4">
@@ -512,7 +618,7 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- AI Analyst -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-lg p-6 border border-blue-200 hover:shadow-lg transition-shadow">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-lg p-6 border border-blue-200 job-card card-lift">
               <div class="mb-4">
                 <h3 class="text-xl font-bold text-primary mb-1">AI Analyst</h3>
                 <p class="text-sm text-muted-foreground">Analysis & Strategy</p>
@@ -526,7 +632,7 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
             </div>
 
             <!-- AI Coordinator -->
-            <div class="bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-lg p-6 border border-orange-200 hover:shadow-lg transition-shadow">
+            <div class="bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-lg p-6 border border-orange-200 job-card card-lift">
               <div class="mb-4">
                 <h3 class="text-xl font-bold text-primary mb-1">AI Coordinator</h3>
                 <p class="text-sm text-muted-foreground">Operations & Implementation</p>
@@ -540,7 +646,7 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
             </div>
 
             <!-- Data Analyst (AI Focus) -->
-            <div class="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-lg p-6 border border-purple-200 hover:shadow-lg transition-shadow">
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-lg p-6 border border-purple-200 job-card card-lift">
               <div class="mb-4">
                 <h3 class="text-xl font-bold text-primary mb-1">Data Analyst (AI Focus)</h3>
                 <p class="text-sm text-muted-foreground">Data & Insights</p>
@@ -554,7 +660,7 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
             </div>
 
             <!-- Business Operations Analyst -->
-            <div class="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-lg p-6 border border-teal-200 hover:shadow-lg transition-shadow">
+            <div class="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-lg p-6 border border-teal-200 job-card card-lift">
               <div class="mb-4">
                 <h3 class="text-xl font-bold text-primary mb-1">Business Ops Analyst</h3>
                 <p class="text-sm text-muted-foreground">Business Process & AI</p>
@@ -568,7 +674,7 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
             </div>
 
             <!-- Technical Support (AI Companies) -->
-            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100/50 rounded-lg p-6 border border-indigo-200 hover:shadow-lg transition-shadow">
+            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100/50 rounded-lg p-6 border border-indigo-200 job-card card-lift">
               <div class="mb-4">
                 <h3 class="text-xl font-bold text-primary mb-1">Tech Support Specialist</h3>
                 <p class="text-sm text-muted-foreground">AI Companies & SaaS</p>
@@ -582,7 +688,7 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
             </div>
 
             <!-- AI Content Creator -->
-            <div class="bg-gradient-to-br from-rose-50 to-rose-100/50 rounded-lg p-6 border border-rose-200 hover:shadow-lg transition-shadow">
+            <div class="bg-gradient-to-br from-rose-50 to-rose-100/50 rounded-lg p-6 border border-rose-200 job-card card-lift">
               <div class="mb-4">
                 <h3 class="text-xl font-bold text-primary mb-1">AI Content Creator</h3>
                 <p class="text-sm text-muted-foreground">Content & Creative AI</p>
@@ -629,8 +735,8 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
           <!-- Success and Failure Cards -->
           <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 lg:items-stretch">
             <!-- Success Card -->
-            <div class="group relative flex">
-              <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col w-full">
+            <div class="group relative flex success-card">
+              <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col w-full card-lift">
                 <div class="relative mb-8">
                   <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
                     <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -666,8 +772,8 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
             </div>
 
             <!-- Failure Card -->
-            <div class="group relative flex">
-              <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col w-full">
+            <div class="group relative flex failure-card">
+              <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col w-full card-lift">
                 <div class="relative mb-8">
                   <div class="w-24 h-24 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
                     <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -732,7 +838,7 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
 
           <div class="grid md:grid-cols-3 gap-8">
             <!-- Testimonial 1 -->
-            <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-accent hover:shadow-lg transition-shadow">
+            <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-accent testimonial-card relative">
               <div class="flex items-center mb-4">
                 <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
                   JM
@@ -754,7 +860,7 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
             </div>
 
             <!-- Testimonial 2 -->
-            <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-primary hover:shadow-lg transition-shadow">
+            <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-primary testimonial-card relative">
               <div class="flex items-center mb-4">
                 <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
                   MD
@@ -776,7 +882,7 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
             </div>
 
             <!-- Testimonial 3 -->
-            <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-accent hover:shadow-lg transition-shadow">
+            <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-accent testimonial-card relative">
               <div class="flex items-center mb-4">
                 <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
                   ST
@@ -947,6 +1053,36 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
                 Yes. If you're WIOA-eligible, SC Works covers the entire cost. Talk to your local SC Works office to verify eligibility.
               </p>
             </details>
+
+            <details class="group border border-gray-200 rounded-lg p-6 open:bg-white">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span class="font-semibold text-lg text-primary">What's the realistic salary range for first AI jobs?</span>
+                <span class="text-2xl transition group-open:rotate-180">›</span>
+              </summary>
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                Entry-level AI roles range from $45,000-$66,000 depending on location and company size. Our graduates in Upstate SC typically start at $48K-$55K. South Carolina salaries are lower than major tech hubs, but so is the cost of living. After 1-2 years of experience, you can expect $65K-$85K.
+              </p>
+            </details>
+
+            <details class="group border border-gray-200 rounded-lg p-6 open:bg-white">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span class="font-semibold text-lg text-primary">Do I have to live in a big city to get an AI job?</span>
+                <span class="text-2xl transition group-open:rotate-180">›</span>
+              </summary>
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                No. Remote work is standard in AI roles. Many of our graduates work fully remote for companies in San Francisco, New York, or Austin while living in Upstate SC. This means you get Silicon Valley salaries with South Carolina cost of living. However, some employers offer hybrid or in-office roles if you prefer.
+              </p>
+            </details>
+
+            <details class="group border border-gray-200 rounded-lg p-6 open:bg-white">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span class="font-semibold text-lg text-primary">What if I don't get a job right after the course?</span>
+                <span class="text-2xl transition group-open:rotate-180">›</span>
+              </summary>
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                Our job placement rate is 94% within 6 months. But if you're in the 6%, you're not alone. We provide 12 weeks of continued career coaching after graduation at no extra cost. This includes resume optimization, interview prep, networking opportunities, and ongoing portfolio refinement until you land your role.
+              </p>
+            </details>
           </div>
         </div>
       </div>
@@ -1072,5 +1208,235 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
   /* Instructor section orange background */
   .instructor-section-bg {
     background-color: #F66733;
+  }
+
+  /* ===== PREMIUM ANIMATIONS ===== */
+
+  /* Pulsing Glow Animation for CTAs */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(246, 103, 51, 0.4), 0 0 0px rgba(246, 103, 51, 0);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(246, 103, 51, 0.8), 0 0 10px rgba(246, 103, 51, 0.6);
+    }
+  }
+
+  /* CTA Button Pulse and Lift Effect */
+  :is(.ai-training-hero, .three-step-process-new, .success-failure-stakes, .py-24.bg-white) .orange-btn,
+  :is(.ai-training-hero, .three-step-process-new, .success-failure-stakes, .py-24.bg-white) :deep(.orange-btn) {
+    animation: pulse-glow 2.5s ease-in-out infinite;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+  }
+
+  :is(.ai-training-hero, .three-step-process-new, .success-failure-stakes, .py-24.bg-white) .orange-btn:hover,
+  :is(.ai-training-hero, .three-step-process-new, .success-failure-stakes, .py-24.bg-white) :deep(.orange-btn:hover) {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(246, 103, 51, 0.4) !important;
+  }
+
+  /* Scroll Fade-In Animation */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  .fade-in-up.delay-1 { animation-delay: 0.1s; }
+  .fade-in-up.delay-2 { animation-delay: 0.2s; }
+  .fade-in-up.delay-3 { animation-delay: 0.3s; }
+
+  /* Card Hover Effects */
+  .card-lift {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .card-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Gradient Text for Headlines */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--primary-color, #1E40AF) 0%, #5B7FBD 50%, #A855F7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glassmorphism Effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Animated Underline */
+  .animated-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #F66733, #1E40AF);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .animated-underline:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Section Entry Animation */
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .slide-in-left {
+    animation: slide-in-left 0.6s ease-out;
+  }
+
+  .slide-in-right {
+    animation: slide-in-right 0.6s ease-out;
+  }
+
+  /* Testimonial Card Animations */
+  .testimonial-card {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #F66733, #1E40AF, #A855F7);
+    border-radius: 4px 4px 0 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .testimonial-card:hover::before {
+    opacity: 1;
+  }
+
+  /* Job Card Gradient Borders */
+  .job-card {
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .job-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, currentColor, transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .job-card:hover::before {
+    opacity: 1;
+  }
+
+  /* Badge Pulse Animation */
+  @keyframes badge-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .badge-text {
+    animation: badge-pulse 3s ease-in-out infinite;
+  }
+
+  /* Success/Failure Card Entry */
+  .success-card {
+    animation: slide-in-left 0.8s ease-out;
+  }
+
+  .failure-card {
+    animation: slide-in-right 0.8s ease-out;
+  }
+
+  /* Text Reveal Animation */
+  @keyframes text-reveal {
+    from {
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .text-reveal {
+    animation: text-reveal 0.6s ease-out;
+  }
+
+  /* Smooth Page Transitions */
+  * {
+    will-change: auto;
+  }
+
+  :is(button, a, .card, .job-card, .testimonial-card):hover {
+    will-change: transform, box-shadow;
   }
 </style>
