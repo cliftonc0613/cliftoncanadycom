@@ -6,6 +6,7 @@ import AIBoardroomHeader from '../components/AIBoardroomHeader.astro';
 import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
 import AITrainingModalManager from '../components/AITrainingModalManager';
 import AITrainingButton from '../components/AITrainingButton';
+import CurriculumDisclosure from '../components/curriculum/CurriculumDisclosure.astro';
 
 // Course Schema with Geographic Targeting
 const courseSchema = {
@@ -458,6 +459,9 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
               </p>
             </div>
           </div>
+
+          <!-- Curriculum Disclosure Section -->
+          <CurriculumDisclosure />
 
           <!-- What You'll Learn -->
           <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">

@@ -1,0 +1,81 @@
+---
+// CurriculumWeek.astro
+// Expandable week section with sessions
+// Wraps sessions in details/summary
+
+import CurriculumSession from "./CurriculumSession.astro";
+
+interface Session {
+  session: number;
+  title: string;
+  description: string;
+  badge: "hands-on" | "project-based" | "career-coaching";
+}
+
+interface Props {
+  week: number;
+  title: string;
+  sessions: Session[];
+}
+
+const { week, title, sessions } = Astro.props;
+---
+
+<details class="curriculum-week group border border-gray-200 rounded-lg p-4 cursor-pointer transition-all">
+  <summary
+    class="flex items-center justify-between cursor-pointer font-semibold text-gray-900 hover:text-primary transition-colors select-none"
+    aria-expanded="false"
+  >
+    <span class="text-lg">Week {week}: {title}</span>
+    <span class="text-2xl transition duration-300 group-open:rotate-180">›</span>
+  </summary>
+
+  <div class="mt-4 space-y-3 ml-4">
+    {sessions.map((session) => (
+      <CurriculumSession
+        week={week}
+        session={session.session}
+        title={session.title}
+        description={session.description}
+        badge={session.badge}
+      />
+    ))}
+  </div>
+</details>
+
+<style>
+  .curriculum-week {
+    transition: background-color 0.3s ease;
+  }
+
+  .curriculum-week summary {
+    transition: color 0.3s ease;
+  }
+
+  .curriculum-week summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .curriculum-week[open] {
+    background-color: rgb(249, 250, 251); /* bg-gray-50 */
+  }
+
+  .curriculum-week[open] summary {
+    color: var(--primary, #1E40AF);
+  }
+</style>
+
+<script>
+  // Update aria-expanded attribute when details element opens/closes
+  document.querySelectorAll('.curriculum-week').forEach((el) => {
+    const details = el as HTMLDetailsElement;
+    const summary = details.querySelector('summary');
+
+    details.addEventListener('toggle', () => {
+      summary?.setAttribute('aria-expanded', details.open ? 'true' : 'false');
+    });
+
+    // Set initial aria-expanded state
+    summary?.setAttribute('aria-expanded', details.open ? 'true' : 'false');
+  });
+</script>
