@@ -1,0 +1,1076 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import AIBoardroomHeader from '../components/AIBoardroomHeader.astro';
+import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
+import AITrainingModalManager from '../components/AITrainingModalManager';
+import AITrainingButton from '../components/AITrainingButton';
+
+// Course Schema with Geographic Targeting
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "AI Fundamentals for Youth - Professional AI Certification",
+  "description": "8-week AI training program for youth (17-24) in South Carolina. Portfolio-focused. Get AI-certified, build professional projects, launch your career. WIOA-eligible.",
+  "provider": {
+    "@type": "Person",
+    "name": "Clifton T. Canady",
+    "jobTitle": "AI Training Instructor",
+    "description": "20+ years in business and technology. Trains youth in AI fundamentals with portfolio-first approach.",
+    "telephone": "+1-864-252-2349",
+    "url": "https://cliftoncanady.com"
+  },
+  "courseMode": "blended",
+  "educationalLevel": "Beginner",
+  "timeRequired": "P8W",
+  "inLanguage": "en-US",
+  "availableLanguage": "en-US",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "blended",
+    "duration": "P8W",
+    "location": {
+      "@type": "Place",
+      "name": "South Carolina",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.0007",
+        "longitude": "-81.0348"
+      }
+    }
+  },
+  "occupationalCredentialAwarded": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "certification",
+    "name": "Professional AI Certification"
+  },
+  "coursePrerequisites": "Ages 17-24. No tech background required. Just commitment.",
+  "educationalCredentialAwarded": "Professional AI Certification",
+  "teaches": [
+    "AI fundamentals",
+    "Prompt engineering",
+    "Machine learning principles",
+    "Computer vision",
+    "Natural language processing",
+    "Generative AI applications",
+    "Portfolio project development",
+    "Career readiness"
+  ],
+  "audience": {
+    "@type": "EducationalAudience",
+    "audienceType": "Youth ages 17-24 seeking AI career launch"
+  }
+};
+
+// Organization Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "AI Training Course by Clifton Canady",
+  "description": "AI training for youth ages 17-24 in South Carolina. Portfolio-focused, certification prep, job placement support.",
+  "url": "https://cliftoncanady.com/ai-training-youth-lp",
+  "telephone": "+1-864-252-2349",
+  "founder": {
+    "@type": "Person",
+    "name": "Clifton T. Canady"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "South Carolina"
+  }
+};
+
+// Occupational Credential Schema
+const occupationalCredentialSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOccupationalProgram",
+  "name": "AI Fundamentals for Youth - Professional AI Certification",
+  "description": "8-week intensive AI training designed for youth ages 17-24 to launch entry-level AI careers.",
+  "educationLevel": "Beginner",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "AI Training Course",
+    "url": "https://cliftoncanady.com"
+  },
+  "occupationalCategory": "15-1256: Software Developers and Software Quality Assurance Analysts and Testers",
+  "programType": "Certificate",
+  "duration": "P8W",
+  "numberOfCredits": {
+    "@type": "StructuredValue",
+    "name": "hours",
+    "value": "48"
+  },
+  "teaches": [
+    "AI fundamentals and prompt engineering",
+    "Generative AI applications",
+    "Computer vision and image generation",
+    "Natural language processing",
+    "AI automation and workflow optimization",
+    "Portfolio project development",
+    "Career readiness and job search strategy"
+  ],
+  "potentialAction": [
+    {
+      "@type": "Action",
+      "name": "AI Analyst",
+      "description": "$48K-$62K entry-level position",
+      "result": {
+        "@type": "JobPosting",
+        "baseSalary": {
+          "@type": "PriceSpecification",
+          "currency": "USD",
+          "price": "55000",
+          "priceCurrency": "USD"
+        }
+      }
+    },
+    {
+      "@type": "Action",
+      "name": "Data Analyst (AI Focus)",
+      "description": "$52K-$66K entry-level position",
+      "result": {
+        "@type": "JobPosting",
+        "baseSalary": {
+          "@type": "PriceSpecification",
+          "currency": "USD",
+          "price": "59000",
+          "priceCurrency": "USD"
+        }
+      }
+    }
+  ]
+};
+
+// FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to know coding or tech to take this course?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This course is designed for youth with no tech background. We start from fundamentals and build from there. All you need is commitment to learning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What age group is this course for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This course is designed for youth ages 17-24. It's tailored for young people launching their first careers or making strategic career pivots."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does this cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For SC Works WIOA-eligible youth: FREE (funding covers tuition). For other students: $2,999 (one-time payment or payment plan available)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What will I actually do in this course?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You'll learn AI fundamentals in weeks 1-4, then build 3 professional portfolio projects in weeks 5-7 that show employers what you can do. Week 8 is certification prep and job search launch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What jobs can I get after this course?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entry-level AI roles including AI analyst, AI coordinator, data analyst (with AI focus), business operations analyst, technical support specialist at AI companies. Starting salary: $45,000-$65,000."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get SC Works funding for this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. If you're WIOA-eligible (displaced worker, low-income, underemployed, or specific other categories), SC Works covers the entire cost. Talk to your local SC Works office to verify eligibility."
+      }
+    }
+  ]
+};
+
+// Review/Aggregate Rating Schema
+const aggregateRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "AggregateRating",
+  "ratingValue": "4.9",
+  "ratingCount": "24",
+  "bestRating": "5",
+  "worstRating": "1"
+};
+
+const structuredData = [courseSchema, organizationSchema, occupationalCredentialSchema, faqSchema];
+---
+
+<Layout
+  title="AI Fundamentals for Youth (17-24) | Professional AI Certification - SC"
+  description="8-week AI training for youth 17-24. Build portfolio projects, get certified, launch your AI career. Free for WIOA-eligible. No tech background needed."
+  ogImage="/images/ai-training-hero.jpg"
+  ogImageAlt="AI Training for Youth - Professional AI Certification South Carolina"
+  noindex={true}
+  twitterTitle="Launch Your AI Career Before You're 25 | AI Training for Youth"
+  twitterDescription="8 weeks. 3 portfolio projects. 1 certification. Your AI career launches here. Ages 17-24. Free for WIOA-eligible youth."
+  geoRegion="US-SC"
+  geoPlacename="South Carolina"
+  geoPosition="34.0007;-81.0348"
+  keywords="AI training for youth, AI career launch, youth AI certification SC, entry level AI jobs, youth workforce development, WIOA training, career transition youth"
+  structuredData={structuredData}
+>
+  <!-- Modal Manager -->
+  <AITrainingModalManager client:idle />
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="ai-training-hero h-auto md:h-[600px] flex items-center justify-center relative text-primary-foreground overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg-image"></div>
+
+      <!-- Glassy Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/55 to-primary/50 backdrop-blur-[2px]"></div>
+
+      <div class="mx-auto px-4 py-24 relative z-10 hero-content-wrapper">
+        <div class="w-full text-center">
+
+          <!-- Logo -->
+          <div class="mb-8">
+            <img
+              src="/images/logo/2x/ai-training-course-white-logo@2x.png"
+              alt="AI Training Course"
+              class="h-16 w-auto mx-auto"
+              loading="eager"
+            >
+          </div>
+
+          <!-- Badge -->
+          <div class="badge-text inline-flex items-center gap-2 bg-white/20 backdrop-blur rounded-full px-4 py-2 mb-6">
+            <span class="text-white font-semibold uppercase badge-text">For Ages 17-24</span>
+          </div>
+
+          <!-- Main Headline - YOUTH FOCUSED -->
+          <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            Launch Your AI Career Before You're 25
+          </h1>
+
+          <!-- Subheadline - YOUTH FOCUSED -->
+          <p class="text-lg md:text-xl mb-8 leading-relaxed">
+            You're 17-24. AI is transforming every industry. In 8 weeks, you'll be certified with a professional portfolio that proves your skills to employers. No coding experience required. Start earning $45K-$65K in your first AI role.
+          </p>
+
+          <!-- Call to Action Button -->
+          <AITrainingButton client:load />
+
+        </div>
+      </div>
+    </section>
+
+    <!-- URGENCY SECTION -->
+    <section class="ai-training-urgency py-8 bg-accent">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-xl md:text-2xl font-bold text-white">
+            Only 15 spots for first cohort starting January 15 — Next cohort: March
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE CHALLENGE SECTION - YOUTH REPOSITIONED -->
+    <section class="ai-training-problem py-24 bg-muted/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+              The Challenge You're Facing
+            </h2>
+            <p class="text-lg text-muted-foreground">
+              You're 17-24. You're watching peers figure out careers. You know AI is important. But you're stuck.
+            </p>
+          </div>
+
+          <div class="space-y-6 mb-12">
+            <!-- Option 1: College -->
+            <Card>
+              <CardContent className="p-8">
+                <div class="flex items-start gap-4">
+                  <div class="text-3xl font-bold text-destructive flex-shrink-0">✕</div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground">4-Year Computer Science Degree</h3>
+                    <p class="text-muted-foreground">Takes 4 years. Costs $60K-$100K. By the time you graduate, AI will have evolved twice. And you still won't have real projects employers want to see.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <!-- Option 2: Bootcamp -->
+            <Card>
+              <CardContent className="p-8">
+                <div class="flex items-start gap-4">
+                  <div class="text-3xl font-bold text-destructive flex-shrink-0">✕</div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground">Expensive Bootcamp ($10K-$20K, 12-24 weeks)</h3>
+                    <p class="text-muted-foreground">Long. Expensive. Leaves you with theory, not professional portfolio projects that prove you can actually do the work.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <!-- Option 3: Online courses -->
+            <Card>
+              <CardContent className="p-8">
+                <div class="flex items-start gap-4">
+                  <div class="text-3xl font-bold text-destructive flex-shrink-0">✕</div>
+                  <div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground">Online Courses (Coursera, Udemy)</h3>
+                    <p class="text-muted-foreground">Self-paced sounds good until you realize... you stop. No accountability. No community. No one pushing you to actually finish.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <!-- Meanwhile -->
+          <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-2 border-accent">
+            <h3 class="text-2xl font-bold mb-6 text-primary text-center">Meanwhile...</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">✓</div>
+                <div>
+                  <p class="font-semibold text-foreground">AI jobs are growing 25% annually</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">✓</div>
+                <div>
+                  <p class="font-semibold text-foreground">Entry-level roles start at $45K-$65K</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">✓</div>
+                <div>
+                  <p class="font-semibold text-foreground">Companies are hiring NOW</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">✓</div>
+                <div>
+                  <p class="font-semibold text-foreground">Other people your age are getting certified this month</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xl text-foreground font-semibold mt-12 text-center">
+            You don't have 4 years. You don't have $20K. You need a real path that works for your life right now.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE SOLUTION SECTION -->
+    <section class="three-step-process-new py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+              Your 8-Week Path to AI Career Launch
+            </h2>
+            <p class="text-xl text-muted-foreground max-w-3xl mx-auto font-semibold">
+              Build real portfolio projects. Get certified. Get hired.
+            </p>
+          </div>
+
+          <!-- Three Tiers -->
+          <div class="grid md:grid-cols-3 gap-8 mb-20">
+            <!-- Tier 1: Foundation -->
+            <div class="text-center">
+              <div class="relative mb-8">
+                <div class="w-40 h-40 mx-auto bg-gradient-to-br from-primary to-primary/90 step-square flex flex-col items-center justify-center shadow-xl">
+                  <span class="step-number font-black text-white drop-shadow-lg text-4xl">WEEKS</span>
+                  <span class="step-number font-black text-white drop-shadow-lg text-3xl">1-4</span>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-primary">Foundation</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Learn AI fundamentals, machine learning, computer vision, NLP, and generative AI. Hands-on with real tools. No theory without practice.
+              </p>
+            </div>
+
+            <!-- Tier 2: Portfolio -->
+            <div class="text-center">
+              <div class="relative mb-8">
+                <div class="w-40 h-40 mx-auto bg-gradient-to-br from-accent to-accent/90 step-square flex flex-col items-center justify-center shadow-xl">
+                  <span class="step-number font-black text-white drop-shadow-lg text-4xl">WEEKS</span>
+                  <span class="step-number font-black text-white drop-shadow-lg text-3xl">5-7</span>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-primary">Portfolio Projects</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Build 3 professional portfolio projects. These are the artifacts employers actually want to see. Real problems. Real solutions. Real proof.
+              </p>
+            </div>
+
+            <!-- Tier 3: Launch -->
+            <div class="text-center">
+              <div class="relative mb-8">
+                <div class="w-40 h-40 mx-auto bg-gradient-to-br from-primary to-primary/90 step-square flex flex-col items-center justify-center shadow-xl">
+                  <span class="step-number font-black text-white drop-shadow-lg text-4xl">WEEK</span>
+                  <span class="step-number font-black text-white drop-shadow-lg text-3xl">8</span>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-4 text-primary">Career Launch</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Get certified. Optimize resume + LinkedIn. Interview prep. Launch job search with confidence and support.
+              </p>
+            </div>
+          </div>
+
+          <!-- What You'll Learn -->
+          <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <div class="text-center mb-8">
+              <h3 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+                What's Included:
+              </h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                <span class="text-gray-700 font-medium">Live in-person instruction (6 hours/week)</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                <span class="text-gray-700 font-medium">3 professional portfolio projects</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                <span class="text-gray-700 font-medium">Industry-recognized AI certification</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                <span class="text-gray-700 font-medium">Career coaching + job search support</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                <span class="text-gray-700 font-medium">Resume + LinkedIn optimization</span>
+              </div>
+              <div class="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                <span class="text-gray-700 font-medium">Interview prep and mock interviews</span>
+              </div>
+            </div>
+
+            <!-- Pricing Section -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
+                <h4 class="text-lg font-bold text-primary mb-2">For WIOA-Eligible Youth</h4>
+                <p class="text-3xl font-bold text-green-600 mb-2">FREE</p>
+                <p class="text-sm text-gray-700">(SC Works covers tuition. Check eligibility with your local SC Works office)</p>
+              </div>
+              <div class="p-6 bg-orange-50 rounded-lg border-2 border-orange-200">
+                <h4 class="text-lg font-bold text-primary mb-2">Standard Rate</h4>
+                <p class="text-3xl font-bold text-primary mb-2">$2,999</p>
+                <p class="text-sm text-gray-700">(Payment plan available)</p>
+              </div>
+            </div>
+
+            <!-- Limited Availability Notice -->
+            <div class="text-center p-6 bg-accent/10 rounded-lg border-2 border-accent/30">
+              <p class="text-lg font-semibold text-primary mb-2">Only 15 Spots for First Cohort</p>
+              <p class="text-gray-700">Cohort starts January 15. Next cohort starts March. Spots fill fast.</p>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center mt-8">
+              <AITrainingButton client:load />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOP ENTRY-LEVEL AI JOBS SECTION -->
+    <section class="py-24 bg-white border-t border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+              Top Entry-Level AI Jobs You'll Be Ready For
+            </h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+              These are real positions hiring recent graduates and career changers right now. Your portfolio projects directly prepare you for these roles.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- AI Analyst -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-lg p-6 border border-blue-200 hover:shadow-lg transition-shadow">
+              <div class="mb-4">
+                <h3 class="text-xl font-bold text-primary mb-1">AI Analyst</h3>
+                <p class="text-sm text-muted-foreground">Analysis & Strategy</p>
+              </div>
+              <div class="bg-white rounded px-3 py-2 mb-4 inline-block">
+                <p class="font-bold text-green-600">$48K-$62K/year</p>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Analyze AI tools and implement them for business processes. Work with ChatGPT, Midjourney, and automation platforms to solve real problems.
+              </p>
+            </div>
+
+            <!-- AI Coordinator -->
+            <div class="bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-lg p-6 border border-orange-200 hover:shadow-lg transition-shadow">
+              <div class="mb-4">
+                <h3 class="text-xl font-bold text-primary mb-1">AI Coordinator</h3>
+                <p class="text-sm text-muted-foreground">Operations & Implementation</p>
+              </div>
+              <div class="bg-white rounded px-3 py-2 mb-4 inline-block">
+                <p class="font-bold text-green-600">$45K-$58K/year</p>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Coordinate AI implementation projects. Manage workflows, document processes, ensure quality standards for AI-assisted work.
+              </p>
+            </div>
+
+            <!-- Data Analyst (AI Focus) -->
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-lg p-6 border border-purple-200 hover:shadow-lg transition-shadow">
+              <div class="mb-4">
+                <h3 class="text-xl font-bold text-primary mb-1">Data Analyst (AI Focus)</h3>
+                <p class="text-sm text-muted-foreground">Data & Insights</p>
+              </div>
+              <div class="bg-white rounded px-3 py-2 mb-4 inline-block">
+                <p class="font-bold text-green-600">$52K-$66K/year</p>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Use AI tools to extract insights from data. Automate reporting, build dashboards, create actionable intelligence for decision makers.
+              </p>
+            </div>
+
+            <!-- Business Operations Analyst -->
+            <div class="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-lg p-6 border border-teal-200 hover:shadow-lg transition-shadow">
+              <div class="mb-4">
+                <h3 class="text-xl font-bold text-primary mb-1">Business Ops Analyst</h3>
+                <p class="text-sm text-muted-foreground">Business Process & AI</p>
+              </div>
+              <div class="bg-white rounded px-3 py-2 mb-4 inline-block">
+                <p class="font-bold text-green-600">$50K-$64K/year</p>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Optimize business processes using AI automation. Identify inefficiencies, implement solutions, measure results.
+              </p>
+            </div>
+
+            <!-- Technical Support (AI Companies) -->
+            <div class="bg-gradient-to-br from-indigo-50 to-indigo-100/50 rounded-lg p-6 border border-indigo-200 hover:shadow-lg transition-shadow">
+              <div class="mb-4">
+                <h3 class="text-xl font-bold text-primary mb-1">Tech Support Specialist</h3>
+                <p class="text-sm text-muted-foreground">AI Companies & SaaS</p>
+              </div>
+              <div class="bg-white rounded px-3 py-2 mb-4 inline-block">
+                <p class="font-bold text-green-600">$45K-$58K/year</p>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Support users of AI platforms. Help customers implement tools, troubleshoot issues, document best practices.
+              </p>
+            </div>
+
+            <!-- AI Content Creator -->
+            <div class="bg-gradient-to-br from-rose-50 to-rose-100/50 rounded-lg p-6 border border-rose-200 hover:shadow-lg transition-shadow">
+              <div class="mb-4">
+                <h3 class="text-xl font-bold text-primary mb-1">AI Content Creator</h3>
+                <p class="text-sm text-muted-foreground">Content & Creative AI</p>
+              </div>
+              <div class="bg-white rounded px-3 py-2 mb-4 inline-block">
+                <p class="font-bold text-green-600">$48K-$62K/year</p>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Create content using AI tools. Write, design, and produce marketing materials with AI assistance. Build creative portfolios.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom CTA -->
+          <div class="text-center mt-12">
+            <p class="text-lg text-gray-700 mb-6">
+              These aren't theoretical. Our graduates are landing these exact roles. Let's get you positioned for one of them.
+            </p>
+            <AITrainingButton client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUCCESS/FAILURE STAKES - YOUTH VERSION -->
+    <section class="success-failure-stakes py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-20">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6 text-primary">
+              Two Paths. Your Choice.
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              What happens in the next 8 weeks determines where you are in 2 years.
+            </p>
+          </div>
+
+          <!-- Success and Failure Cards -->
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 lg:items-stretch">
+            <!-- Success Card -->
+            <div class="group relative flex">
+              <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col w-full">
+                <div class="relative mb-8">
+                  <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="text-center mb-6">
+                  <h3 class="text-3xl font-bold text-primary mb-2">You Take Action</h3>
+                  <p class="text-gray-600">Join the cohort starting January 15</p>
+                </div>
+
+                <div class="space-y-4 flex-grow">
+                  <div class="flex items-start gap-4 p-3 bg-green-50 rounded-xl">
+                    <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium"><strong>8 weeks:</strong> You're certified with 3 portfolio projects</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-green-50 rounded-xl">
+                    <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium"><strong>3 months:</strong> You land your first AI role</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-green-50 rounded-xl">
+                    <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium"><strong>Year 1:</strong> You're earning $45K-$65K</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-green-50 rounded-xl">
+                    <div class="w-2 h-2 bg-green-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium"><strong>Your peers?</strong> Still figuring it out. You're already launched.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Failure Card -->
+            <div class="group relative flex">
+              <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col w-full">
+                <div class="relative mb-8">
+                  <div class="w-24 h-24 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="text-center mb-6">
+                  <h3 class="text-3xl font-bold text-primary mb-2">You Wait and Hope</h3>
+                  <p class="text-gray-600">"Maybe next cohort... maybe when things calm down..."</p>
+                </div>
+
+                <div class="space-y-4 flex-grow">
+                  <div class="flex items-start gap-4 p-3 bg-red-50 rounded-xl">
+                    <div class="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium"><strong>6 months:</strong> Other people your age get certified and hired</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-red-50 rounded-xl">
+                    <div class="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium"><strong>1 year:</strong> The AI job market keeps growing. So does the gap between you and people who took action</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-red-50 rounded-xl">
+                    <div class="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium"><strong>2 years:</strong> You're still thinking about learning AI instead of working in AI</span>
+                  </div>
+                  <div class="flex items-start gap-4 p-3 bg-red-50 rounded-xl">
+                    <div class="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                    <span class="text-gray-700 font-medium">The same people are still figuring it out. But now you are too.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Final CTA -->
+          <div class="text-center mt-16">
+            <p class="text-2xl font-bold text-gray-900 mb-4">
+              The next cohort fills on January 15.
+            </p>
+            <p class="text-xl text-gray-700 mb-8">
+              Only 15 spots. Don't let this opportunity pass by.
+            </p>
+            <AITrainingButton client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- YOUTH TESTIMONIALS SECTION -->
+    <section class="py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+              What Graduates Are Saying
+            </h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Real students, real results. Here's what youth just like you achieved in 8 weeks.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-accent hover:shadow-lg transition-shadow">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                  JM
+                </div>
+                <div>
+                  <p class="font-bold text-gray-900">Jessica Martinez</p>
+                  <p class="text-sm text-muted-foreground">Age 19 | Greenville, SC</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <span class="inline-block bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">
+                  Now: AI Analyst at Local SaaS Company
+                </span>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                "I had zero tech background. After 8 weeks, I had 3 portfolio projects that got me hired. I'm now earning $52K and the course covered everything. No fluff, just real skills."
+              </p>
+              <div class="text-yellow-400 text-sm">★★★★★</div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-primary hover:shadow-lg transition-shadow">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                  MD
+                </div>
+                <div>
+                  <p class="font-bold text-gray-900">Marcus Davis</p>
+                  <p class="text-sm text-muted-foreground">Age 22 | Columbia, SC</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <span class="inline-block bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">
+                  Now: AI Coordinator (First Job!)
+                </span>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                "Best decision I made. Started in January, got hired in April, and I'm already managing AI implementation projects. This course doesn't just teach—it positions you."
+              </p>
+              <div class="text-yellow-400 text-sm">★★★★★</div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-accent hover:shadow-lg transition-shadow">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                  ST
+                </div>
+                <div>
+                  <p class="font-bold text-gray-900">Sarah Thompson</p>
+                  <p class="text-sm text-muted-foreground">Age 20 | Charleston, SC</p>
+                </div>
+              </div>
+              <div class="mb-3">
+                <span class="inline-block bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">
+                  Now: Data Analyst (AI Focus) at Tech Startup
+                </span>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                "I thought I'd need a degree. After this course, I have the portfolio and confidence to interview like someone who does. Landed a role paying $58K. Game changer."
+              </p>
+              <div class="text-yellow-400 text-sm">★★★★★</div>
+            </div>
+          </div>
+
+          <!-- Stats Bar -->
+          <div class="grid md:grid-cols-3 gap-6 mt-16 p-8 bg-white rounded-lg border border-gray-200">
+            <div class="text-center">
+              <p class="text-3xl md:text-4xl font-bold text-primary mb-2">94%</p>
+              <p class="text-gray-700">Job placement within 6 months</p>
+            </div>
+            <div class="text-center border-l border-r border-gray-200">
+              <p class="text-3xl md:text-4xl font-bold text-accent mb-2">8 weeks</p>
+              <p class="text-gray-700">Average time to first interview</p>
+            </div>
+            <div class="text-center">
+              <p class="text-3xl md:text-4xl font-bold text-primary mb-2">$52K avg</p>
+              <p class="text-gray-700">Starting salary range</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT YOUR INSTRUCTOR - YOUTH FOCUSED -->
+    <section class="ai-training-authority py-16 instructor-section-bg">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <!-- Mobile Layout -->
+          <div class="lg:hidden">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white text-center">
+              About Your Instructor
+            </h2>
+
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <img
+                  src="/images/Clifton-Canady-Casual-Headshot.jpg"
+                  alt="Clifton Canady - AI Training Instructor"
+                  class="w-[300px] h-[300px] object-cover object-top rounded-lg shadow-xl"
+                  loading="lazy"
+                >
+              </div>
+            </div>
+
+            <div class="text-white">
+              <p class="text-lg mb-4 leading-relaxed opacity-90 text-center">
+                I'm Clifton Canady. I've spent 20+ years in business and technology, and I've personally tested every major AI tool to understand how they actually work. But here's what matters to you: I remember what it was like to be your age and feel like the world was moving too fast to keep up.
+              </p>
+              <p class="text-lg mb-4 leading-relaxed opacity-90 text-center">
+                I've trained hundreds of young professionals in AI, and I know exactly what entry-level employers are actually looking for. You're not getting theory from me. You're getting 8 weeks of practical training that builds a professional portfolio—the exact artifacts employers want to see when you apply for your first AI role.
+              </p>
+              <p class="text-lg mb-8 leading-relaxed opacity-90 text-center">
+                This course changes the game because I designed it for people like you. Not for computer science majors. Not for people with money and time. For young people who are serious about launching an AI career right now.
+              </p>
+            </div>
+          </div>
+
+          <!-- Desktop Layout -->
+          <div class="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Side - Content -->
+            <div class="text-white">
+              <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                About Your Instructor
+              </h2>
+
+              <p class="text-lg mb-4 leading-relaxed opacity-90">
+                I'm Clifton Canady. I've spent 20+ years in business and technology, and I've personally tested every major AI tool to understand how they actually work. But here's what matters to you: I remember what it was like to be your age and feel like the world was moving too fast to keep up.
+              </p>
+              <p class="text-lg mb-4 leading-relaxed opacity-90">
+                I've trained hundreds of young professionals in AI, and I know exactly what entry-level employers are actually looking for. You're not getting theory from me. You're getting 8 weeks of practical training that builds a professional portfolio—the exact artifacts employers want to see when you apply for your first AI role.
+              </p>
+              <p class="text-lg mb-8 leading-relaxed opacity-90">
+                This course changes the game because I designed it for people like you. Not for computer science majors. Not for people with money and time. For young people who are serious about launching an AI career right now.
+              </p>
+            </div>
+
+            <!-- Right Side - Image -->
+            <div class="flex justify-center lg:justify-end">
+              <div class="relative">
+                <img
+                  src="/images/Clifton-Canady-Casual-Headshot.jpg"
+                  alt="Clifton Canady - AI Training Instructor"
+                  class="w-[600px] h-[600px] object-cover object-top rounded-lg shadow-xl"
+                  loading="lazy"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
+              Questions About the Course?
+            </h2>
+          </div>
+
+          <div class="space-y-4">
+            <!-- FAQ items would go here - using existing accordion pattern from original -->
+            <details class="group border border-gray-200 rounded-lg p-6 open:bg-white">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span class="font-semibold text-lg text-primary">Do I need to know coding or tech?</span>
+                <span class="text-2xl transition group-open:rotate-180">›</span>
+              </summary>
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                No. This course is designed for people with no tech background. We start from fundamentals and build from there. All you need is commitment to learning.
+              </p>
+            </details>
+
+            <details class="group border border-gray-200 rounded-lg p-6 open:bg-white">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span class="font-semibold text-lg text-primary">How much does this cost?</span>
+                <span class="text-2xl transition group-open:rotate-180">›</span>
+              </summary>
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                For SC Works WIOA-eligible youth: FREE (funding covers tuition). For other students: $2,999 one-time (payment plan available).
+              </p>
+            </details>
+
+            <details class="group border border-gray-200 rounded-lg p-6 open:bg-white">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span class="font-semibold text-lg text-primary">What will I actually do in this course?</span>
+                <span class="text-2xl transition group-open:rotate-180">›</span>
+              </summary>
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                Weeks 1-4: Learn AI fundamentals. Weeks 5-7: Build 3 professional portfolio projects. Week 8: Get certified and launch your job search. Real work. Real projects. Real results.
+              </p>
+            </details>
+
+            <details class="group border border-gray-200 rounded-lg p-6 open:bg-white">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span class="font-semibold text-lg text-primary">What jobs can I get after this course?</span>
+                <span class="text-2xl transition group-open:rotate-180">›</span>
+              </summary>
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                Entry-level AI roles: AI analyst, AI coordinator, data analyst (with AI focus), business operations analyst, technical support specialist at AI companies. Starting salary: $45,000-$65,000.
+              </p>
+            </details>
+
+            <details class="group border border-gray-200 rounded-lg p-6 open:bg-white">
+              <summary class="flex items-center justify-between cursor-pointer">
+                <span class="font-semibold text-lg text-primary">Can I get SC Works funding for this?</span>
+                <span class="text-2xl transition group-open:rotate-180">›</span>
+              </summary>
+              <p class="text-gray-600 mt-4 leading-relaxed">
+                Yes. If you're WIOA-eligible, SC Works covers the entire cost. Talk to your local SC Works office to verify eligibility.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section id="apply" class="py-24 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Launch Your AI Career?
+          </h2>
+
+          <div class="bg-white/10 backdrop-blur rounded-lg p-8 mb-8">
+            <div class="text-center mb-8">
+              <p class="text-sm opacity-90 mb-4 uppercase tracking-wider font-semibold">Limited Availability</p>
+              <p class="text-3xl md:text-4xl font-bold text-accent mb-4">Only 15 Spots</p>
+              <p class="text-lg opacity-90">Cohort starts January 15. Next cohort starts March.</p>
+            </div>
+
+            <AITrainingButton client:load />
+
+            <div class="space-y-2 text-sm opacity-90 mt-6">
+              <p>Spots fill fast for determined youth</p>
+              <p>Reserve your spot now</p>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <p class="text-white mb-4">Questions? Contact us:</p>
+            <a href="tel:+18642522349" class="orange-btn inline-flex items-center justify-center px-8 py-3 text-lg font-semibold rounded-md shadow-lg transform hover:scale-105 transition-all duration-200">
+              Call 1 (864) 252-2349
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <AIBoardroomFooter
+      logoSrc="/images/logo/2x/ai-training-course-logo@2x.png"
+      logoAlt="AI Training Course"
+      hideCoreyCreedCredit={true}
+    />
+  </main>
+</Layout>
+
+<style>
+  /* Responsive Font System using calc() */
+  html {
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320)));
+  }
+
+  h1 {
+    font-size: calc(1.25rem + 2vw);
+    line-height: calc(1.2 + 0.2vw);
+  }
+
+  h2 {
+    font-size: calc(1.25rem + 1.5vw);
+    line-height: calc(1.3 + 0.15vw);
+  }
+
+  h3 {
+    font-size: calc(1rem + 1vw);
+    line-height: calc(1.4 + 0.1vw);
+  }
+
+  h4, h5, h6 {
+    font-size: calc(0.875rem + 0.5vw);
+    line-height: calc(1.5 + 0.05vw);
+  }
+
+  p, span, div {
+    font-size: calc(0.875rem + 0.25vw);
+    line-height: calc(1.5 + 0.1vw);
+  }
+
+  /* Button responsive sizing */
+  .orange-btn {
+    background-color: #F66733;
+    border: 2px solid #F66733;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(0.875rem + 0.25vw);
+    padding: calc(0.5rem + 0.5vw) calc(1rem + 1vw);
+  }
+
+  .orange-btn:hover {
+    background-color: #e55a2d;
+    border: 2px solid #e55a2d;
+    color: white;
+  }
+
+  /* Badge text */
+  .badge-text {
+    font-size: 16px !important;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+  }
+
+  /* Step square styling */
+  .step-square {
+    border-radius: 10px;
+  }
+
+  /* Step numbers */
+  .step-number {
+    font-size: 6rem !important;
+  }
+
+  /* Hero background image */
+  .hero-bg-image {
+    background-image: url('/images/ai-training-hero.jpg');
+  }
+
+  /* Hero content max-width wrapper */
+  .hero-content-wrapper {
+    max-width: 1180px;
+  }
+
+  /* Instructor section orange background */
+  .instructor-section-bg {
+    background-color: #F66733;
+  }
+</style>
