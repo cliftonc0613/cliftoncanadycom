@@ -249,4 +249,14 @@
   .prose > table::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--accent) / 0.6);
   }
+
+  /* AI Training week badges styling */
+  span.step-wk {
+    font-size: 5rem !important;
+  }
+
+  .step-number {
+    font-size: 3rem;
+    line-height: 1.6;
+  }
 }
