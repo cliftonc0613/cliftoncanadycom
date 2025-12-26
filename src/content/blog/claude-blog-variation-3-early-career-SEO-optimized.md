@@ -65,7 +65,7 @@ The difference? One is credentials. The other is positioning. One gets your resu
 
 ## Claude's Plan Mode vs. Accept Edits: A Perfect Metaphor for Career Strategy
 
-[Claude Code](https://www.claude.com/product/claude-code) (my development tool) has two modes that perfectly illustrate how strategic positioning should work:
+<a href="https://www.claude.com/product/claude-code" target="_blank">Claude Code</a> (my development tool) has two modes that perfectly illustrate how strategic positioning should work:
 
 **Plan Mode**: You're thinking strategically. Exploring the challenge. Understanding what needs to happen. Designing your approach. *Not executing yet.* This is where YOUR thinking matters most.
 
