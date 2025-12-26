@@ -170,7 +170,7 @@ const structuredData = [courseSchema, organizationSchema, faqSchema];
 
   <main>
     <!-- Hero Section -->
-    <section class="ai-training-hero h-auto md:h-[600px] flex items-center justify-center relative text-primary-foreground overflow-hidden">
+    <section class="ai-training-hero min-h-[600px] md:min-h-[700px] flex items-center justify-center relative text-primary-foreground">
       <!-- Background Image -->
       <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/ai-training-hero.jpg');"></div>
 
@@ -206,7 +206,13 @@ const structuredData = [courseSchema, organizationSchema, faqSchema];
           </p>
 
           <!-- Call to Action Button -->
-          <AITrainingButton client:load />
+          <button
+            onclick="window.dispatchEvent(new Event('openAITrainingModal'))"
+            class="inline-flex items-center justify-center text-lg px-8 py-4 font-semibold rounded-md shadow-lg hover:scale-105 transition-all duration-200 text-white border-2 bg-[#F66733] border-[#F66733] hover:bg-[#e55a2d] hover:border-[#e55a2d]"
+            style="font-family: Poppins, sans-serif;"
+          >
+            Reserve Your Spot
+          </button>
 
         </div>
       </div>
