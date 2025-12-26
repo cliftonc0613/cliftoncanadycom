@@ -1,0 +1,163 @@
+{
+  "phases": [
+    {
+      "phase": "Foundation",
+      "weeks": [
+        {
+          "week": 1,
+          "title": "AI Foundations & Real-World Context",
+          "sessions": [
+            {
+              "session": 1,
+              "title": "What is AI, Really?",
+              "description": "Break down AI myths, understand AI vs. ML vs. Generative AI, live demos of ChatGPT/image generators, career stories",
+              "badge": "hands-on"
+            },
+            {
+              "session": 2,
+              "title": "AI Across Industries",
+              "description": "Case studies in healthcare/finance/manufacturing, hands-on exploration of AI tools, program roadmap",
+              "badge": "hands-on"
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Machine Learning Principles & Supervised vs. Unsupervised Learning",
+          "sessions": [
+            {
+              "session": 1,
+              "title": "How Machines Learn",
+              "description": "How machines learn from data, supervised learning walkthrough, live model training demo, hands-on activity",
+              "badge": "hands-on"
+            },
+            {
+              "session": 2,
+              "title": "Unsupervised Learning & Applications",
+              "description": "Clustering and pattern recognition, hands-on lab with Azure/AWS/Google Cloud",
+              "badge": "hands-on"
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Computer Vision & Natural Language Processing",
+          "sessions": [
+            {
+              "session": 1,
+              "title": "Computer Vision & Image AI",
+              "description": "How computers interpret images, real-world applications, live demo of image classification, ethics spotlight",
+              "badge": "hands-on"
+            },
+            {
+              "session": 2,
+              "title": "Natural Language Processing & Chatbots",
+              "description": "How machines understand language, NLP applications, chatbot architecture, live demo of conversational bot",
+              "badge": "hands-on"
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Generative AI, Large Language Models & Prompt Engineering",
+          "sessions": [
+            {
+              "session": 1,
+              "title": "Generative AI & Large Language Models",
+              "description": "What is Generative AI, LLMs overview (GPT, Claude, Gemini), how LLMs work, transformer architecture",
+              "badge": "hands-on"
+            },
+            {
+              "session": 2,
+              "title": "Mastering Prompt Engineering",
+              "description": "Prompt engineering techniques, live demos of bad vs. good prompts, hands-on practice with business scenarios",
+              "badge": "hands-on"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "Portfolio Projects",
+      "weeks": [
+        {
+          "week": 5,
+          "title": "Portfolio Project #1 - Business Intelligence Analysis",
+          "sessions": [
+            {
+              "session": 1,
+              "title": "Project #1 Kickoff & Data Analysis Frameworks",
+              "description": "Project overview, complete example demo, data analysis framework, dataset selection, hands-on exploratory data analysis",
+              "badge": "project-based"
+            },
+            {
+              "session": 2,
+              "title": "Project #1 Work Session & Peer Feedback",
+              "description": "Data visualization best practices, work time with instructor support, peer feedback session, final refinement",
+              "badge": "project-based"
+            }
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Portfolio Project #2 - Industry AI Solution Design",
+          "sessions": [
+            {
+              "session": 1,
+              "title": "Project #1 Presentations + Project #2 Kickoff",
+              "description": "Student presentations of Project #1, solution design framework, industry examples, problem identification",
+              "badge": "project-based"
+            },
+            {
+              "session": 2,
+              "title": "Project #2 Work Session & Solution Design Review",
+              "description": "Cost-benefit analysis mini-lesson, work time with instructor guidance, peer review, refinement based on feedback",
+              "badge": "project-based"
+            }
+          ]
+        },
+        {
+          "week": 7,
+          "title": "Portfolio Project #3 - Independent Capstone Project",
+          "sessions": [
+            {
+              "session": 1,
+              "title": "Project #2 Presentations + Capstone Kickoff",
+              "description": "Student presentations of Project #2, capstone options (predictive model, chatbot, prompt engineering portfolio, AI strategy), student pitches",
+              "badge": "project-based"
+            },
+            {
+              "session": 2,
+              "title": "Capstone Work Session & Peer Review",
+              "description": "Independent work time, peer review of work-in-progress, feedback on clarity/feasibility/quality, final refinement",
+              "badge": "project-based"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "Career Launch",
+      "weeks": [
+        {
+          "week": 8,
+          "title": "Career Launch",
+          "sessions": [
+            {
+              "session": 1,
+              "title": "Portfolio Showcase Presentations",
+              "description": "Capstone presentations (10-minute each per student), portfolio packaging workshop, resume optimization, LinkedIn profile setup",
+              "badge": "career-coaching"
+            },
+            {
+              "session": 2,
+              "title": "Certification Prep & Career Launch",
+              "description": "Certification exam strategies, full-length practice exam, mock interview practice, alumni panel, job search launch",
+              "badge": "career-coaching"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
