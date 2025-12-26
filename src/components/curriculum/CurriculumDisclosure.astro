@@ -1,0 +1,85 @@
+---
+// CurriculumDisclosure.astro
+// Parent container component for curriculum disclosure
+// Imports curriculum.json and renders all phases
+
+import CurriculumPhase from "./CurriculumPhase.astro";
+import curriculum from "../../data/curriculum.json";
+
+interface Props {
+  // Additional props can be added here if needed for customization
+}
+
+const props = Astro.props;
+
+// Determine if we're on desktop (1024px+)
+// This is used to set the default open state for phases
+// On desktop: phases open by default
+// On mobile: phases closed by default
+// Note: This is set via CSS media query in the component styling
+---
+
+<section class="curriculum-disclosure py-24 bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-20">
+  <div class="max-w-4xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-primary">
+        What You'll Learn: Week-by-Week Breakdown
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        Here's exactly what happens each session.
+      </p>
+    </div>
+
+    <!-- Curriculum Phases -->
+    <div class="space-y-6">
+      {curriculum.phases.map((phaseData) => (
+        <CurriculumPhase
+          phase={phaseData.phase}
+          weeks={phaseData.weeks}
+          isOpen={true}
+        />
+      ))}
+    </div>
+
+    <!-- Info Note -->
+    <div class="mt-12 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+      <p class="text-sm text-gray-600 text-center">
+        <span class="font-semibold text-primary">Mobile:</span> Tap any section to expand and see details.
+        <span class="font-semibold text-primary ml-2">Desktop:</span> All sections visible by default.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Mobile-first: Phases and weeks closed by default */
+  @media (max-width: 1023px) {
+    :global(.curriculum-disclosure details) {
+      /* Keep closed by default on mobile */
+    }
+  }
+
+  /* Desktop (1024px+): Phases and weeks open by default */
+  @media (min-width: 1024px) {
+    :global(.curriculum-disclosure details) {
+      /* Inherit open state from isOpen prop */
+    }
+  }
+
+  /* Smooth transitions for expand/collapse */
+  :global(.curriculum-disclosure details[open]) {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

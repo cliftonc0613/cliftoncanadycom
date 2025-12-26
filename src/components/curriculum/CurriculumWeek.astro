@@ -1,0 +1,59 @@
+---
+// CurriculumWeek.astro
+// Expandable week section with sessions
+// Wraps sessions in details/summary
+
+import CurriculumSession from "./CurriculumSession.astro";
+
+interface Session {
+  session: number;
+  title: string;
+  description: string;
+  badge: "hands-on" | "project-based" | "career-coaching";
+}
+
+interface Props {
+  week: number;
+  title: string;
+  sessions: Session[];
+}
+
+const { week, title, sessions } = Astro.props;
+---
+
+<details class="group border border-gray-200 rounded-lg p-4 open:bg-gray-50 cursor-pointer transition-all">
+  <summary class="flex items-center justify-between cursor-pointer font-semibold text-gray-900 hover:text-primary transition-colors select-none">
+    <span class="text-lg">Week {week}: {title}</span>
+    <span class="text-2xl transition duration-300 group-open:rotate-180">›</span>
+  </summary>
+
+  <div class="mt-4 space-y-3 ml-4">
+    {sessions.map((session) => (
+      <CurriculumSession
+        week={week}
+        session={session.session}
+        title={session.title}
+        description={session.description}
+        badge={session.badge}
+      />
+    ))}
+  </div>
+</details>
+
+<style>
+  details {
+    transition: background-color 0.2s ease;
+  }
+
+  summary {
+    transition: color 0.2s ease;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details[open] summary {
+    color: var(--primary, #1E40AF);
+  }
+</style>
