@@ -13,6 +13,8 @@ Multi-disciplinary digital professional and AI trainer specializing in:
 - **AI Training** - Multiple courses and seminars on AI implementation and strategy
 - **Photography** - Corporate, events, headshots, product photography
 
+With 20+ years of experience in web development and content creation, plus 24+ years in customer service, I specialize in WordPress development, strategic AI consulting, compelling copywriting, professional photography, and engaging presentations. I help businesses break through growth plateaus with proven digital solutions and AI-powered strategic planning.
+
 **Contact**: 1 (864) 252-2349 | https://cliftoncanady.com/
 
 ## 🎨 Brand Guidelines
