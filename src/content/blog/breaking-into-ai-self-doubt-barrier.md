@@ -40,7 +40,7 @@ Here's what's actually true:
 
 - **Some AI work requires coding**: If you want to build and train machine learning models from scratch, yes, you'll need programming skills eventually.
 
-- **Much AI work doesn't require coding**: Using AI tools, analyzing data, designing AI solutions, implementing AI strategies—<a href="https://www.makemeloveai.com/learn-ai/blog-post-how-to-build-a-successful-career-in-ai-without-coding" target="_blank" rel="noopener noreferrer">these don't require you to know how to code</a>. In fact, <a href="https://www.cobloom.com/careers-blog/tech-career-paths-no-experience" target="_blank" rel="noopener noreferrer">over 43% of tech company roles are completely non-technical</a>.
+- **Much AI work doesn't require coding**: Using AI tools, analyzing data, designing AI solutions, implementing AI strategies—<a href="https://www.themuse.com/advice/non-technical-jobs-in-ai" target="_blank" rel="noopener noreferrer">these don't require you to know how to code</a>. In fact, <a href="https://www.cobloom.com/careers-blog/tech-career-paths-no-experience" target="_blank" rel="noopener noreferrer">over 43% of tech company roles are completely non-technical</a>.
 
 - **Coding is learnable**: If you want to code, you can learn it. It's a skill, not a talent you're born with.
 
