@@ -6,10 +6,11 @@ A professional personal brand website showcasing expertise in WordPress developm
 
 ## About
 
-Multi-disciplinary digital professional specializing in:
+Multi-disciplinary digital professional and AI trainer specializing in:
 - **WordPress Development** - Custom sites, themes, plugins, e-commerce
-- **Content Writing** - SEO content, copywriting, blog writing, technical writing  
+- **Content Writing** - SEO content, copywriting, blog writing, technical writing
 - **Speaking & Seminars** - Keynotes, workshops, corporate training
+- **AI Training** - Multiple courses and seminars on AI implementation and strategy
 - **Photography** - Corporate, events, headshots, product photography
 
 **Contact**: 1 (864) 252-2349 | https://cliftoncanady.com/
