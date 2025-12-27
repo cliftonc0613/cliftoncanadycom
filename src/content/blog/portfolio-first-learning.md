@@ -2,7 +2,7 @@
 title: 'AI Fundamentals Certification + Portfolio Projects: Get Hired in 8 Weeks'
 description: >-
   Get your AI fundamentals certification AND build 3 portfolio projects in 8 weeks.
-  Learn why employers want both—the credential AND proof you can execute. Entry-level AI
+  Learn why employers want both. The credential AND proof you can execute. Entry-level AI
   jobs start at $48K-$66K. Limited to 15 students per cohort.
 pubDate: 2025-12-09T00:00:00.000Z
 category: AI Training
@@ -58,12 +58,12 @@ structuredData:
         name: "I don't have a technical background. Can I really do this?"
         acceptedAnswer:
           "@type": "Answer"
-          text: "Yes. This is the biggest myth in AI education—that you need to be 'technical' to learn AI. You don't. Most of our students come in with zero coding experience. They finish with 3 professional portfolio projects."
+          text: "Yes. This is the biggest myth in AI education. You need to be 'technical' to learn AI. You don't. Most of our students come in with zero coding experience. They finish with 3 professional portfolio projects."
       - "@type": "Question"
         name: "What if I don't get hired after?"
         acceptedAnswer:
           "@type": "Answer"
-          text: "Our graduates have a 94% job placement rate within 6 months. We provide 12 weeks of continued career coaching after graduation—included, no extra cost."
+          text: "Our graduates have a 94% job placement rate within 6 months. We provide 12 weeks of continued career coaching after graduation. Included, no extra cost."
       - "@type": "Question"
         name: "Is $2,999 really worth it?"
         acceptedAnswer:
@@ -126,9 +126,9 @@ What actually separates you? The candidate who shows up with their certification
 **That's it. That's the difference. You need BOTH.**
 
 I'm talking about the candidate who:
-- Built a predictive model using real data and documented exactly how they approached it (imperfect results don't matter—the thinking does)
+- Built a predictive model using real data and documented exactly how they approached it (imperfect results don't matter. The thinking does)
 - Created data visualizations that made messy data actually make sense
-- Designed an AI solution to a real business problem—something your future employer actually cares about
+- Designed an AI solution to a real business problem. Something your future employer actually cares about
 
 That person doesn't need to hope. They have proof.
 
@@ -154,7 +154,7 @@ It felt efficient. It wasn't. I was outsourcing my judgment. I was letting a too
 
 Then something clicked: AI isn't supposed to be your brain. AI is supposed to be your tool. You bring the thinking. You bring the decisions. You bring the direction. AI helps you execute that vision faster.
 
-That shift changed everything for me. Suddenly AI wasn't replacing my thinking—it was accelerating it. I was directing AI, not following AI.
+That shift changed everything for me. Suddenly AI wasn't replacing my thinking. It was accelerating it. I was directing AI, not following AI.
 
 This is the exact skill I teach in portfolio projects. A project forces you to think. A project forces you to make decisions. You can't outsource that. You have to stay in the driver's seat. AI sits shotgun and helps you execute faster.
 
@@ -176,7 +176,7 @@ And suddenly? They're stuck. Because knowing *what* AI is and *applying* AI to s
 
 That's when the real learning happens.
 
-I had a student last year—no coding background, worried about whether she could even do this. First project, she built a predictive model. It didn't work right. Most people would quit. She didn't. She debugged it. She figured out the problem. She fixed it.
+I had a student last year. No coding background, worried about whether she could even do this. First project, she built a predictive model. It didn't work right. Most people would quit. She didn't. She debugged it. She figured out the problem. She fixed it.
 
 That moment? When she had to solve her own problem instead of watching me solve it? That's when she became dangerous (in a good way). She stopped being a student and became a practitioner.
 
@@ -192,7 +192,7 @@ Here's what actually happens when you build projects:
 
 - **You learn to communicate**: You build something. Now explain to your manager why you did it that way. Employers need this more than they need perfect code.
 
-- **You iterate and improve**: You finish project one. Get feedback. Improve it. That cycle—build, feedback, improve, rebuild—is exactly how real jobs work.
+- **You iterate and improve**: You finish project one. Get feedback. Improve it. That cycle. Build, feedback, improve, rebuild. This is exactly how real jobs work.
 
 These aren't just nice-to-haves. These are the skills that separate "certified" from "hireable."
 
@@ -343,7 +343,7 @@ Here's what you get in 8 weeks:
 
 **The Market:**
 
-This isn't theoretical. <a href="https://www.veritone.com/blog/ai-jobs-growth-q1-2025-labor-market-analysis/" target="_blank" rel="noopener noreferrer">In Q1 2025, there were 35,445 AI positions posted in the U.S.—a 25.2% increase from the previous year.</a>
+This isn't theoretical. <a href="https://www.veritone.com/blog/ai-jobs-growth-q1-2025-labor-market-analysis/" target="_blank" rel="noopener noreferrer">In Q1 2025, there were 35,445 AI positions posted in the U.S. A 25.2% increase from the previous year.</a>
 
 Entry-level AI analyst roles? **$48K-$62K**.
 Data analysts with AI focus? **$52K-$66K**.
@@ -367,7 +367,7 @@ You're 17-24. You don't have years to waste on education that only half-solves t
 
 ### "I don't have a technical background. Can I really do this?"
 
-Yes. And this is the biggest myth in AI education—that you need to be "technical" to learn AI. You don't.
+Yes. And this is the biggest myth in AI education. That you need to be "technical" to learn AI. You don't.
 
 Last cohort, we had someone who'd never coded in their life. Not even HTML. They were terrified. Week 1, they're building their first data analysis project. By week 4, they'd finished their predictive model. By week 8? They had three projects they could show employers. They're now working as a data analyst at $54K.
 
@@ -379,7 +379,7 @@ Here's why it works: project-based learning means you learn by *doing*. You pick
 
 Our graduates have a **94% job placement rate within 6 months**. But if you're in the 6%? You're not abandoned.
 
-We provide **12 weeks of continued career coaching after graduation**—included, no extra cost. We're talking resume optimization, interview prep, networking strategy, portfolio refinement. One graduate in our last cohort wasn't getting interviews until we rewrote her resume to emphasize the specific projects she'd built. Two weeks later? Interview offer. She's now at a company making $56K.
+We provide **12 weeks of continued career coaching after graduation**. Included, no extra cost. We're talking resume optimization, interview prep, networking strategy, portfolio refinement. One graduate in our last cohort wasn't getting interviews until we rewrote her resume to emphasize the specific projects she'd built. Two weeks later? Interview offer. She's now at a company making $56K.
 
 Here's the deal: we don't just hand you a certificate and disappear. We help you land the job because your success is our success.
 
@@ -398,7 +398,7 @@ And WIOA-eligible? It's **FREE**. Government funding covers the entire cost. You
 ### "How much time do I need to commit?"
 
 - 6 hours/week live instruction
-- Project work: 8-10 hours/week (you set your pace—no rushing)
+- Project work: 8-10 hours/week (you set your pace. No rushing)
 - Total: 15 hours/week for 8 weeks
 
 Is that doable while working? Yes. We've had students pull this off while working full-time. One guy worked nights at a warehouse, attended our morning sessions, and did his project work on weekends. Sounds brutal? He said it was the best investment he ever made. He's now in an AI role making $52K instead of $15/hour.

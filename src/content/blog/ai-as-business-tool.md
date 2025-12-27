@@ -177,7 +177,7 @@ This is the big one. Don't expect your team (or yourself) to use AI effectively 
 Full transparency: I *still* fall into this trap sometimes. When a new AI tool launches, I get excited and want to jump in without learning it properly. I catch myself. "Slow down, Clifton. Understand first." It's an ongoing practice, not something I've mastered. The difference is now I *know* it's a trap, and I course-correct faster.
 
 **Trap 5: Ignoring Ethics and Transparency**
-If you're using AI for customer-facing work (content, recommendations, analysis)—tell people. They deserve to know. <a href="https://www.imd.org/ibyimd/artificial-intelligence/why-ai-ethics-is-now-a-competitive-advantage/" target="_blank" rel="noopener noreferrer">AI ethics is becoming a real competitive advantage</a>, not just a nice-to-have. Your customers will respect you more for being honest about it.
+If you're using AI for customer-facing work (content, recommendations, analysis). Tell people. They deserve to know. <a href="https://www.imd.org/ibyimd/artificial-intelligence/why-ai-ethics-is-now-a-competitive-advantage/" target="_blank" rel="noopener noreferrer">AI ethics is becoming a real competitive advantage</a>, not just a nice-to-have. Your customers will respect you more for being honest about it.
 
 ## The Real Opportunity: Sustainable AI Advantage
 
@@ -220,22 +220,22 @@ Here's the bottom line: Your business doesn't need the latest AI platform. It ne
 
 ### For Growth-Stage Business Owners:
 
-If you're running a 10-100 person operation and hitting that frustrating growth plateau, you need **strategic transformation**. You need a framework that actually connects AI to your specific bottlenecks—not some generic "AI tips" article.
+If you're running a 10-100 person operation and hitting that frustrating growth plateau, you need **strategic transformation**. You need a framework that actually connects AI to your specific bottlenecks. Not some generic "AI tips" article.
 
-**[Dive into the AI Training Course](/ai-training)** to learn the exact Teach and Build frameworks I use with real clients. These frameworks transform how you think about AI—and drive $15K-$50K+ in measurable business impact.
+**[Dive into the AI Training Course](/ai-training)** to learn the exact Teach and Build frameworks I use with real clients. These frameworks transform how you think about AI and drive $15K-$50K+ in measurable business impact.
 
 Or, join the live experience:
 
-**[Come to the AI Boardroom Workshop](/ai-boardroom)** ($49 early-bird pricing) — This is where we walk through the Teach and Build method in real time, with real business applications and peer learning from other growth-stage business owners who actually get it. No fluff. No theory. Just strategy that works.
+**[Come to the AI Boardroom Workshop](/ai-boardroom)** ($49 early-bird pricing). This is where we walk through the Teach and Build method in real time, with real business applications and peer learning from other growth-stage business owners who actually get it. No fluff. No theory. Just strategy that works.
 
 ### For Small Business Owners:
 
 You're wearing five hats. You barely have time to *think* strategically, let alone implement. Start small. Focus on the quick wins.
 
-**[Check out our free AI strategy resources](/blog)** — Find your ONE biggest admin bottleneck and learn the Teach and Build method to reclaim 8-10 hours per week. No expensive courses. No jargon. Just practical frameworks built for people who are actually *doing* the work.
+**[Check out our free AI strategy resources](/blog)**. Find your ONE biggest admin bottleneck and learn the Teach and Build method to reclaim 8-10 hours per week. No expensive courses. No jargon. Just practical frameworks built for people who are actually *doing* the work.
 
 ---
 
-You're already the expert. You don't need me to tell you that. You need me to show you how to be seen as one—and how to leverage AI to amplify your expertise without creating another dependency.
+You're already the expert. You don't need me to tell you that. You need me to show you how to be seen as one and how to leverage AI to amplify your expertise without creating another dependency.
 
 Let's go.
