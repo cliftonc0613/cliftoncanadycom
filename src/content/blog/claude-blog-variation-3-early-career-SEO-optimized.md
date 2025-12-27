@@ -18,7 +18,7 @@ tags:
 keywords: >-
   Career advancement, strategic positioning, AI, Claude, professional
   development
-featured: true
+featured: false
 ---
 
 ## The #1 Mistake Early Career Professionals Make With Claude
