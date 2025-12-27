@@ -5,6 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.4] - 2025-12-27
+
+### Added
+- **Homepage Screenshot**: Added visual showcase (`public/images/homepage-above-fold.png`) displaying above-the-fold hero section
+  - Provides immediate visual context for site design
+  - Enhances README presentation with professional brand imagery
+
+### Changed
+- **README Streamlining**: Refocused documentation on professional brand and capabilities
+  - Removed redundant Technology Stack section (details available in package.json)
+  - Removed Project Structure section (better suited for internal documentation)
+  - Removed Development Commands section (available in package.json scripts)
+  - Removed Learn More section (external links that don't enhance brand value)
+  - Net reduction: 74 lines removed, 7 lines added for cleaner presentation
+
+### Improved
+- **About Section Enhancement**: Comprehensive professional bio showcasing multi-disciplinary expertise
+  - Added AI training expertise details highlighting 24+ years of teaching experience
+  - Expanded coverage of professional services (WordPress, content writing, speaking, photography)
+  - Emphasized 20+ years web development and 24+ years classroom teaching experience
+  - Better communication of AI-assisted development capabilities and value proposition
+
+### Documentation
+- Documentation-only release with no code changes
+- Improved GitHub repository presentation
+- Enhanced professional brand communication
+
+---
+
+## [1.3.3] - 2025-12-27
+
+### Fixed
+- **Blog Post Formatting**: Removed horizontal rule separators from blog posts for cleaner, more professional appearance
+  - Applied to all blog content for consistent styling
+  - Improves visual flow and readability
+
+---
+
 ## [1.3.2] - 2025-12-27
 
 ### Fixed
@@ -165,6 +203,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+[1.3.4]: https://github.com/cliftoncanady/cliftoncanady.com/compare/v1.3.3...v1.3.4
+[1.3.3]: https://github.com/cliftoncanady/cliftoncanady.com/compare/v1.3.2...v1.3.3
 [1.3.2]: https://github.com/cliftoncanady/cliftoncanady.com/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/cliftoncanady/cliftoncanady.com/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/cliftoncanady/cliftoncanady.com/compare/v1.2.0...v1.3.0
