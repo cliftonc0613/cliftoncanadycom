@@ -6,6 +6,7 @@ const blogCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.date(),
+    publishDate: z.date().optional(),
     updatedDate: z.date().optional(),
     author: z.string().default('Clifton T. Canady'),
     image: z.object({
