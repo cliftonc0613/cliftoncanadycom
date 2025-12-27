@@ -2,80 +2,20 @@
 
 A professional personal brand website showcasing expertise in WordPress development, content writing, speaking/seminars, and photography. Built with Astro and shadcn/ui following the StoryBrand messaging framework.
 
+![Homepage above the fold screenshot](./public/images/homepage-above-fold.png)
+
 ## About
 
-Multi-disciplinary digital professional specializing in:
+Multi-disciplinary digital professional and AI trainer specializing in:
 - **WordPress Development** - Custom sites, themes, plugins, e-commerce
-- **Content Writing** - SEO content, copywriting, blog writing, technical writing  
+- **Content Writing** - SEO content, copywriting, blog writing, technical writing
 - **Speaking & Seminars** - Keynotes, workshops, corporate training
+- **AI Training** - Multiple courses and seminars on AI implementation and strategy
 - **Photography** - Corporate, events, headshots, product photography
 
+With 20+ years of experience in web development and content creation, plus 24+ years in customer service, I specialize in WordPress development, strategic AI consulting, compelling copywriting, professional photography, and engaging presentations. I help businesses break through growth plateaus with proven digital solutions and AI-powered strategic planning.
+
 **Contact**: 1 (864) 252-2349 | https://cliftoncanady.com/
-
-## 🚀 Technology Stack
-
-- **Frontend**: Astro (Static Site Generation)
-- **UI Framework**: shadcn/ui with Tailwind CSS
-- **Animation**: GSAP (GreenSock Animation Platform)
-- **Navigation**: HeadroomJS for sticky navigation
-- **Hosting**: Netlify
-- **Code Repository**: GitHub
-
-## 📁 Project Structure
-
-```text
-website/
-├── src/
-│   ├── components/
-│   │   ├── ui/ (shadcn/ui components)
-│   │   ├── Navigation.astro
-│   │   ├── Hero.astro
-│   │   ├── About.astro
-│   │   ├── Services.astro
-│   │   ├── Contact.astro
-│   │   └── Footer.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   ├── pages/
-│   │   ├── index.astro (Homepage)
-│   │   └── resume.astro
-│   ├── styles/
-│   │   └── globals.css
-│   ├── lib/
-│   │   └── utils.ts
-│   └── scripts/
-│       ├── gsap-animations.js
-│       └── headroom-init.js
-├── public/
-│   └── images/
-├── components.json (shadcn/ui config)
-├── astro.config.mjs
-└── tailwind.config.mjs
-```
-
-## 🧞 Development Commands
-
-### Initial Setup (if needed)
-```bash
-# Install dependencies
-npm install
-
-# Initialize shadcn/ui (if not already done)
-npx shadcn-ui@latest init
-
-# Add required shadcn/ui components
-npx shadcn-ui@latest add button card sheet badge avatar accordion
-```
-
-### Development Workflow
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npx astro check`         | Check for TypeScript errors                      |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 
 ## 🎨 Brand Guidelines
 
