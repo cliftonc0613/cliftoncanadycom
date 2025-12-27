@@ -11,8 +11,28 @@ import TableOfContents from '@/components/TableOfContents.astro';
 
 // Generate static paths for all blog posts
 export async function getStaticPaths() {
-  const blogPosts = await getCollection('blog');
-  return blogPosts.map(post => ({
+  const allBlogPosts = await getCollection('blog');
+
+  // Filter out drafts and unpublished posts
+  const publishedPosts = allBlogPosts.filter(post => {
+    // In production, exclude drafts
+    if (import.meta.env.PROD && post.data.draft) {
+      return false;
+    }
+
+    // Check if publishDate has passed (if set)
+    if (post.data.publishDate) {
+      const publishDate = new Date(post.data.publishDate);
+      const now = new Date();
+      if (publishDate > now && import.meta.env.PROD) {
+        return false;
+      }
+    }
+
+    return true;
+  });
+
+  return publishedPosts.map(post => ({
     params: { slug: post.slug },
     props: { post }
   }));

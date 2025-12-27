@@ -9,8 +9,23 @@ import BlogCard from '@/components/BlogCard.astro';
 
 // Get all blog posts
 const allPosts = await getCollection('blog', ({ data }) => {
-  // In production, exclude drafts. In development, include all.
-  return import.meta.env.PROD ? !data.draft : true;
+  // In production, exclude drafts and check publishDate
+  if (import.meta.env.PROD) {
+    // Exclude drafts
+    if (data.draft) return false;
+
+    // Check if publishDate has passed (if set)
+    if (data.publishDate) {
+      const publishDate = new Date(data.publishDate);
+      const now = new Date();
+      return publishDate <= now;
+    }
+
+    return true;
+  }
+
+  // In development, include all posts
+  return true;
 });
 
 // Sort posts by date (newest first)
