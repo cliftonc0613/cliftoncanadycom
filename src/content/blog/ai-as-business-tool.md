@@ -212,8 +212,6 @@ If you're serious about leveraging AI as a competitive advantage and not just ju
 
 This is the Teach and Build method in action. It's not flashy. It's not trendy. It's strategic thinking applied to AI.
 
----
-
 ## Ready to Build Your Sustainable AI Strategy?
 
 Here's the bottom line: Your business doesn't need the latest AI platform. It needs a framework. A real, strategic framework for deploying AI to solve *actual* problems and break through growth barriers. That's where competitive advantage lives.
@@ -233,8 +231,6 @@ Or, join the live experience:
 You're wearing five hats. You barely have time to *think* strategically, let alone implement. Start small. Focus on the quick wins.
 
 **[Check out our free AI strategy resources](/blog)**. Find your ONE biggest admin bottleneck and learn the Teach and Build method to reclaim 8-10 hours per week. No expensive courses. No jargon. Just practical frameworks built for people who are actually *doing* the work.
-
----
 
 You're already the expert. You don't need me to tell you that. You need me to show you how to be seen as one and how to leverage AI to amplify your expertise without creating another dependency.
 
