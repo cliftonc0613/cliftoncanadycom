@@ -109,8 +109,6 @@ Maybe you're wondering: "Should I get an AI certification? Take a course? Build 
 
 Here's why: employers want proof you understand AI concepts (AI fundamentals certification) AND proof that you can actually execute (portfolio projects). You need both credentials. One without the other doesn't get you hired for entry-level AI jobs.
 
----
-
 ## Why Certification Alone Isn't Enough
 
 Look, certifications ARE valuable. An AI Fundamentals certification proves you understand core concepts. Employers absolutely want to see them.
@@ -142,8 +140,6 @@ Together? You're hired.
 
 **Sound like what you need?** <a href="/ai-training-youth-lp" style="font-weight: bold; text-decoration: none;">See how our 8-week program delivers both →</a>
 
----
-
 ## How I Learned to Use AI Right (The Hard Way)
 
 Early in my AI journey, I made a mistake that a lot of people make: I used AI as my brain.
@@ -161,8 +157,6 @@ This is the exact skill I teach in portfolio projects. A project forces you to t
 That's the real skill students need to win in AI.
 
 **This is exactly what we teach.** <a href="/ai-training-youth-lp" style="font-weight: bold; text-decoration: none;">See how our curriculum builds this approach →</a>
-
----
 
 ## Why Hands-On Projects Build Job-Ready Skills
 
@@ -361,8 +355,6 @@ Both. Done right.
 
 You're 17-24. You don't have years to waste on education that only half-solves the problem. You need the credential AND the proof. You want results.
 
----
-
 ## Common Questions (Before You Enroll)
 
 ### "I don't have a technical background. Can I really do this?"
@@ -418,8 +410,6 @@ He offered her the job on the spot.
 The certification got her the interview. The projects got her hired.
 
 Why? Because employers don't really care about the badge. They care about whether you can *think* and *execute*. The projects prove you can do both. The certification just proves you learned in a rigorous environment.
-
----
 
 **Ready to launch your AI career?**
 
