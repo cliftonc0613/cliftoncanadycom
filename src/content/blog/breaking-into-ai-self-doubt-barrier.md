@@ -40,11 +40,11 @@ Here's what's actually true:
 
 - **Some AI work requires coding**: If you want to build and train machine learning models from scratch, yes, you'll need programming skills eventually.
 
-- **Much AI work doesn't require coding**: Using AI tools, analyzing data, designing AI solutions, implementing AI strategies—<a href="https://www.themuse.com/advice/non-technical-jobs-in-ai" target="_blank" rel="noopener noreferrer">these don't require you to know how to code</a>. In fact, <a href="https://www.cobloom.com/careers-blog/tech-career-paths-no-experience" target="_blank" rel="noopener noreferrer">over 43% of tech company roles are completely non-technical</a>.
+- **Much AI work doesn't require coding**: Using AI tools, analyzing data, designing AI solutions, implementing AI strategies. <a href="https://www.themuse.com/advice/non-technical-jobs-in-ai" target="_blank" rel="noopener noreferrer">These don't require you to know how to code</a>. In fact, <a href="https://www.cobloom.com/careers-blog/tech-career-paths-no-experience" target="_blank" rel="noopener noreferrer">over 43% of tech company roles are completely non-technical</a>.
 
 - **Coding is learnable**: If you want to code, you can learn it. It's a skill, not a talent you're born with.
 
-- **Non-technical backgrounds are valuable**: <a href="https://businessanalyst.techcanvass.com/ai-careers-without-coding/" target="_blank" rel="noopener noreferrer">Many of the best AI strategists, product managers, and analysts come from non-technical backgrounds</a>. They understand business, psychology, communication—skills that matter as much (or more) than technical depth.
+- **Non-technical backgrounds are valuable**: <a href="https://businessanalyst.techcanvass.com/ai-careers-without-coding/" target="_blank" rel="noopener noreferrer">Many of the best AI strategists, product managers, and analysts come from non-technical backgrounds</a>. They understand business, psychology, communication. These skills matter as much (or more) than technical depth.
 
 The AI field doesn't just need technical people. It needs people with diverse backgrounds. Business people. Marketing people. Writers. Project managers. Customer service experts. Teachers. All of these perspectives make AI teams better.
 
@@ -60,13 +60,13 @@ And here's what I've observed: Self-doubt is the *only* barrier that actually st
 
 Self-doubt is.
 
-This isn't just my observation — <a href="https://medium.com/wearefutureworks/58-of-tech-employees-experience-imposter-syndrome-heres-how-to-overcome-it-78172d8a2258" target="_blank" rel="noopener noreferrer">research shows 58% of tech employees experience imposter syndrome</a>, even the ones with computer science degrees and years of experience. So that feeling you're having? Everyone has it.
+This isn't just my observation. <a href="https://medium.com/wearefutureworks/58-of-tech-employees-experience-imposter-syndrome-heres-how-to-overcome-it-78172d8a2258" target="_blank" rel="noopener noreferrer">Research shows 58% of tech employees experience imposter syndrome</a>, even the ones with computer science degrees and years of experience. So that feeling you're having? Everyone has it.
 
 Everyone starting in a new field feels this way. Every single person. The technical people felt it when they started. The people with CS degrees felt it. The feeling is universal and it's not a reliable indicator of your capability.
 
 Here's the uncomfortable truth: **Your imposter syndrome is lying to you.**
 
-The story you're telling yourself—"I'm not technical, so I can't do this"—is a story, not a fact. It *feels* true, but it's not. Feeling like an imposter is actually a common trait of successful people breaking into new fields.
+The story you're telling yourself ("I'm not technical, so I can't do this") is a story, not a fact. It *feels* true, but it's not. Feeling like an imposter is actually a common trait of successful people breaking into new fields.
 
 What separates people who break into AI from people who don't isn't technical background. It's whether they choose to believe the self-doubt story or not.
 
@@ -75,16 +75,16 @@ What separates people who break into AI from people who don't isn't technical ba
 Let me be specific about what's open to you:
 
 **AI Strategy & Consulting**
-Help organizations figure out where AI can solve real problems. This requires business thinking, problem-solving, and strategic analysis—not coding.
+Help organizations figure out where AI can solve real problems. This requires business thinking, problem-solving, and strategic analysis. No coding needed.
 
 **Data Analysis & Business Intelligence**
 Analyze data to answer business questions and generate insights. You'll use tools (like AI platforms) to do analysis, but you don't need to build these tools yourself.
 
 **AI Product Management**
-Manage AI products and features. This requires understanding user needs, business goals, and product strategy—not necessarily writing code.
+Manage AI products and features. This requires understanding user needs, business goals, and product strategy. Writing code is optional.
 
 **AI Implementation & Deployment**
-Help organizations implement AI solutions successfully. This is about change management, strategy, and execution—not writing code.
+Help organizations implement AI solutions successfully. This is about change management, strategy, and execution. No code required.
 
 **AI Training & Education**
 Teach others about AI. Understanding concepts and being able to explain them is more important than being able to build them from scratch.
@@ -97,7 +97,7 @@ Write about AI, create educational content, communicate technical concepts to no
 
 **For Educators Specifically**: If you're a teacher considering this path, know this: Your teaching expertise + AI fundamentals = valuable. You could teach AI to students, build an AI curriculum, train other teachers. The education sector is hungry for educators who understand both teaching *and* AI.
 
-All of these paths are open to you. You just need to develop the right skills—and none of them require a technical background to start.
+All of these paths are open to you. You just need to develop the right skills. None of them require a technical background to start.
 
 ## The Skills That Actually Determine Success
 
@@ -115,7 +115,7 @@ These have nothing to do with technical background. They're about curiosity and 
 - Can you read documentation and figure things out?
 - Can you adapt when something changes?
 
-If you can do this, you can learn anything—including AI tools you've never seen before. <a href="https://www.researchgate.net/publication/320165264_The_role_of_learning_agility_in_executive_career_success_The_results_of_two_field_studies" target="_blank" rel="noopener noreferrer">Research from the Korn Ferry Institute shows learning agility is the #1 predictor of career success—ranking above intelligence and education</a>. Think about that. Not IQ. Not a degree. The ability to learn.
+If you can do this, you can learn anything, including AI tools you've never seen before. <a href="https://www.researchgate.net/publication/320165264_The_role_of_learning_agility_in_executive_career_success_The_results_of_two_field_studies" target="_blank" rel="noopener noreferrer">Research from the Korn Ferry Institute shows learning agility is the #1 predictor of career success. It ranks above intelligence and education</a>. Think about that. Not IQ. Not a degree. The ability to learn.
 
 **3. Communication Skills**
 - Can you explain concepts clearly?
@@ -161,7 +161,7 @@ Here's what I tell non-technical people entering AI:
 
 **You're not constrained by "that's how tech works"**: Sometimes the most innovative solutions come from people who don't know the "standard" way and approach a problem differently.
 
-**You focus on outcomes**: Non-technical people tend to focus on business outcomes—does this actually solve a real problem? Does it improve customer experience? This is the right focus.
+**You focus on outcomes**: Non-technical people tend to focus on business outcomes. Does this actually solve a real problem? Does it improve customer experience? This is the right focus.
 
 Some of the most impactful people in AI didn't start with a technical background. <a href="https://talent.intulsa.com/post/8-tips-to-successfully-switch-to-a-new-career-in-tech" target="_blank" rel="noopener noreferrer">Studies on career transitions show that non-traditional backgrounds actually lead to innovation and problem-solving advantages</a>. They brought a different perspective and that made all the difference.
 
