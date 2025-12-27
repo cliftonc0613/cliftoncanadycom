@@ -43,7 +43,7 @@ The opposite approach (strategic thinking about your career positioning FIRST, u
 
 Strategic thinking about your career advancement means something specific:
 
-- **Understanding what you've actually learned and built** (not just listing job duties, but what specific results you've created)—[portfolio projects demonstrate this better than credentials alone](/blog/portfolio-first-learning)
+- **Understanding what you've actually learned and built** (not just listing job duties, but what specific results you've created). [Portfolio projects demonstrate this better than credentials alone](/blog/portfolio-first-learning)
 - **Knowing your target audience** (not writing for "a hiring manager," but THIS hiring manager at THIS company with their specific challenges)
 - **Finding YOUR competitive advantage** (what's your specific perspective, experience, or proven skill that actually solves their problem?)
 - **Being clear about your goal** (what do you want to happen after they read this? What conversation do you want to have?)
@@ -71,7 +71,7 @@ The difference? One is credentials. The other is positioning. One gets your resu
 
 **Accept Edits**: Once you approve the plan, Claude executes. Builds. Makes changes. Tactical execution.
 
-Most people skip Plan Mode and jump straight to execution. That's backward. This [strategic approach to AI thinking](/blog/ai-as-business-tool) before executing—is the same principle that separates successful AI implementation from tool-hopping.
+Most people skip Plan Mode and jump straight to execution. That's backward. This [strategic approach to AI thinking](/blog/ai-as-business-tool) before executing is the same principle that separates successful AI implementation from tool-hopping.
 
 **With career advancement, it's exactly the same:**
 

@@ -109,7 +109,7 @@ Look, if you're thinking about breaking into AI, you need to know what actually 
 
 And it's not what you think.
 
-**Problem-Solving.** Can you look at a messy situation and figure out what's actually wrong? Can you ask the right questions instead of just taking the first answer you get? I'm talking about real thinking here—analyzing information, connecting dots, trying solutions. That's all problem-solving. And yeah, it has nothing to do with whether you took computer science in high school.
+**Problem-Solving.** Can you look at a messy situation and figure out what's actually wrong? Can you ask the right questions instead of just taking the first answer you get? I'm talking about real thinking here. Analyzing information, connecting dots, trying solutions. That's all problem-solving. And yeah, it has nothing to do with whether you took computer science in high school.
 
 **Learning Agility.** This is the big one. Can you learn a new tool quickly? Can you read documentation and figure it out without someone holding your hand? Can you adapt when things change? Because honestly, AI tools change every week. If you can learn new things fast, you can learn anything. <a href="https://www.researchgate.net/publication/320165264_The_role_of_learning_agility_in_executive_career_success_The_results_of_two_field_studies" target="_blank" rel="noopener noreferrer">The Korn Ferry Institute did research showing this is the #1 predictor of career success. It ranked above IQ. Above education level.</a> Let that sink in. Not your test scores. Not your degree. Your ability to learn.
 
@@ -127,7 +127,7 @@ Here's the thing: all of these skills are independent of your technical backgrou
 
 Here's what I tell non-technical people entering AI:
 
-**You understand non-technical people**: If you're implementing AI solutions in an organization, you need to communicate with business stakeholders, salespeople, customer service reps—people without technical backgrounds. You speak their language naturally. You don't have to translate your thinking.
+**You understand non-technical people**: If you're implementing AI solutions in an organization, you need to communicate with business stakeholders, salespeople, customer service reps. People without technical backgrounds. You speak their language naturally. You don't have to translate your thinking.
 
 **You ask different questions**: Technical people sometimes get trapped in technical thinking. You might ask a business question that opens up a completely new perspective.
 
@@ -141,7 +141,7 @@ Some of the most impactful people in AI didn't start with a technical background
 
 ## Your Path Into AI (Starting Today)
 
-Real quick—I want to tell you about Sarah. She was 21. Marketing major. No coding experience. No CS background. She was terrified. Thought she was "too late" and "not smart enough." She asked herself the same questions you're probably asking right now.
+Real quick. I want to tell you about Sarah. She was 21. Marketing major. No coding experience. No CS background. She was terrified. Thought she was "too late" and "not smart enough." She asked herself the same questions you're probably asking right now.
 
 She started small. One workshop. A little online course. Hands-on stuff, not theory. Within six months? She had her first AI implementation project. Now she's working at a company helping them integrate AI into their operations. She makes good money. She's confident.
 
@@ -150,7 +150,7 @@ She's not special. She didn't have some magic background. She just started.
 **If you want to do what Sarah did, here's how:**
 
 **Step 1: Choose Your Focus**
-What aspect of AI interests you? Strategy? Data analysis? AI tools? Implementation? Teaching? Pick something. Not forever—just something to start with that aligns with what you actually care about.
+What aspect of AI interests you? Strategy? Data analysis? AI tools? Implementation? Teaching? Pick something. Not forever. Just something to start with that aligns with what you actually care about.
 
 **Step 2: Learn the Fundamentals**
 Learn what AI actually is, what problems it solves, what different types of AI do. This conceptual understanding is your foundation.
@@ -190,7 +190,7 @@ Here's what actually stops people: Self-doubt makes them think the door is locke
 
 Don't be that person.
 
-Start small. Learn the fundamentals. Get hands-on. Build something. Stay curious. Push through the hard parts. Remember that your background isn't a weakness—it's your advantage.
+Start small. Learn the fundamentals. Get hands-on. Build something. Stay curious. Push through the hard parts. Remember that your background isn't a weakness. It's your advantage.
 
 Your path into AI isn't about becoming a coder. It's about becoming someone who solves problems using AI in a way nobody else can.
 
