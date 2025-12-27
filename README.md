@@ -2,6 +2,8 @@
 
 A professional personal brand website showcasing expertise in WordPress development, content writing, speaking/seminars, and photography. Built with Astro and shadcn/ui following the StoryBrand messaging framework.
 
+![Homepage above the fold screenshot](./public/images/homepage-above-fold.png)
+
 ## About
 
 Multi-disciplinary digital professional specializing in:
