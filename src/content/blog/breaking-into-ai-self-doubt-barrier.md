@@ -24,11 +24,15 @@ image:
     together. You can too.
 ---
 
-You're interested in learning AI. But you see job postings requiring "computer science background" or "programming experience" and you think: "That's not me. I'm not technical."
+You want to learn AI. You're interested. You're ready.
 
-So you don't apply. You don't enroll. You assume the door is closed.
+But then you see job postings. "Computer science background required." "Programming experience necessary." And you think: "That's not me."
 
-Here's what I need you to hear: **The technical background requirement isn't actually your barrier. Self-doubt is.**
+So you don't apply. You don't enroll. You tell yourself the door is closed before you even knock.
+
+I need you to hear this: **The technical background requirement isn't your barrier. Self-doubt is.**
+
+And here's the good news: you can fix that.
 
 ## The Myth Everyone Believes (But It's Wrong)
 
@@ -52,15 +56,15 @@ The AI field doesn't just need technical people. It needs people with diverse ba
 
 ## The Real Barrier: Self-Doubt (And Why It's Lying to You)
 
-You look at the AI field. You see technical jargon. You meet people with CS degrees. You watch them talk about algorithms and neural networks and you think: "I don't belong here."
+You look at the AI field. Technical jargon everywhere. People with CS degrees talking about algorithms. Neural networks. You think: "I don't belong here."
 
-That feeling isn't evidence. It's self-doubt.
+That feeling isn't real. It's just self-doubt.
 
-And here's what I've observed: Self-doubt is the *only* barrier that actually stops people. Technical background isn't. Education isn't. Age isn't.
+Here's what I've actually observed: Self-doubt is the *only* barrier that stops people. Not technical background. Not education. Not age.
 
-Self-doubt is.
+Just self-doubt.
 
-This isn't just my observation. <a href="https://medium.com/wearefutureworks/58-of-tech-employees-experience-imposter-syndrome-heres-how-to-overcome-it-78172d8a2258" target="_blank" rel="noopener noreferrer">Research shows 58% of tech employees experience imposter syndrome</a>, even the ones with computer science degrees and years of experience. So that feeling you're having? Everyone has it.
+And you know what? <a href="https://medium.com/wearefutureworks/58-of-tech-employees-experience-imposter-syndrome-heres-how-to-overcome-it-78172d8a2258" target="_blank" rel="noopener noreferrer">58% of tech employees experience imposter syndrome</a>. Even the ones with CS degrees. Even the experienced ones. That feeling you have right now? Everyone has it. Everyone.
 
 Everyone starting in a new field feels this way. Every single person. The technical people felt it when they started. The people with CS degrees felt it. The feeling is universal and it's not a reliable indicator of your capability.
 
@@ -101,53 +105,23 @@ All of these paths are open to you. You just need to develop the right skills. N
 
 ## The Skills That Actually Determine Success
 
-If you're serious about breaking into AI, here are the skills that will make the real difference:
+Look, if you're thinking about breaking into AI, you need to know what actually matters.
 
-**1. Problem-Solving Mindset**
-- Can you understand a business problem and think through potential solutions?
-- Can you ask good questions?
-- Can you analyze information and draw conclusions?
+And it's not what you think.
 
-These have nothing to do with technical background. They're about curiosity and critical thinking.
+**Problem-Solving.** Can you look at a messy situation and figure out what's actually wrong? Can you ask the right questions instead of just taking the first answer you get? I'm talking about real thinking here—analyzing information, connecting dots, trying solutions. That's all problem-solving. And yeah, it has nothing to do with whether you took computer science in high school.
 
-**2. Learning Agility**
-- Can you learn new tools and concepts quickly?
-- Can you read documentation and figure things out?
-- Can you adapt when something changes?
+**Learning Agility.** This is the big one. Can you learn a new tool quickly? Can you read documentation and figure it out without someone holding your hand? Can you adapt when things change? Because honestly, AI tools change every week. If you can learn new things fast, you can learn anything. <a href="https://www.researchgate.net/publication/320165264_The_role_of_learning_agility_in_executive_career_success_The_results_of_two_field_studies" target="_blank" rel="noopener noreferrer">The Korn Ferry Institute did research showing this is the #1 predictor of career success. It ranked above IQ. Above education level.</a> Let that sink in. Not your test scores. Not your degree. Your ability to learn.
 
-If you can do this, you can learn anything, including AI tools you've never seen before. <a href="https://www.researchgate.net/publication/320165264_The_role_of_learning_agility_in_executive_career_success_The_results_of_two_field_studies" target="_blank" rel="noopener noreferrer">Research from the Korn Ferry Institute shows learning agility is the #1 predictor of career success. It ranks above intelligence and education</a>. Think about that. Not IQ. Not a degree. The ability to learn.
+**Communication.** Here's what nobody talks about: the best engineer who can't explain their work is worth less than a decent communicator who understands the concepts. In AI, you need to explain what you're doing to people who don't code. To business people. To customers. To your team. If you can do that, you're ahead.
 
-**3. Communication Skills**
-- Can you explain concepts clearly?
-- Can you understand what others are saying?
-- Can you present ideas effectively?
+**Business Thinking.** Real talk: non-technical people often understand business better than engineers do. You know how companies work. You understand money and outcomes. You think about impact. That's valuable.
 
-This is underrated in AI but absolutely critical. The best technical person who can't communicate is less valuable than a good communicator who understands the concepts.
+**Curiosity.** Are you actually interested in how things work? Do you ask questions? Do you dive deep into topics that interest you? Because this matters more than your background ever will. Curious people learn constantly. They stay current. They figure things out.
 
-**4. Business Thinking**
-- Do you understand how businesses work?
-- Can you think about problems from a business perspective?
-- Can you connect solutions to real outcomes?
+**Work Ethic.** Can you commit to something hard? Can you push through when it's difficult? Everyone breaking into a new field needs this. Period.
 
-This is something non-technical people often have that technical people lack. It's valuable.
-
-**5. Curiosity**
-- Are you genuinely interested in how things work?
-- Do you ask questions?
-- Do you read about topics that interest you?
-
-This matters more than your background. Curious people learn constantly.
-
-**6. Work Ethic**
-- Are you willing to put in effort to learn?
-- Can you stick with something difficult?
-- Can you be persistent when it's hard?
-
-Everyone breaking into a new field needs this.
-
-**All of these skills are independent of technical background.**
-
-The person with zero technical background who has these skills will outpace the person with a CS degree who lacks them. Every time.
+Here's the thing: all of these skills are independent of your technical background. A person with zero coding experience who has these six skills will outpace someone with a CS degree who doesn't. Every single time.
 
 ## Why Your Non-Technical Background Is Actually an Advantage
 
@@ -167,10 +141,16 @@ Some of the most impactful people in AI didn't start with a technical background
 
 ## Your Path Into AI (Starting Today)
 
-If you're ready to break through the self-doubt and actually start:
+Real quick—I want to tell you about Sarah. She was 21. Marketing major. No coding experience. No CS background. She was terrified. Thought she was "too late" and "not smart enough." She asked herself the same questions you're probably asking right now.
+
+She started small. One workshop. A little online course. Hands-on stuff, not theory. Within six months? She had her first AI implementation project. Now she's working at a company helping them integrate AI into their operations. She makes good money. She's confident.
+
+She's not special. She didn't have some magic background. She just started.
+
+**If you want to do what Sarah did, here's how:**
 
 **Step 1: Choose Your Focus**
-What aspect of AI interests you? Strategy? Data analysis? AI tools? Implementation? Teaching? Choose something that aligns with your interests and background.
+What aspect of AI interests you? Strategy? Data analysis? AI tools? Implementation? Teaching? Pick something. Not forever—just something to start with that aligns with what you actually care about.
 
 **Step 2: Learn the Fundamentals**
 Learn what AI actually is, what problems it solves, what different types of AI do. This conceptual understanding is your foundation.
@@ -189,26 +169,32 @@ The AI field changes constantly. Plan to keep learning throughout your career.
 
 ## You Absolutely Can Do This
 
-I want to be direct: **If you're interested in AI, your non-technical background is not a barrier.**
+Real talk: **If you're interested in AI, your non-technical background isn't a barrier.**
 
-It might *feel* like a barrier. You might look at people further ahead and think they have something you don't. But what they have is experience—and that's something you can gain.
+It might feel like one. You might look at people ahead of you and think they have something you're missing.
 
-You have everything you need to break into AI:
+They don't.
+
+What they have is experience. And you can get that.
+
+You already have the foundation:
 - The ability to learn
 - Curiosity about how things work
-- Determination to grow
-- A unique perspective from your background
+- The drive to grow
+- A perspective nobody else has
 - Problem-solving ability
 
-That's your foundation. Everything else is learnable.
+That's it. Everything else? Learnable.
 
-Here's what stops most people: They let self-doubt convince them the door is closed before they even try to open it.
+Here's what actually stops people: Self-doubt makes them think the door is locked. So they never even try.
 
-Don't do that.
+Don't be that person.
 
-Start with the fundamentals. Get hands-on with tools. Build projects. Stay curious. Be persistent when it's hard. Trust that your background is an asset, not a liability.
+Start small. Learn the fundamentals. Get hands-on. Build something. Stay curious. Push through the hard parts. Remember that your background isn't a weakness—it's your advantage.
 
-Your journey into AI isn't about becoming a coder or a mathematician. It's about developing the skills and knowledge to solve problems using AI in a way that only someone with your background and perspective can do.
+Your path into AI isn't about becoming a coder. It's about becoming someone who solves problems using AI in a way nobody else can.
+
+Because that's what you bring. That's what matters.
 
 **That's valuable. That's needed. That's absolutely possible.**
 
