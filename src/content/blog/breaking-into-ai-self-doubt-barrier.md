@@ -198,7 +198,5 @@ Because that's what you bring. That's what matters.
 
 **That's valuable. That's needed. That's absolutely possible.**
 
----
-
 Ready to actually start? I'm <a href="/ai-training-youth-lp" target="_blank" rel="noopener noreferrer">launching the AI Training Youth course</a> in early 2026. Hands-on, practical, built for people like you. No CS degree required. Just people ready to break through the self-doubt and actually learn.
 
