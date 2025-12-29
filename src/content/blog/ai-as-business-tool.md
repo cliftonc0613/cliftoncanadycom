@@ -22,7 +22,7 @@ The AI hype is deafening. Every week, another tool promises to revolutionize you
 
 Here's what I've learned working with growth-stage businesses for over 20 years: **the problem isn't AI. The problem is strategy.**
 
-According to recent research, <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" target="_blank" rel="noopener noreferrer">95% of generative AI pilots at companies are failing</a>, and <a href="https://dataconomy.com/2025/12/10/why-84-percent-of-ai-projects-fail-and-its-not-the-technology/" target="_blank" rel="noopener noreferrer">84% of all AI projects fail, but not because of the technology. The failure is organizational</a>. This isn't about tools. It's about strategy and how you deploy them.
+According to recent research, <a href="https://www.forbes.com/sites/jasonsnyder/2025/08/26/mit-finds-95-of-genai-pilots-fail-because-companies-avoid-friction/" target="_blank" rel="noopener noreferrer">95% of generative AI pilots at companies are failing</a>, and <a href="https://dataconomy.com/2025/12/10/why-84-percent-of-ai-projects-fail-and-its-not-the-technology/" target="_blank" rel="noopener noreferrer">84% of all AI projects fail, but not because of the technology. The failure is organizational</a>. This isn't about tools. It's about strategy and how you deploy them.
 
 ## The AI Trap: Tools Without Direction
 
