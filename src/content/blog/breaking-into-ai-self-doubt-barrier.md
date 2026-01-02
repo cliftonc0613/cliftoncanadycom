@@ -16,7 +16,7 @@ tags:
   - Non-Technical
   - AI Fundamentals
 featured: true
-draft: true
+draft: false
 image:
   url: /images/blog/breaking-into-ai-self-doubt-barrier.jpg
   alt: >-
