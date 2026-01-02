@@ -14,11 +14,11 @@ const allPosts = await getCollection('blog', ({ data }) => {
     // Exclude drafts
     if (data.draft) return false;
 
-    // Check if publishDate has passed (if set)
-    if (data.publishDate) {
-      const publishDate = new Date(data.publishDate);
+    // Check if pubDate has passed (if set)
+    if (data.pubDate) {
+      const pubDate = new Date(data.pubDate);
       const now = new Date();
-      return publishDate <= now;
+      return pubDate <= now;
     }
 
     return true;
