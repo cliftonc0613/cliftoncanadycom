@@ -6,8 +6,8 @@ description: >-
   You don't have a technical background? That's not your barrier. Here's what
   actually stops non-technical people from breaking into AI—and how to overcome
   it.
-pubDate: 2025-12-29T00:00:00.000Z
-publishDate: 2025-12-29T00:00:00.000Z
+pubDate: 2026-01-02T00:00:00.000Z
+publishDate: 2026-01-02T00:00:00.000Z
 category: AI Training
 tags:
   - AI
