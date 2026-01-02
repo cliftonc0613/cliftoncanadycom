@@ -83,6 +83,65 @@
     border-radius: 5px !important;
   }
 
+  /* Hero Section Styles */
+  .hero-section {
+    @apply h-[95vh] md:h-[60vh] lg:h-[85vh] flex items-center justify-center relative overflow-hidden;
+  }
+
+  .hero-bg-image {
+    @apply absolute inset-0 bg-cover bg-center bg-no-repeat;
+    background-image: url('/images/clifton-canady-hero.jpg');
+  }
+
+  .hero-gradient-overlay {
+    @apply absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/70 to-primary/80;
+  }
+
+  .hero-content-container {
+    @apply container mx-auto px-4 text-center relative z-10 text-white;
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-headline {
+    @apply text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+
+  .hero-subheadline {
+    @apply text-xl md:text-2xl lg:text-3xl mb-12 font-light leading-relaxed max-w-4xl mx-auto;
+  }
+
+  /* Hero Button Styles */
+  .hire-me-btn {
+    @apply text-base px-6 py-2 font-semibold shadow-lg transform hover:scale-105 transition-all duration-200 inline-flex items-center gap-2 text-center no-underline;
+    background-color: #F66733;
+    border: 2px solid #F66733;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .hire-me-btn:hover {
+    background-color: transparent;
+    border: 2px solid #F66733;
+    color: #F66733;
+  }
+
+  .resume-btn {
+    @apply text-base px-6 py-2 font-semibold shadow-lg transform hover:scale-105 transition-all duration-200 inline-flex items-center gap-2 text-center no-underline;
+    background-color: white;
+    border: 2px solid white;
+    color: #3D4E76;
+    border-radius: 5px;
+  }
+
+  .resume-btn:hover {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+  }
+
   /* Blog prose typography styles */
   .prose {
     @apply max-w-none;
