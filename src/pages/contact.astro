@@ -73,7 +73,7 @@ import { Code, PenTool, Mic, Camera, Phone, ExternalLink } from 'lucide-react';
               <a href="tel:+18642522349" class="group block mb-8">
                 <div class="flex items-center justify-center gap-4 mb-6">
                   <div class="w-14 h-14 bg-accent/15 rounded-full flex items-center justify-center group-hover:bg-accent/25 transition-all">
-                    <Phone size={32} class="text-accent" />
+                    <Phone size={32} className="text-accent" />
                   </div>
                   <div class="text-left">
                     <p class="text-gray-500 text-xs uppercase tracking-wider">Phone</p>
@@ -94,6 +94,91 @@ import { Code, PenTool, Mic, Camera, Phone, ExternalLink } from 'lucide-react';
             <!-- Accent dot decoration -->
             <div class="absolute -top-6 -right-6 w-16 h-16 bg-accent/20 rounded-full blur-xl"></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule Consultation Section -->
+    <section class="relative py-20 md:py-28 bg-white overflow-hidden">
+      <!-- Subtle background pattern -->
+      <div class="absolute inset-0 opacity-[0.02]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%233D4E76&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+      <div class="container mx-auto px-4 max-w-5xl relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4" style="font-family: 'Poppins', sans-serif;">
+            Schedule Your Free Consultation
+          </h2>
+          <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Book a convenient time to discuss your web design project with our experts
+          </p>
+        </div>
+
+        <!-- Choose Your Preferred Time Card -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 md:p-8 mb-8">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-primary mb-2">Choose Your Preferred Time</h3>
+              <p class="text-gray-600">
+                Select a date and time that works best for you. All consultations are completely free with no obligation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calendar Widget Container -->
+        <div class="bg-white border-2 border-slate-100 rounded-2xl shadow-lg overflow-hidden mb-8">
+          <div class="p-6 md:p-10 min-h-[500px] flex items-center justify-center">
+<!-- Calendar Booking Widget -->
+            <div id="calendar-embed" class="w-full">
+              <iframe src="https://links.ctwebdesignshop.com/widget/booking/1As3GOHcx1FKpjPx8p0i" style="width: 100%; min-height: 650px; border: none; overflow: hidden;" scrolling="no" id="1As3GOHcx1FKpjPx8p0i_1767456832452"></iframe>
+              <script src="https://links.ctwebdesignshop.com/js/form_embed.js" type="text/javascript"></script>
+            </div>
+          </div>
+        </div>
+
+        <!-- What to Expect Card -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 md:p-8">
+          <h4 class="text-lg font-bold text-accent mb-4">What to Expect:</h4>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-5 h-5 bg-accent rounded-full flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700 text-sm">15-30 minute consultation call</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-5 h-5 bg-accent rounded-full flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700 text-sm">Discussion of your business goals and needs</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-5 h-5 bg-accent rounded-full flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700 text-sm">Custom recommendations for your project</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-5 h-5 bg-accent rounded-full flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700 text-sm">No-obligation project proposal</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
