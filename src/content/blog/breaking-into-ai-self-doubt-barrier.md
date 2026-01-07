@@ -15,7 +15,7 @@ tags:
   - Imposter Syndrome
   - Non-Technical
   - AI Fundamentals
-featured: true
+featured: false
 draft: false
 image:
   url: /images/blog/breaking-into-ai-self-doubt-barrier.jpg

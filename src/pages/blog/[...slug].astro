@@ -141,6 +141,54 @@ const articleSchema = {
   "wordCount": wordCount,
   "articleBody": post.body
 };
+
+// Generate FAQ schema for decision framework (if applicable)
+const faqSchema = post.slug === 'portfolio-training-beats-bootcamps' ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will I actually finish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bootcamp (structured, so yes). Online (unstructured, so maybe not). Portfolio-focused (structured but not full-time, so likely yes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I have portfolio pieces employers want to see?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bootcamp (1-2 projects, maybe). Online (mostly exercises, no). Portfolio-focused (3 professional projects, absolutely)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I get support breaking into jobs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bootcamp (some). Online (basically no). Portfolio-focused (explicit career launch support)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I actually learn and retain the material?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bootcamp (some—but breadth vs. depth problem). Online (some—but completion problem). Portfolio-focused (high—learning by doing)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the actual cost per job obtained?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bootcamp ($21K-$28K). Online ($5K-$15K, but low completion). Portfolio-focused ($3.5K-$5K)."
+      }
+    }
+  ]
+} : undefined;
 ---
 
 <Layout
@@ -151,7 +199,7 @@ const articleSchema = {
   twitterTitle={post.data.title}
   twitterDescription={post.data.description}
   keywords={post.data.tags?.join(", ") || post.data.category}
-  structuredData={[articleSchema]}
+  structuredData={faqSchema ? [articleSchema, faqSchema] : [articleSchema]}
 >
   <!-- Navigation Header -->
   <Navigation />
