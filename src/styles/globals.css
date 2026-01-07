@@ -59,6 +59,11 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Global list typography - Roboto Mono for all lists */
+  ul, ol, li {
+    font-family: 'Roboto Mono', monospace;
+  }
 }
 
 @layer components {
