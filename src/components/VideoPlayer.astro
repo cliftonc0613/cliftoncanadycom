@@ -1,0 +1,66 @@
+---
+/**
+ * VideoPlayer.astro
+ *
+ * Astro wrapper component for the YouTubePlayer React component.
+ * Provides a simple interface for embedding YouTube videos with Video.js controls.
+ *
+ * Usage:
+ * <VideoPlayer videoId="dQw4w9WgXcQ" />
+ * <VideoPlayer videoId="dQw4w9WgXcQ" width={800} height={450} />
+ * <VideoPlayer videoId="dQw4w9WgXcQ" autoplay muted />
+ */
+
+import YouTubePlayer from './YouTubePlayer.tsx';
+
+interface Props {
+  /** YouTube video ID (the part after ?v= in the URL) */
+  videoId: string;
+  /** Width in pixels or CSS value (default: '100%') */
+  width?: number | string;
+  /** Height in pixels or 'auto' for 16:9 aspect ratio (default: 'auto') */
+  height?: number | string;
+  /** Auto-play the video (default: false) */
+  autoplay?: boolean;
+  /** Show player controls (default: true) */
+  controls?: boolean;
+  /** Loop the video (default: false) */
+  loop?: boolean;
+  /** Mute the video (default: false) */
+  muted?: boolean;
+  /** Additional CSS classes */
+  class?: string;
+}
+
+const {
+  videoId,
+  width = '100%',
+  height = 'auto',
+  autoplay = false,
+  controls = true,
+  loop = false,
+  muted = false,
+  class: className = '',
+} = Astro.props;
+---
+
+<div class={`video-player-container ${className}`}>
+  <YouTubePlayer
+    client:load
+    videoId={videoId}
+    width={width}
+    height={height}
+    autoplay={autoplay}
+    controls={controls}
+    loop={loop}
+    muted={muted}
+  />
+</div>
+
+<style>
+  .video-player-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+</style>
