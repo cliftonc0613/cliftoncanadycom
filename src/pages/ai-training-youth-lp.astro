@@ -7,6 +7,7 @@ import AIBoardroomFooter from '../components/AIBoardroomFooter.astro';
 import AITrainingModalManager from '../components/AITrainingModalManager';
 import AITrainingButton from '../components/AITrainingButton';
 import CurriculumDisclosure from '../components/curriculum/CurriculumDisclosure.astro';
+import VideoPlayer from '../components/VideoPlayer.astro';
 
 // Course Schema with Geographic Targeting
 const courseSchema = {
@@ -311,7 +312,7 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
     </section>
 
     <!-- THE CHALLENGE SECTION - YOUTH REPOSITIONED -->
-    <section class="ai-training-problem py-24 bg-muted/30">
+    <section class="ai-training-problem pt-24 pb-12 bg-muted/30">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-12">
@@ -403,9 +404,14 @@ const structuredData = [courseSchema, organizationSchema, occupationalCredential
     </section>
 
     <!-- THE SOLUTION SECTION -->
-    <section class="three-step-process-new py-24 bg-gray-50">
+    <section class="three-step-process-new pt-12 pb-24 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
+          <!-- Course Video -->
+          <div class="max-w-4xl mx-auto mb-12">
+            <VideoPlayer videoId="RukcUmmWX6I" />
+          </div>
+
           <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">
               Your 8-Week Path to AI Career Launch
