@@ -36,7 +36,7 @@ const phaseRanges: Record<string, string> = {
 const weekRange = phaseRanges[phase] || phaseDisplay;
 ---
 
-<details class="curriculum-phase group border-2 border-gray-200 rounded-lg p-6 cursor-pointer transition-all">
+<details class="curriculum-phase group border-2 border-gray-200 rounded-lg px-2 py-3 md:p-6 cursor-pointer transition-all">
   <summary
     class="flex items-center justify-between cursor-pointer font-bold text-lg text-primary hover:text-primary/80 transition-colors select-none"
     aria-expanded="false"
@@ -45,7 +45,7 @@ const weekRange = phaseRanges[phase] || phaseDisplay;
     <span class="text-2xl transition duration-300 group-open:rotate-180">›</span>
   </summary>
 
-  <div class="mt-6 space-y-4 ml-4">
+  <div class="mt-4 md:mt-6 space-y-3 md:space-y-4">
     {weeks.map((week) => (
       <CurriculumWeek
         week={week.week}
