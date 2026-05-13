@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+const lastUpdated = "May 13, 2025";
+---
+
+<Layout
+  title="Privacy Policy | Clifton T. Canady"
+  description="Privacy Policy for cliftoncanady.com. Learn how we collect, use, and protect your personal information."
+>
+  <Navigation />
+  <main>
+    <!-- Hero -->
+    <section class="relative min-h-[300px] flex items-center justify-center text-white overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/clifton-canady-resume-cv.jpg');"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/80"></div>
+      <div class="relative z-10 container mx-auto px-4 text-center" style="padding-top: 5em; padding-bottom: 2em;">
+        <span class="inline-block text-sm font-semibold text-blue-100 mb-4 uppercase tracking-widest">Legal</span>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Privacy Policy</h1>
+        <p class="text-lg opacity-80">Last updated: {lastUpdated}</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+
+        <!-- Quick Nav -->
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-12">
+          <p class="text-sm font-semibold text-primary uppercase tracking-widest mb-4">Jump To Section</p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+            <li><a href="#information-we-collect" class="text-accent hover:underline">1. Information We Collect</a></li>
+            <li><a href="#how-we-use" class="text-accent hover:underline">2. How We Use Your Information</a></li>
+            <li><a href="#sharing" class="text-accent hover:underline">3. Sharing of Information</a></li>
+            <li><a href="#cookies" class="text-accent hover:underline">4. Cookies &amp; Tracking</a></li>
+            <li><a href="#third-party" class="text-accent hover:underline">5. Third-Party Services</a></li>
+            <li><a href="#data-retention" class="text-accent hover:underline">6. Data Retention</a></li>
+            <li><a href="#your-rights" class="text-accent hover:underline">7. Your Rights</a></li>
+            <li><a href="#children" class="text-accent hover:underline">8. Children's Privacy</a></li>
+            <li><a href="#security" class="text-accent hover:underline">9. Security</a></li>
+            <li><a href="#changes" class="text-accent hover:underline">10. Changes to This Policy</a></li>
+            <li><a href="#contact" class="text-accent hover:underline">11. Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="prose-content space-y-12">
+
+          <!-- Introduction -->
+          <div>
+            <p class="text-gray-700 text-lg leading-relaxed mb-4">
+              cliftoncanady.com ("we," "us," or "our") is committed to protecting your personal information. This Privacy Policy explains what data we collect, how we use it, and your rights regarding that data when you visit <strong>cliftoncanady.com</strong> and any related pages or services operated by Clifton T. Canady.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              By using this website, you agree to the practices described in this policy. If you do not agree, please discontinue use of the site.
+            </p>
+          </div>
+
+          <!-- Section 1 -->
+          <div id="information-we-collect">
+            <h2 class="section-heading">1. Information We Collect</h2>
+
+            <h3 class="subsection-heading">Information You Provide Directly</h3>
+            <p class="policy-text">When you contact us, schedule a consultation, or engage our services, we may collect:</p>
+            <ul class="policy-list">
+              <li>Name and email address</li>
+              <li>Phone number</li>
+              <li>Business name and website URL</li>
+              <li>Project details and messages you send us</li>
+              <li>Billing information when purchasing services</li>
+            </ul>
+
+            <h3 class="subsection-heading mt-6">Information Collected Automatically</h3>
+            <p class="policy-text">When you visit our website, we automatically collect certain technical information including:</p>
+            <ul class="policy-list">
+              <li>IP address and general geographic location</li>
+              <li>Browser type and version</li>
+              <li>Operating system</li>
+              <li>Pages visited and time spent on each page</li>
+              <li>Referring website or source</li>
+              <li>Device type (desktop, tablet, mobile)</li>
+            </ul>
+          </div>
+
+          <!-- Section 2 -->
+          <div id="how-we-use">
+            <h2 class="section-heading">2. How We Use Your Information</h2>
+            <p class="policy-text">We use the information we collect to:</p>
+            <ul class="policy-list">
+              <li>Respond to your inquiries and service requests</li>
+              <li>Schedule and manage consultations and project work</li>
+              <li>Deliver and improve the services you've requested</li>
+              <li>Send project updates, proposals, and invoices</li>
+              <li>Send occasional marketing communications (you may opt out at any time)</li>
+              <li>Analyze website performance and improve user experience</li>
+              <li>Comply with legal obligations</li>
+              <li>Prevent fraud and protect the security of our site and services</li>
+            </ul>
+            <p class="policy-text mt-4">
+              We will never sell your personal information to third parties. We do not use your data for purposes beyond what is described in this policy without your consent.
+            </p>
+          </div>
+
+          <!-- Section 3 -->
+          <div id="sharing">
+            <h2 class="section-heading">3. Sharing of Information</h2>
+            <p class="policy-text">We do not sell, trade, or rent your personal information. We may share your data only in these limited circumstances:</p>
+            <ul class="policy-list">
+              <li><strong>Service Providers:</strong> Trusted third-party tools that help us operate our business (e.g., scheduling software, email platforms, payment processors). These providers are contractually bound to use your data only to perform services on our behalf.</li>
+              <li><strong>Legal Requirements:</strong> When required by law, court order, or governmental authority.</li>
+              <li><strong>Protection of Rights:</strong> When necessary to protect the rights, property, or safety of cliftoncanady.com, our clients, or the public.</li>
+              <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
+            </ul>
+          </div>
+
+          <!-- Section 4 -->
+          <div id="cookies">
+            <h2 class="section-heading">4. Cookies &amp; Tracking Technologies</h2>
+            <p class="policy-text">
+              Our website uses cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and understand where our visitors are coming from.
+            </p>
+
+            <h3 class="subsection-heading">Types of Cookies We Use</h3>
+            <ul class="policy-list">
+              <li><strong>Essential Cookies:</strong> Required for the website to function properly. These cannot be disabled.</li>
+              <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our site (e.g., Google Analytics via Google Tag Manager).</li>
+              <li><strong>Marketing Cookies:</strong> Used to track the effectiveness of our advertising campaigns.</li>
+            </ul>
+
+            <h3 class="subsection-heading mt-6">Managing Cookies</h3>
+            <p class="policy-text">
+              You can control cookies through your browser settings. Most browsers allow you to refuse or delete cookies. Note that disabling certain cookies may affect the functionality of our website. For more information on managing cookies, visit <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">allaboutcookies.org</a>.
+            </p>
+          </div>
+
+          <!-- Section 5 -->
+          <div id="third-party">
+            <h2 class="section-heading">5. Third-Party Services</h2>
+            <p class="policy-text">Our website integrates with third-party services that have their own privacy policies. These include:</p>
+            <ul class="policy-list">
+              <li><strong>Google Analytics / Google Tag Manager:</strong> Web analytics and tag management. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Google Privacy Policy</a></li>
+              <li><strong>GoHighLevel (CRM &amp; Booking):</strong> Used for scheduling consultations and managing client communications.</li>
+              <li><strong>Payment Processors:</strong> We use secure, PCI-compliant payment processors. We do not store full credit card information on our servers.</li>
+            </ul>
+            <p class="policy-text mt-4">
+              We are not responsible for the privacy practices of third-party services. We encourage you to review their privacy policies before providing any personal information.
+            </p>
+          </div>
+
+          <!-- Section 6 -->
+          <div id="data-retention">
+            <h2 class="section-heading">6. Data Retention</h2>
+            <p class="policy-text">
+              We retain your personal information only as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required by law. Specifically:
+            </p>
+            <ul class="policy-list">
+              <li>Contact and inquiry data: Retained for up to 3 years from last contact</li>
+              <li>Client project data: Retained for the duration of the project plus 5 years</li>
+              <li>Billing records: Retained for 7 years as required by tax law</li>
+              <li>Analytics data: Retained per the third-party provider's policies</li>
+            </ul>
+            <p class="policy-text mt-4">
+              When data is no longer needed, we securely delete or anonymize it.
+            </p>
+          </div>
+
+          <!-- Section 7 -->
+          <div id="your-rights">
+            <h2 class="section-heading">7. Your Rights</h2>
+            <p class="policy-text">Depending on your location, you may have the following rights regarding your personal data:</p>
+            <ul class="policy-list">
+              <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+              <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data.</li>
+              <li><strong>Deletion:</strong> Request deletion of your personal data ("right to be forgotten").</li>
+              <li><strong>Portability:</strong> Request a machine-readable copy of your data.</li>
+              <li><strong>Objection:</strong> Object to our processing of your data for marketing purposes.</li>
+              <li><strong>Opt-Out:</strong> Unsubscribe from marketing emails at any time via the unsubscribe link in any email.</li>
+            </ul>
+            <p class="policy-text mt-4">
+              To exercise any of these rights, contact us at <a href="mailto:hello@cliftoncanady.com" class="text-accent hover:underline">hello@cliftoncanady.com</a>. We will respond within 30 days.
+            </p>
+          </div>
+
+          <!-- Section 8 -->
+          <div id="children">
+            <h2 class="section-heading">8. Children's Privacy</h2>
+            <p class="policy-text">
+              Our website and services are not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us immediately and we will delete it.
+            </p>
+          </div>
+
+          <!-- Section 9 -->
+          <div id="security">
+            <h2 class="section-heading">9. Security</h2>
+            <p class="policy-text">
+              We implement reasonable technical and organizational measures to protect your personal information from unauthorized access, loss, misuse, or alteration. Our website uses HTTPS encryption for all data in transit.
+            </p>
+            <p class="policy-text mt-4">
+              However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee absolute security.
+            </p>
+          </div>
+
+          <!-- Section 10 -->
+          <div id="changes">
+            <h2 class="section-heading">10. Changes to This Policy</h2>
+            <p class="policy-text">
+              We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. For significant changes, we will provide more prominent notice. Your continued use of the website after any changes constitutes your acceptance of the revised policy.
+            </p>
+          </div>
+
+          <!-- Section 11 -->
+          <div id="contact">
+            <h2 class="section-heading">11. Contact Us</h2>
+            <p class="policy-text">If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us:</p>
+            <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 mt-4">
+              <p class="font-bold text-primary text-lg mb-2">Clifton T. Canady</p>
+              <p class="text-gray-700">cliftoncanady.com</p>
+              <p class="text-gray-700 mt-2">
+                Email: <a href="mailto:hello@cliftoncanady.com" class="text-accent hover:underline">hello@cliftoncanady.com</a>
+              </p>
+              <p class="text-gray-700">
+                Phone: <a href="tel:+18647528017" class="text-accent hover:underline">(864) 752-8017</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Terms Link -->
+          <div class="border-t border-gray-100 pt-10">
+            <p class="text-gray-600">
+              Looking for our Terms of Service? <a href="/terms" class="text-accent font-semibold hover:underline">View Terms of Service &rarr;</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .section-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(var(--primary));
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid hsl(var(--accent) / 0.2);
+  }
+
+  .subsection-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: hsl(var(--primary));
+    margin-bottom: 0.5rem;
+  }
+
+  .policy-text {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
+  }
+
+  .policy-list {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.875rem;
+    color: #4b5563;
+    line-height: 1.8;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+    space-y: 0.5rem;
+  }
+
+  .policy-list li {
+    margin-bottom: 0.5rem;
+  }
+</style>
