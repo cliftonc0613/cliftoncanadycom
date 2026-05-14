@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from "@/components/ui/button";
+---
+
+
+<Layout
+  title="Your PDF is Ready | Five Signs You Need an AI Search Engine"
+  description="Download your free guide: Five Signs You Need an AI Search Engine."
+  ogImage="/images/ai-boardrooms-og.jpg"
+  ogImageAlt="Five Signs You Need an AI Search Engine"
+  noindex={true}
+>
+  <main>
+
+    <!-- Hero Section: Two-column, no header/footer -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+
+      <!-- Background image -->
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/ai-boardroom.jpg');"></div>
+
+      <!-- Glassy overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/80 backdrop-blur-sm"></div>
+      <div class="absolute inset-0 bg-white/5 backdrop-blur-[2px]"></div>
+
+      <div class="relative z-10 w-full max-w-6xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+          <!-- Left: Text + CTA -->
+          <div class="text-white">
+
+            <!-- Confirmation badge -->
+            <div class="inline-flex items-center gap-2 bg-accent/20 backdrop-blur rounded-full px-5 py-2.5 mb-8">
+              <svg class="w-5 h-5 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-white font-semibold text-xs uppercase tracking-widest hero-badge-text">Your Download Is Ready</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Please download<br />your PDF.
+            </h1>
+
+            <!-- Subhead -->
+            <p class="text-lg md:text-xl text-white/85 font-medium mb-10 max-w-md leading-relaxed">
+              Five Signs You Need an AI Search Engine. Your free guide to spotting the shift before your competitors do.
+            </p>
+
+            <!-- Download CTA -->
+            <a
+              href="/downloads/ai-boardroom-5-signs.pdf"
+              download="Five-Signs-You-Need-an-AI-Search-Engine.pdf"
+              class="hire-me-btn text-base px-8 py-4 text-lg"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              Download Your PDF
+            </a>
+
+            <!-- Helper text -->
+            <p class="text-white/60 text-sm mt-4">
+              Saves as a PDF on your device.
+            </p>
+
+          </div>
+
+          <!-- Right: PDF cover mockup -->
+          <div class="hidden md:flex items-center justify-center">
+            <div class="transform rotate-3 hover:rotate-0 transition-transform duration-300 ease-out">
+              <img
+                src="/images/lead-magnets/5-signs-cover.png"
+                alt="Cover of the Five Signs You Need an AI Search Engine PDF guide."
+                class="w-72 lg:w-80 rounded-2xl shadow-2xl border border-white/20"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Soft next-step block -->
+    <section class="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div class="max-w-2xl mx-auto px-6 text-center">
+
+        <p class="text-xs font-bold uppercase tracking-widest text-accent mb-4">While You're Here</p>
+
+        <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4 leading-snug">
+          Want to talk through what these signs mean for your business?
+        </h2>
+
+        <p class="text-base text-gray-600 mb-8 max-w-lg mx-auto">
+          Book a free strategy call with Clifton. We'll review your current setup and map out what to do next.
+        </p>
+
+        <a
+          href="https://links.ctwebdesignshop.com/widget/bookings/cliftoncanady"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button variant="outline" size="lg" class="border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8">
+            Book a Strategy Call &rarr;
+          </Button>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+</Layout>
