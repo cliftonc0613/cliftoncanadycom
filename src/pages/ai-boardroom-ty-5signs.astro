@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Your PDF is Ready | Five Signs You Need an AI Search Engine"
+  description="Download your free guide: Five Signs You Need an AI Search Engine."
+  ogImage="/images/ai-boardrooms-og.jpg"
+  ogImageAlt="Five Signs You Need an AI Search Engine"
+  noindex={true}
+>
+  <main>
+
+    <!-- Hero: compact, centered, terms-style -->
+    <section class="relative min-h-[300px] flex items-center justify-center text-white overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/ai-boardroom.jpg');"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary/80"></div>
+      <div class="relative z-10 container mx-auto px-4 text-center" style="padding-top: 5em; padding-bottom: 2em;">
+        <span class="inline-block text-sm font-semibold text-blue-100 mb-4 uppercase tracking-widest">Your Download Is Ready</span>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Please download your PDF</h1>
+        <p class="text-lg opacity-80">Five Signs You Need an AI Search Engine</p>
+      </div>
+    </section>
+
+    <!-- Two-column white action zone -->
+    <section class="py-20 md:py-24 bg-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          <!-- Left: Copy + Download CTA -->
+          <div>
+            <p class="text-xs font-bold uppercase tracking-widest text-accent mb-4">Your Free Guide</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
+              Save it now and read it later.
+            </h2>
+            <p class="text-base text-gray-600 mb-8 max-w-md leading-relaxed">
+              Inside: the five clear signs that you're still using AI like a search engine, and why your results feel generic. Plus what to do instead.
+            </p>
+
+            <a
+              href="https://assets.cdn.filesafe.space/O3A0THtKcMOzi34vEwru/media/6a05313c60b8c350d3f0a078.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hire-me-btn text-base px-8 py-4 text-lg"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              Download Your PDF
+            </a>
+
+            <p class="text-gray-500 text-sm mt-4">
+              Saves as Five-Signs-You-Need-an-AI-Search-Engine.pdf
+            </p>
+          </div>
+
+          <!-- Right: PDF cover (tilted) -->
+          <div class="flex items-center justify-center">
+            <div class="transform rotate-3 hover:rotate-0 transition-transform duration-300 ease-out">
+              <img
+                src="/images/lead-magnets/5-signs-cover.png"
+                alt="Cover of the Five Signs You Need an AI Search Engine PDF guide."
+                class="w-72 lg:w-96 rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Soft strategy-call block -->
+    <section class="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div class="max-w-2xl mx-auto px-6 text-center">
+        <p class="text-xs font-bold uppercase tracking-widest text-accent mb-4">While You're Here</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-primary mb-4 leading-snug">
+          Want to talk through what these signs mean for your business?
+        </h2>
+        <p class="text-base text-gray-600 mb-8 max-w-lg mx-auto">
+          Book a free strategy call with Clifton. We'll review your current setup and map out what to do next.
+        </p>
+        <a
+          href="https://links.ctwebdesignshop.com/widget/bookings/cliftoncanady"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8 py-3 rounded-md transition-colors"
+        >
+          Book a Strategy Call &rarr;
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>
