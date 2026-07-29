@@ -1,0 +1,257 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const webhookUrl = 'https://services.leadconnectorhq.com/hooks/O3A0THtKcMOzi34vEwru/webhook-trigger/43590492-5351-414e-919c-520e8fd00e75';
+const thankYouUrl = '/lp/ctwds-master-team-thank-you';
+---
+
+<Layout
+  title="Meet the CT Web Design Shop Team | Get the Full Roster"
+  description="See the full CT Web Design Shop team behind every project. Drop your email to get the roster and how we work."
+  ogImage="/images/lead-magnets/ctwds-master-team.webp"
+  ogImageAlt="The CT Web Design Shop team"
+  noindex={true}
+>
+  <main class="lp-main">
+    <div class="lp-grid">
+      <div class="lp-image-col">
+        <img
+          src="/images/lead-magnets/ctwds-master-team.webp"
+          alt="The CT Web Design Shop team"
+          class="lp-image"
+          width="2048"
+          height="2048"
+          fetchpriority="high"
+        />
+      </div>
+
+      <div class="lp-form-col">
+        <div class="lp-form-inner">
+          <p class="lp-eyebrow">CT Web Design Shop</p>
+          <h1 class="lp-headline">Meet the Team Behind the Work</h1>
+          <p class="lp-subhead">
+            Drop your email and we'll send you the full roster, straight to your inbox.
+          </p>
+
+          <form id="lp-form" class="lp-form" data-webhook={webhookUrl} data-thankyou={thankYouUrl}>
+            <input
+              type="email"
+              id="lp-email"
+              name="email"
+              placeholder="you@email.com"
+              autocomplete="email"
+              required
+              class="lp-input"
+            />
+            <button type="submit" id="lp-submit" class="lp-submit">
+              <span>Get the Roster</span>
+            </button>
+            <div id="lp-error" class="lp-error hidden">Please enter a valid email address.</div>
+          </form>
+
+          <p class="lp-privacy">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const form = document.getElementById('lp-form') as HTMLFormElement | null;
+  const emailInput = document.getElementById('lp-email') as HTMLInputElement | null;
+  const submitBtn = document.getElementById('lp-submit') as HTMLButtonElement | null;
+  const errorMsg = document.getElementById('lp-error');
+
+  if (form && emailInput && submitBtn && errorMsg) {
+    const webhookUrl = form.dataset.webhook as string;
+    const thankYouUrl = form.dataset.thankyou as string;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorMsg.classList.add('hidden');
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value)) {
+        errorMsg.textContent = 'Please enter a valid email address.';
+        errorMsg.classList.remove('hidden');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.querySelector('span')!.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: emailInput.value.trim() }),
+        });
+
+        if (response.ok) {
+          window.location.href = thankYouUrl;
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (err) {
+        errorMsg.textContent = 'Something went wrong. Please try again.';
+        errorMsg.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.querySelector('span')!.textContent = 'Get the Roster';
+      }
+    });
+  }
+</script>
+
+<style>
+  .lp-main {
+    min-height: 100vh;
+    display: flex;
+    align-items: stretch;
+    background: hsl(var(--background));
+  }
+
+  .lp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .lp-image-col {
+    position: relative;
+    background: hsl(var(--primary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    overflow: hidden;
+  }
+
+  .lp-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .lp-form-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+    background: hsl(var(--background));
+  }
+
+  .lp-form-inner {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .lp-eyebrow {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--accent));
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .lp-headline {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: hsl(var(--foreground));
+    margin-bottom: 0.9rem;
+  }
+
+  .lp-subhead {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: hsl(var(--foreground) / 0.75);
+    margin-bottom: 1.75rem;
+  }
+
+  .lp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .lp-input {
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    border: 2px solid hsl(var(--foreground) / 0.15);
+    border-radius: 0.6rem;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .lp-input:focus {
+    border-color: hsl(var(--accent));
+  }
+
+  .lp-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: hsl(var(--accent-foreground));
+    background: hsl(var(--accent));
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease, opacity 0.2s ease;
+  }
+
+  .lp-submit:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: hsl(var(--accent) / 0.9);
+  }
+
+  .lp-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .lp-error {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    color: #dc2626;
+    padding: 0.6rem 0.9rem;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 0.5rem;
+  }
+
+  .lp-error.hidden {
+    display: none;
+  }
+
+  .lp-privacy {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    color: hsl(var(--foreground) / 0.5);
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 900px) {
+    .lp-grid {
+      grid-template-columns: 1.1fr 1fr;
+    }
+
+    .lp-image-col {
+      min-height: 100vh;
+    }
+  }
+</style>
