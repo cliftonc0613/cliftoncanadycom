@@ -1,27 +1,100 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const youtubeId = 'l7XWNUzL13I';
+const githubUrl = 'https://github.com/cliftonc0613/ctwds-team';
 ---
 
 <Layout
   title="You're In | CT Web Design Shop"
   description="Thanks for signing up. Check your inbox for the CT Web Design Shop team roster."
+  ogImage="/images/lead-magnets/ctwds-master-team.webp"
+  ogImageAlt="The CT Web Design Shop team"
   noindex={true}
 >
   <main class="ty-main">
-    <div class="ty-card">
+    <div class="ty-content-inner">
+      <div class="ty-browser-frame">
+        <div class="ty-browser-bar">
+          <div class="ty-browser-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="ty-browser-url">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="5" y="11" width="14" height="9" rx="1.5" />
+              <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+            </svg>
+            <span>github.com/cliftonc0613/ctwds-team</span>
+          </div>
+        </div>
+        <div id="ty-video-facade" class="ty-video-facade">
+          <img
+            src="/images/lead-magnets/ctwds-os-agency-master-team.webp"
+            alt="The CT Web Design Shop team of AI agents"
+            class="ty-video-thumb"
+            width="3840"
+            height="2160"
+            fetchpriority="high"
+          />
+          <button type="button" id="ty-play-btn" class="ty-play-btn" aria-label="Play video">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
       <div class="ty-check">
-        <svg width="40" height="40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
         </svg>
       </div>
+      <p class="ty-eyebrow">CT Web Design Shop</p>
       <h1 class="ty-headline">You're In</h1>
       <p class="ty-subhead">
-        Check your inbox, the CT Web Design Shop team roster is on its way.
+        Check your inbox, the CT Web Design Shop team roster is on its way. Watch the quick
+        walkthrough and grab the full project files below.
       </p>
+
+      <a
+        href={githubUrl}
+        class="ty-github-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.21.66.8.55A11.5 11.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5Z" />
+        </svg>
+        <span>Download the Project on GitHub</span>
+      </a>
+
       <a href="/" class="ty-link">Back to cliftoncanady.com</a>
     </div>
   </main>
 </Layout>
+
+<script define:vars={{ youtubeId }}>
+  const facade = document.getElementById('ty-video-facade');
+  const playBtn = document.getElementById('ty-play-btn');
+
+  function playVideo() {
+    if (!facade) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+    iframe.title = 'CT Web Design Shop video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.className = 'ty-video-iframe';
+    iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block;border:0;';
+    facade.replaceChildren(iframe);
+  }
+
+  facade?.addEventListener('click', playVideo);
+  playBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    playVideo();
+  });
+</script>
 
 <style>
   .ty-main {
@@ -29,24 +102,142 @@ import Layout from '../../layouts/Layout.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
+    background: hsl(var(--background));
+  }
+
+  .ty-browser-frame {
+    width: 100%;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background: #15181f;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .ty-browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.65rem 0.85rem;
+    background: #1d2129;
+  }
+
+  .ty-browser-dots {
+    display: flex;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .ty-browser-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .ty-browser-dots span:nth-child(1) {
+    background: #ff5f57;
+  }
+
+  .ty-browser-dots span:nth-child(2) {
+    background: #febc2e;
+  }
+
+  .ty-browser-dots span:nth-child(3) {
+    background: #28c840;
+  }
+
+  .ty-browser-url {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.55);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.72rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .ty-video-facade {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    cursor: pointer;
     background: hsl(var(--primary));
   }
 
-  .ty-card {
+  .ty-video-thumb {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    max-width: 440px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ty-video-iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+  }
+
+  .ty-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: none;
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .ty-play-btn svg {
+    margin-left: 3px;
+  }
+
+  .ty-play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+    background: hsl(var(--accent) / 0.9);
+  }
+
+  .ty-video-facade::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0) 40%);
+    pointer-events: none;
+  }
+
+  .ty-content-inner {
+    width: 100%;
+    max-width: 790px;
     text-align: center;
-    background: hsl(var(--background));
-    border-radius: 1rem;
-    padding: 3rem 2rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   }
 
   .ty-check {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 1.5rem;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,12 +246,23 @@ import Layout from '../../layouts/Layout.astro';
     color: hsl(var(--accent));
   }
 
+  .ty-eyebrow {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--accent));
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
   .ty-headline {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
     font-weight: 800;
+    line-height: 1.15;
     color: hsl(var(--foreground));
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.9rem;
   }
 
   .ty-subhead {
@@ -68,18 +270,45 @@ import Layout from '../../layouts/Layout.astro';
     font-size: 1rem;
     line-height: 1.6;
     color: hsl(var(--foreground) / 0.75);
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .ty-github-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: hsl(var(--accent-foreground));
+    background: hsl(var(--accent));
+    border: none;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease, opacity 0.2s ease;
+    margin-bottom: 1.5rem;
+  }
+
+  .ty-github-btn:hover {
+    transform: translateY(-1px);
+    background: hsl(var(--accent) / 0.9);
   }
 
   .ty-link {
+    display: block;
+    text-align: center;
     font-family: 'Roboto Mono', monospace;
     font-size: 0.9rem;
     font-weight: 700;
-    color: hsl(var(--accent));
+    color: hsl(var(--foreground) / 0.6);
     text-decoration: none;
   }
 
   .ty-link:hover {
     text-decoration: underline;
+    color: hsl(var(--accent));
   }
 </style>
