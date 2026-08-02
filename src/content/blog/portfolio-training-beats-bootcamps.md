@@ -15,7 +15,7 @@ tags:
   - Portfolio Projects
   - Career Guidance
   - Bootcamp Comparison
-featured: true
+featured: false
 draft: false
 ---
 

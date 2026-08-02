@@ -30,3 +30,6 @@ pnpm-debug.log*
 test-results/
 playwright-report/
 playwright/.cache/
+
+# AI image generation scratch/cache
+knowledge/
